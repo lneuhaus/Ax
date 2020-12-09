@@ -71,6 +71,19 @@ src="/js/documentation_options.js">
     <span class="k">pass</span></div>
 
 
+<div class="viewcode-block" id="UnsupportedPlotError"><a class="viewcode-back" href="../../../exceptions.html#ax.exceptions.core.UnsupportedPlotError">[docs]</a><span class="k">class</span> <span class="nc">UnsupportedPlotError</span><span class="p">(</span><span class="n">AxError</span><span class="p">):</span>
+    <span class="sd">"""Raised when plotting functionality is not supported for the</span>
+<span class="sd">    given configurations.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">message</span><span class="o">=</span><span class="n">message</span>
+            <span class="ow">or</span> <span class="s2">"Plotting functionality is not supported for the </span><span class="se">\</span>
+<span class="s2">            given configurations."</span>
+        <span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="ExperimentNotReadyError"><a class="viewcode-back" href="../../../exceptions.html#ax.exceptions.core.ExperimentNotReadyError">[docs]</a><span class="k">class</span> <span class="nc">ExperimentNotReadyError</span><span class="p">(</span><span class="n">AxError</span><span class="p">):</span>
     <span class="sd">"""Raised when failing to query data due to immature experiment.</span>
 

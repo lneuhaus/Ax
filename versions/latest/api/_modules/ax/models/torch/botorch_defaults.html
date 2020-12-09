@@ -64,7 +64,7 @@ src="/js/documentation_options.js">
 <span class="kn">from</span> <span class="nn">gpytorch.mlls.exact_marginal_log_likelihood</span> <span class="kn">import</span> <span class="n">ExactMarginalLogLikelihood</span>
 <span class="kn">from</span> <span class="nn">gpytorch.mlls.sum_marginal_log_likelihood</span> <span class="kn">import</span> <span class="n">SumMarginalLogLikelihood</span>
 <span class="kn">from</span> <span class="nn">gpytorch.priors.lkj_prior</span> <span class="kn">import</span> <span class="n">LKJCovariancePrior</span>
-<span class="kn">from</span> <span class="nn">gpytorch.priors.torch_priors</span> <span class="kn">import</span> <span class="n">GammaPrior</span>
+<span class="kn">from</span> <span class="nn">gpytorch.priors.torch_priors</span> <span class="kn">import</span> <span class="n">GammaPrior</span><span class="p">,</span> <span class="n">LogNormalPrior</span>
 <span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">Tensor</span>
 
 
@@ -612,9 +612,9 @@ src="/js/documentation_options.js">
     <span class="c1"># Note: this currently uses the same warping functions for all tasks</span>
     <span class="n">tf</span> <span class="o">=</span> <span class="n">Warp</span><span class="p">(</span>
         <span class="n">indices</span><span class="o">=</span><span class="n">indices</span><span class="p">,</span>
-        <span class="c1"># use an uninformative prior with maximum log probability at 1</span>
-        <span class="n">concentration1_prior</span><span class="o">=</span><span class="n">GammaPrior</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span>
-        <span class="n">concentration0_prior</span><span class="o">=</span><span class="n">GammaPrior</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span>
+        <span class="c1"># prior with a median of 1</span>
+        <span class="n">concentration1_prior</span><span class="o">=</span><span class="n">LogNormalPrior</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">),</span>
+        <span class="n">concentration0_prior</span><span class="o">=</span><span class="n">LogNormalPrior</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.75</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">),</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">tf</span></div>
 </pre></div>

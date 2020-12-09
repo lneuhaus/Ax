@@ -143,7 +143,7 @@ Strategy</cite>. Do not assign as it will be reassigned when instantiating
 <dl class="class">
 <dt id="ax.modelbridge.generation_strategy.GenerationStrategy">
 <em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.generation_strategy.</code><code class="sig-name descname">GenerationStrategy</code><span class="sig-paren">(</span><em class="sig-param">steps: List[ax.modelbridge.generation_strategy.GenerationStep], name: Optional[str] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/generation_strategy.html#GenerationStrategy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.generation_strategy.GenerationStrategy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ax.utils.common.base.Base</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="utils.html#ax.utils.common.base.Base" title="ax.utils.common.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.utils.common.base.Base</span></code></a></p>
 <p>GenerationStrategy describes which model should be used to generate new
 points for which trials, enabling and automating use of different models
 throughout the optimization process. For instance, it allows to use one
@@ -1578,6 +1578,34 @@ transform (does nothing).</p>
 </dd></dl>
 </dd></dl>
 </div>
+<div class="section" id="module-ax.modelbridge.transforms.cast">
+<span id="ax-modelbridge-transforms-cast"></span><h3><cite>ax.modelbridge.transforms.cast</cite><a class="headerlink" href="#module-ax.modelbridge.transforms.cast" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.modelbridge.transforms.cast.Cast">
+<em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.transforms.cast.</code><code class="sig-name descname">Cast</code><span class="sig-paren">(</span><em class="sig-param">search_space: ax.core.search_space.SearchSpace</em>, <em class="sig-param">observation_features: Optional[List[ax.core.observation.ObservationFeatures]] = None</em>, <em class="sig-param">observation_data: Optional[List[ax.core.observation.ObservationData]] = None</em>, <em class="sig-param">config: Optional[Dict[str</em>, <em class="sig-param">Union[int</em>, <em class="sig-param">float</em>, <em class="sig-param">str</em>, <em class="sig-param">botorch.acquisition.acquisition.AcquisitionFunction</em>, <em class="sig-param">Dict[str</em>, <em class="sig-param">Any]]]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/cast.html#Cast"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.cast.Cast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.transforms.base.Transform" title="ax.modelbridge.transforms.base.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.transforms.base.Transform</span></code></a></p>
+<p>Cast each param value to the respective parameter’s type/format</p>
+<p>This is a default transform that should run across all models</p>
+<p>Transform is done in-place.</p>
+<dl class="attribute">
+<dt id="ax.modelbridge.transforms.cast.Cast.config">
+<code class="sig-name descname">config</code><em class="property"> = None</em><a class="headerlink" href="#ax.modelbridge.transforms.cast.Cast.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.transforms.cast.Cast.untransform_observation_features">
+<code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param">observation_features: List[ax.core.observation.ObservationFeatures]</em><span class="sig-paren">)</span> → List[ax.core.observation.ObservationFeatures]<a class="reference internal" href="_modules/ax/modelbridge/transforms/cast.html#Cast.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.cast.Cast.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Untransform observation features.</p>
+<p>This is typically done in-place. This class implements the identity
+transform (does nothing).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>observation_features</strong> – Observation features in the transformed space</p>
+</dd>
+</dl>
+<p>Returns: observation features in the original space</p>
+</dd></dl>
+</dd></dl>
+</div>
 <div class="section" id="module-ax.modelbridge.transforms.cap_parameter">
 <span id="ax-modelbridge-transforms-cap-parameter"></span><h3><cite>ax.modelbridge.transforms.cap_parameter</cite><a class="headerlink" href="#module-ax.modelbridge.transforms.cap_parameter" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
@@ -1903,6 +1931,32 @@ log a warning. “raise” will raise an exception.</p>
 </dl>
 </dd></dl>
 </div>
+<div class="section" id="module-ax.modelbridge.transforms.inverse_gaussian_cdf_y">
+<span id="ax-modelbridge-transforms-inverse-gaussian-cdf-y"></span><h3><cite>ax.modelbridge.transforms.inverse_gaussian_cdf_y</cite><a class="headerlink" href="#module-ax.modelbridge.transforms.inverse_gaussian_cdf_y" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY">
+<em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.transforms.inverse_gaussian_cdf_y.</code><code class="sig-name descname">InverseGaussianCdfY</code><span class="sig-paren">(</span><em class="sig-param">search_space: ax.core.search_space.SearchSpace, observation_features: List[ax.core.observation.ObservationFeatures], observation_data: List[ax.core.observation.ObservationData], config: Optional[Dict[str, Union[int, float, str, botorch.acquisition.acquisition.AcquisitionFunction, Dict[str, Any]]]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/inverse_gaussian_cdf_y.html#InverseGaussianCdfY"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.transforms.base.Transform" title="ax.modelbridge.transforms.base.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.transforms.base.Transform</span></code></a></p>
+<p>Apply inverse CDF transform to Y.</p>
+<p>This means that we model uniform distributions as gaussian-distributed.</p>
+<dl class="attribute">
+<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.config">
+<code class="sig-name descname">config</code><em class="property"> = None</em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.transform_observation_data">
+<code class="sig-name descname">transform_observation_data</code><span class="sig-paren">(</span><em class="sig-param">observation_data: List[ax.core.observation.ObservationData], observation_features: List[ax.core.observation.ObservationFeatures]</em><span class="sig-paren">)</span> → List[ax.core.observation.ObservationData]<a class="reference internal" href="_modules/ax/modelbridge/transforms/inverse_gaussian_cdf_y.html#InverseGaussianCdfY.transform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.transform_observation_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map to inverse Gaussian CDF in place.</p>
+</dd></dl>
+</dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.match_ci_width_truncated">
+<code class="sig-prename descclassname">ax.modelbridge.transforms.inverse_gaussian_cdf_y.</code><code class="sig-name descname">match_ci_width_truncated</code><span class="sig-paren">(</span><em class="sig-param">mean: float, variance: float, transform: Callable[[float], float], level: float = 0.95, margin: float = 0.001</em><span class="sig-paren">)</span> → Tuple[float, float]<a class="reference internal" href="_modules/ax/modelbridge/transforms/inverse_gaussian_cdf_y.html#match_ci_width_truncated"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.match_ci_width_truncated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate a transformed variance using the match ci width method.</p>
+<p>See log_y transform for the original. Here, bounds are forced to lie
+within a [0,1] interval after transformation.</p>
+</dd></dl>
+</div>
 <div class="section" id="module-ax.modelbridge.transforms.log">
 <span id="ax-modelbridge-transforms-log"></span><h3><cite>ax.modelbridge.transforms.log</cite><a class="headerlink" href="#module-ax.modelbridge.transforms.log" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
@@ -1954,6 +2008,99 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: observation features in the original space</p>
 </dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="module-ax.modelbridge.transforms.log_y">
+<span id="ax-modelbridge-transforms-log-y"></span><h3><cite>ax.modelbridge.transforms.log_y</cite><a class="headerlink" href="#module-ax.modelbridge.transforms.log_y" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.modelbridge.transforms.log_y.LogY">
+<em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.transforms.log_y.</code><code class="sig-name descname">LogY</code><span class="sig-paren">(</span><em class="sig-param">search_space: ax.core.search_space.SearchSpace, observation_features: List[ax.core.observation.ObservationFeatures], observation_data: List[ax.core.observation.ObservationData], config: Optional[Dict[str, Union[int, float, str, botorch.acquisition.acquisition.AcquisitionFunction, Dict[str, Any]]]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#LogY"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.transforms.base.Transform" title="ax.modelbridge.transforms.base.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.transforms.base.Transform</span></code></a></p>
+<p>Apply (natural) log-transform to Y.</p>
+<p>This essentially means that we are model the observations as log-normally
+distributed. If <cite>config</cite> specifies <cite>match_ci_width=True</cite>, use a matching
+procedure based on the width of the CIs, otherwise (the default), use the
+delta method,</p>
+<p>Transform is applied only for the metrics specified in the transform config.
+Transform is done in-place.</p>
+<dl class="attribute">
+<dt id="ax.modelbridge.transforms.log_y.LogY.config">
+<code class="sig-name descname">config</code><em class="property"> = None</em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.transforms.log_y.LogY.transform_observation_data">
+<code class="sig-name descname">transform_observation_data</code><span class="sig-paren">(</span><em class="sig-param">observation_data: List[ax.core.observation.ObservationData], observation_features: List[ax.core.observation.ObservationFeatures]</em><span class="sig-paren">)</span> → List[ax.core.observation.ObservationData]<a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#LogY.transform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.transform_observation_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform observation features.</p>
+<p>This is typically done in-place. This class implements the identity
+transform (does nothing).</p>
+<p>This takes in observation_features, so that data transforms can be
+conditional on features, but observation_features are notmutated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>observation_data</strong> – Observation data</p></li>
+<li><p><strong>observation_features</strong> – Corresponding observation features</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: transformed observation data</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.transforms.log_y.LogY.transform_optimization_config">
+<code class="sig-name descname">transform_optimization_config</code><span class="sig-paren">(</span><em class="sig-param">optimization_config: ax.core.optimization_config.OptimizationConfig, modelbridge: Optional[base_modelbridge.ModelBridge], fixed_features: ax.core.observation.ObservationFeatures</em><span class="sig-paren">)</span> → ax.core.optimization_config.OptimizationConfig<a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#LogY.transform_optimization_config"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.transform_optimization_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform optimization config.</p>
+<p>This is typically done in-place. This class implements the identity
+transform (does nothing).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>optimization_config</strong> – The optimization config</p>
+</dd>
+</dl>
+<p>Returns: transformed optimization config.</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.transforms.log_y.LogY.untransform_observation_data">
+<code class="sig-name descname">untransform_observation_data</code><span class="sig-paren">(</span><em class="sig-param">observation_data: List[ax.core.observation.ObservationData], observation_features: List[ax.core.observation.ObservationFeatures]</em><span class="sig-paren">)</span> → List[ax.core.observation.ObservationData]<a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#LogY.untransform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.untransform_observation_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Untransform observation data.</p>
+<p>This is typically done in-place. This class implements the identity
+transform (does nothing).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>observation_data</strong> – Observation data, in transformed space</p></li>
+<li><p><strong>observation_features</strong> – Corresponding observation features, in same
+space.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: observation data in original space.</p>
+</dd></dl>
+</dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.transforms.log_y.lognorm_to_norm">
+<code class="sig-prename descclassname">ax.modelbridge.transforms.log_y.</code><code class="sig-name descname">lognorm_to_norm</code><span class="sig-paren">(</span><em class="sig-param">mu_ln: numpy.ndarray</em>, <em class="sig-param">Cov_ln: numpy.ndarray</em><span class="sig-paren">)</span> → Tuple[numpy.ndarray, numpy.ndarray]<a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#lognorm_to_norm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.lognorm_to_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute mean and covariance of a MVN from those of the associated log-MVN</p>
+<p>If <cite>Y</cite> is log-normal with mean mu_ln and covariance Cov_ln, then
+<cite>X ~ N(mu_n, Cov_n)</cite> with</p>
+<blockquote>
+<div><p>Cov_n_{ij} = log(1 + Cov_ln_{ij} / (mu_ln_{i} * mu_n_{j}))
+mu_n_{i} = log(mu_ln_{i}) - 0.5 * log(1 + Cov_ln_{ii} / mu_ln_{i}**2)</p>
+</div></blockquote>
+</dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.transforms.log_y.match_ci_width">
+<code class="sig-prename descclassname">ax.modelbridge.transforms.log_y.</code><code class="sig-name descname">match_ci_width</code><span class="sig-paren">(</span><em class="sig-param">mean: numpy.ndarray, variance: numpy.ndarray, transform: Callable[[numpy.ndarray], numpy.ndarray], level: float = 0.95</em><span class="sig-paren">)</span> → numpy.ndarray<a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#match_ci_width"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.match_ci_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.transforms.log_y.norm_to_lognorm">
+<code class="sig-prename descclassname">ax.modelbridge.transforms.log_y.</code><code class="sig-name descname">norm_to_lognorm</code><span class="sig-paren">(</span><em class="sig-param">mu_n: numpy.ndarray</em>, <em class="sig-param">Cov_n: numpy.ndarray</em><span class="sig-paren">)</span> → Tuple[numpy.ndarray, numpy.ndarray]<a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#norm_to_lognorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.norm_to_lognorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute mean and covariance of a log-MVN from its MVN sufficient statistics</p>
+<p>If <cite>X ~ N(mu_n, Cov_n)</cite> and <cite>Y = exp(X)</cite>, then <cite>Y</cite> is log-normal with</p>
+<blockquote>
+<div><p>mu_ln_{i} = exp(mu_n_{i}) + 0.5 * Cov_n_{ii}
+Cov_ln_{ij} = exp(mu_n_{i} + mu_n_{j} + 0.5 * (Cov_n_{ii} + Cov_n_{jj})) *
+(exp(Cov_n_{ij}) - 1)</p>
+</div></blockquote>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.modelbridge.transforms.one_hot">
@@ -2111,6 +2258,24 @@ transform (does nothing).</p>
 </dd>
 </dl>
 <p>Returns: observation features in the original space</p>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="module-ax.modelbridge.transforms.percentile_y">
+<span id="ax-modelbridge-transforms-percentile-y"></span><h3><cite>ax.modelbridge.transforms.percentile_y</cite><a class="headerlink" href="#module-ax.modelbridge.transforms.percentile_y" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.modelbridge.transforms.percentile_y.PercentileY">
+<em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.transforms.percentile_y.</code><code class="sig-name descname">PercentileY</code><span class="sig-paren">(</span><em class="sig-param">search_space: ax.core.search_space.SearchSpace, observation_features: List[ax.core.observation.ObservationFeatures], observation_data: List[ax.core.observation.ObservationData], config: Optional[Dict[str, Union[int, float, str, botorch.acquisition.acquisition.AcquisitionFunction, Dict[str, Any]]]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/percentile_y.html#PercentileY"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.transforms.base.Transform" title="ax.modelbridge.transforms.base.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.transforms.base.Transform</span></code></a></p>
+<p>Map Y values to percentiles based on their empirical CDF.</p>
+<dl class="attribute">
+<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.config">
+<code class="sig-name descname">config</code><em class="property"> = None</em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.transform_observation_data">
+<code class="sig-name descname">transform_observation_data</code><span class="sig-paren">(</span><em class="sig-param">observation_data: List[ax.core.observation.ObservationData], observation_features: List[ax.core.observation.ObservationFeatures]</em><span class="sig-paren">)</span> → List[ax.core.observation.ObservationData]<a class="reference internal" href="_modules/ax/modelbridge/transforms/percentile_y.html#PercentileY.transform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.transform_observation_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map observation data to empirical CDF quantiles in place.</p>
 </dd></dl>
 </dd></dl>
 </div>
@@ -2563,6 +2728,148 @@ under the key “winsorization_limits”.</p>
 </dd></dl>
 </div>
 </div>
+<div class="section" id="strategies">
+<h2>Strategies<a class="headerlink" href="#strategies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-ax.modelbridge.strategies.alebo">
+<span id="ax-modelbridge-strategies-alebo"></span><h3><cite>ax.modelbridge.strategies.alebo</cite><a class="headerlink" href="#module-ax.modelbridge.strategies.alebo" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.modelbridge.strategies.alebo.ALEBOStrategy">
+<em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.strategies.alebo.</code><code class="sig-name descname">ALEBOStrategy</code><span class="sig-paren">(</span><em class="sig-param">D: int</em>, <em class="sig-param">d: int</em>, <em class="sig-param">init_size: int</em>, <em class="sig-param">name: str = 'ALEBO'</em>, <em class="sig-param">dtype: torch.dtype = torch.float64</em>, <em class="sig-param">device: torch.device = device(type='cpu')</em>, <em class="sig-param">random_kwargs: Optional[Dict[str</em>, <em class="sig-param">Any]] = None</em>, <em class="sig-param">gp_kwargs: Optional[Dict[str</em>, <em class="sig-param">Any]] = None</em>, <em class="sig-param">gp_gen_kwargs: Optional[Dict[str</em>, <em class="sig-param">Any]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/strategies/alebo.html#ALEBOStrategy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.alebo.ALEBOStrategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.generation_strategy.GenerationStrategy" title="ax.modelbridge.generation_strategy.GenerationStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.generation_strategy.GenerationStrategy</span></code></a></p>
+<p>Generation strategy for Adaptive Linear Embedding BO.</p>
+<p>Both quasirandom initialization and BO are done with the same random
+projection. All function evaluations are done within that projection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>D</strong> – Dimensionality of high-dimensional space</p></li>
+<li><p><strong>d</strong> – Dimensionality of low-dimensional space</p></li>
+<li><p><strong>init_size</strong> – Size of random initialization</p></li>
+<li><p><strong>name</strong> – Name of strategy</p></li>
+<li><p><strong>dtype</strong> – torch dtype</p></li>
+<li><p><strong>device</strong> – torch device</p></li>
+<li><p><strong>random_kwargs</strong> – kwargs passed along to random model</p></li>
+<li><p><strong>gp_kwargs</strong> – kwargs passed along to GP model</p></li>
+<li><p><strong>gp_gen_kwargs</strong> – kwargs passed along to gen call on GP</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ax.modelbridge.strategies.alebo.ALEBOStrategy.clone_reset">
+<code class="sig-name descname">clone_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → ax.modelbridge.strategies.alebo.ALEBOStrategy<a class="reference internal" href="_modules/ax/modelbridge/strategies/alebo.html#ALEBOStrategy.clone_reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.alebo.ALEBOStrategy.clone_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy without state.</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.strategies.alebo.ALEBOStrategy.gen_projection">
+<code class="sig-name descname">gen_projection</code><span class="sig-paren">(</span><em class="sig-param">d: int</em>, <em class="sig-param">D: int</em>, <em class="sig-param">dtype: torch.dtype</em>, <em class="sig-param">device: torch.device</em><span class="sig-paren">)</span> → torch.Tensor<a class="reference internal" href="_modules/ax/modelbridge/strategies/alebo.html#ALEBOStrategy.gen_projection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.alebo.ALEBOStrategy.gen_projection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the projection matrix B as a (d x D) tensor</p>
+</dd></dl>
+</dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.strategies.alebo.get_ALEBO">
+<code class="sig-prename descclassname">ax.modelbridge.strategies.alebo.</code><code class="sig-name descname">get_ALEBO</code><span class="sig-paren">(</span><em class="sig-param">experiment: ax.core.experiment.Experiment</em>, <em class="sig-param">search_space: ax.core.search_space.SearchSpace</em>, <em class="sig-param">data: ax.core.data.Data</em>, <em class="sig-param">B: torch.Tensor</em>, <em class="sig-param">**model_kwargs: Any</em><span class="sig-paren">)</span> → ax.modelbridge.torch.TorchModelBridge<a class="reference internal" href="_modules/ax/modelbridge/strategies/alebo.html#get_ALEBO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.alebo.get_ALEBO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.strategies.alebo.get_ALEBOInitializer">
+<code class="sig-prename descclassname">ax.modelbridge.strategies.alebo.</code><code class="sig-name descname">get_ALEBOInitializer</code><span class="sig-paren">(</span><em class="sig-param">search_space: ax.core.search_space.SearchSpace</em>, <em class="sig-param">B: numpy.ndarray</em>, <em class="sig-param">**model_kwargs: Any</em><span class="sig-paren">)</span> → ax.modelbridge.random.RandomModelBridge<a class="reference internal" href="_modules/ax/modelbridge/strategies/alebo.html#get_ALEBOInitializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.alebo.get_ALEBOInitializer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<span class="target" id="module-ax.modelbridge.strategies.rembo"></span><dl class="class">
+<dt id="ax.modelbridge.strategies.rembo.HeSBOStrategy">
+<em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.strategies.rembo.</code><code class="sig-name descname">HeSBOStrategy</code><span class="sig-paren">(</span><em class="sig-param">D: int</em>, <em class="sig-param">d: int</em>, <em class="sig-param">init_per_proj: int</em>, <em class="sig-param">k: int = 1</em>, <em class="sig-param">name: str = 'HeSBO'</em>, <em class="sig-param">dtype: torch.dtype = torch.float64</em>, <em class="sig-param">device: torch.device = device(type='cpu')</em>, <em class="sig-param">gp_kwargs: Optional[Dict[str</em>, <em class="sig-param">Any]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#HeSBOStrategy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.HeSBOStrategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.strategies.rembo.REMBOStrategy" title="ax.modelbridge.strategies.rembo.REMBOStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.strategies.rembo.REMBOStrategy</span></code></a></p>
+<p>Generation strategy for HeSBO.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>D</strong> – Dimensionality of high-dimensional space</p></li>
+<li><p><strong>d</strong> – Dimensionality of low-dimensional space</p></li>
+<li><p><strong>k</strong> – Number of random projections</p></li>
+<li><p><strong>init_per_proj</strong> – Number of arms to use for random initialization of each
+of the k projections.</p></li>
+<li><p><strong>name</strong> – Name of strategy</p></li>
+<li><p><strong>dtype</strong> – torch dtype</p></li>
+<li><p><strong>device</strong> – torch device</p></li>
+<li><p><strong>gp_kwargs</strong> – kwargs sent along to the GP model</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ax.modelbridge.strategies.rembo.HeSBOStrategy.get_projection">
+<code class="sig-name descname">get_projection</code><span class="sig-paren">(</span><em class="sig-param">D: int</em>, <em class="sig-param">d: int</em>, <em class="sig-param">dtype: torch.dtype</em>, <em class="sig-param">device: torch.device</em><span class="sig-paren">)</span> → Tuple[torch.Tensor, List[Tuple[float, float]]]<a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#HeSBOStrategy.get_projection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.HeSBOStrategy.get_projection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the projection matrix A as a (D x d) tensor</p>
+<p>Also return the box bounds for the low-d space.</p>
+</dd></dl>
+</dd></dl>
+<dl class="class">
+<dt id="ax.modelbridge.strategies.rembo.REMBOStrategy">
+<em class="property">class </em><code class="sig-prename descclassname">ax.modelbridge.strategies.rembo.</code><code class="sig-name descname">REMBOStrategy</code><span class="sig-paren">(</span><em class="sig-param">D: int</em>, <em class="sig-param">d: int</em>, <em class="sig-param">init_per_proj: int</em>, <em class="sig-param">k: int = 4</em>, <em class="sig-param">name: str = 'REMBO'</em>, <em class="sig-param">dtype: torch.dtype = torch.float64</em>, <em class="sig-param">device: torch.device = device(type='cpu')</em>, <em class="sig-param">gp_kwargs: Optional[Dict[str</em>, <em class="sig-param">Any]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#REMBOStrategy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.REMBOStrategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.generation_strategy.GenerationStrategy" title="ax.modelbridge.generation_strategy.GenerationStrategy"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.generation_strategy.GenerationStrategy</span></code></a></p>
+<p>Generation strategy for REMBO.</p>
+<p>Both quasirandom initialization and BO are done with the same random
+projection. As is done in the REMBO paper, k independent optimizations
+are done, each with an independently generated projection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>D</strong> – Dimensionality of high-dimensional space</p></li>
+<li><p><strong>d</strong> – Dimensionality of low-dimensional space</p></li>
+<li><p><strong>k</strong> – Number of random projections</p></li>
+<li><p><strong>init_per_proj</strong> – Number of arms to use for random initialization of each
+of the k projections.</p></li>
+<li><p><strong>name</strong> – Name of strategy</p></li>
+<li><p><strong>dtype</strong> – torch dtype</p></li>
+<li><p><strong>device</strong> – torch device</p></li>
+<li><p><strong>gp_kwargs</strong> – kwargs sent along to the GP model</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ax.modelbridge.strategies.rembo.REMBOStrategy.clone_reset">
+<code class="sig-name descname">clone_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → ax.modelbridge.strategies.rembo.REMBOStrategy<a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#REMBOStrategy.clone_reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.REMBOStrategy.clone_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy without state.</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.strategies.rembo.REMBOStrategy.gen">
+<code class="sig-name descname">gen</code><span class="sig-paren">(</span><em class="sig-param">experiment: ax.core.experiment.Experiment</em>, <em class="sig-param">data: Optional[ax.core.data.Data] = None</em>, <em class="sig-param">n: int = 1</em>, <em class="sig-param">**kwargs: Any</em><span class="sig-paren">)</span> → ax.core.generator_run.GeneratorRun<a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#REMBOStrategy.gen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.REMBOStrategy.gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate new points, rotating through projections each time.</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.strategies.rembo.REMBOStrategy.get_projection">
+<code class="sig-name descname">get_projection</code><span class="sig-paren">(</span><em class="sig-param">D: int</em>, <em class="sig-param">d: int</em>, <em class="sig-param">dtype: torch.dtype</em>, <em class="sig-param">device: torch.device</em><span class="sig-paren">)</span> → Tuple[torch.Tensor, List[Tuple[float, float]]]<a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#REMBOStrategy.get_projection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.REMBOStrategy.get_projection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the projection matrix A as a (D x d) tensor</p>
+<p>Also return the box bounds for the low-d space.</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.modelbridge.strategies.rembo.REMBOStrategy.model_transitions">
+<em class="property">property </em><code class="sig-name descname">model_transitions</code><a class="headerlink" href="#ax.modelbridge.strategies.rembo.REMBOStrategy.model_transitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generator changes every iteration with rotating strategy</p>
+</dd></dl>
+</dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.strategies.rembo.get_REMBO">
+<code class="sig-prename descclassname">ax.modelbridge.strategies.rembo.</code><code class="sig-name descname">get_REMBO</code><span class="sig-paren">(</span><em class="sig-param">experiment: ax.core.experiment.Experiment, data: ax.core.data.Data, A: torch.Tensor, initial_X_d: torch.Tensor, bounds_d: List[Tuple[float, float]], search_space: Optional[ax.core.search_space.SearchSpace] = None, dtype: torch.dtype = torch.float64, device: torch.device = device(type='cpu'), **model_kwargs: Any</em><span class="sig-paren">)</span> → ax.modelbridge.torch.TorchModelBridge<a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#get_REMBO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.get_REMBO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates a BotorchModel.</p>
+</dd></dl>
+<dl class="function">
+<dt id="ax.modelbridge.strategies.rembo.get_rembo_initializer">
+<code class="sig-prename descclassname">ax.modelbridge.strategies.rembo.</code><code class="sig-name descname">get_rembo_initializer</code><span class="sig-paren">(</span><em class="sig-param">search_space: ax.core.search_space.SearchSpace, A: numpy.ndarray, bounds_d: List[Tuple[float, float]], **kwargs: Any</em><span class="sig-paren">)</span> → ax.modelbridge.random.RandomModelBridge<a class="reference internal" href="_modules/ax/modelbridge/strategies/rembo.html#get_rembo_initializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.strategies.rembo.get_rembo_initializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates a uniform random generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_space</strong> – Search space.</p></li>
+<li><p><strong>A</strong> – Projection matrix.</p></li>
+<li><p><strong>bounds_d</strong> – Bounds in low-d space.</p></li>
+<li><p><strong>kwargs</strong> – kwargs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RandomModelBridge, with REMBOInitializer as model.</p>
+</dd>
+</dl>
+</dd></dl>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2582,6 +2889,7 @@ under the key “winsorization_limits”.</p>
 <li class="toctree-l2"><a class="reference internal" href="#model-bridges">Model Bridges</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transforms">Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strategies">Strategies</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">ax.models</a></li>

@@ -27,12 +27,14 @@ src="/js/documentation_options.js">
 <div class="body" role="main">
 <div class="section" id="module-ax.benchmark">
 <span id="ax-benchmark"></span><h1>ax.benchmark<a class="headerlink" href="#module-ax.benchmark" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="benchmark">
+<h2>Benchmark<a class="headerlink" href="#benchmark" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="module-ax.benchmark.benchmark_problem">
-<span id="benchmark-problem"></span><h2>Benchmark Problem<a class="headerlink" href="#module-ax.benchmark.benchmark_problem" title="Permalink to this headline">¶</a></h2>
+<span id="benchmark-problem"></span><h3>Benchmark Problem<a class="headerlink" href="#module-ax.benchmark.benchmark_problem" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="ax.benchmark.benchmark_problem.BenchmarkProblem">
 <em class="property">class </em><code class="sig-prename descclassname">ax.benchmark.benchmark_problem.</code><code class="sig-name descname">BenchmarkProblem</code><span class="sig-paren">(</span><em class="sig-param">search_space: ax.core.search_space.SearchSpace</em>, <em class="sig-param">optimization_config: ax.core.optimization_config.OptimizationConfig</em>, <em class="sig-param">name: Optional[str] = None</em>, <em class="sig-param">optimal_value: Optional[float] = None</em>, <em class="sig-param">evaluate_suggested: bool = True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/benchmark/benchmark_problem.html#BenchmarkProblem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.benchmark.benchmark_problem.BenchmarkProblem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ax.utils.common.base.Base</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="utils.html#ax.utils.common.base.Base" title="ax.utils.common.base.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.utils.common.base.Base</span></code></a></p>
 <p>Benchmark problem, represented in terms of Ax search space and optimization
 config. Useful to represent complex problems that involve constaints, non-
 range parameters, etc.</p>
@@ -157,7 +159,7 @@ optimum.</p></li>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.benchmark.benchmark_result">
-<span id="benchmark-result"></span><h2>Benchmark Result<a class="headerlink" href="#module-ax.benchmark.benchmark_result" title="Permalink to this headline">¶</a></h2>
+<span id="benchmark-result"></span><h3>Benchmark Result<a class="headerlink" href="#module-ax.benchmark.benchmark_result" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="ax.benchmark.benchmark_result.BenchmarkResult">
 <em class="property">class </em><code class="sig-prename descclassname">ax.benchmark.benchmark_result.</code><code class="sig-name descname">BenchmarkResult</code><span class="sig-paren">(</span><em class="sig-param">objective_at_true_best</em>, <em class="sig-param">fit_times</em>, <em class="sig-param">gen_times</em>, <em class="sig-param">optimum</em>, <em class="sig-param">model_transitions</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/benchmark/benchmark_result.html#BenchmarkResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.benchmark.benchmark_result.BenchmarkResult" title="Permalink to this definition">¶</a></dt>
@@ -207,9 +209,9 @@ array, and total model-fitting time and candidate generation time as floats.</p>
 <code class="sig-prename descclassname">ax.benchmark.benchmark_result.</code><code class="sig-name descname">make_plots</code><span class="sig-paren">(</span><em class="sig-param">benchmark_result: ax.benchmark.benchmark_result.BenchmarkResult</em>, <em class="sig-param">problem_name: str</em>, <em class="sig-param">include_individual: bool</em><span class="sig-paren">)</span> → List[ax.plot.base.AxPlotConfig]<a class="reference internal" href="_modules/ax/benchmark/benchmark_result.html#make_plots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.benchmark.benchmark_result.make_plots" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </div>
-<div class="section" id="module-ax.benchmark.benchmark">
-<span id="benchmark"></span><h2>Benchmark<a class="headerlink" href="#module-ax.benchmark.benchmark" title="Permalink to this headline">¶</a></h2>
-<p>Module for benchmarking Ax algorithms.</p>
+<div class="section" id="id1">
+<h3>Benchmark<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-ax.benchmark.benchmark"></span><p>Module for benchmarking Ax algorithms.</p>
 <p>Key terms used:</p>
 <ul class="simple">
 <li><p>Trial –– usual Ax <cite>Trial</cite> or <cite>BatchTral</cite>, one execution of a given arm or
@@ -399,7 +401,7 @@ test is considered failed and aborted. Defaults to 3.</p></li>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.benchmark.utils">
-<span id="benchmark-utilities"></span><h2>Benchmark Utilities<a class="headerlink" href="#module-ax.benchmark.utils" title="Permalink to this headline">¶</a></h2>
+<span id="benchmark-utilities"></span><h3>Benchmark Utilities<a class="headerlink" href="#module-ax.benchmark.utils" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="ax.benchmark.utils.get_corresponding">
 <code class="sig-prename descclassname">ax.benchmark.utils.</code><code class="sig-name descname">get_corresponding</code><span class="sig-paren">(</span><em class="sig-param">value_or_matrix: Union[int, List[List[int]]], row: int, col: int</em><span class="sig-paren">)</span> → int<a class="reference internal" href="_modules/ax/benchmark/utils.html#get_corresponding"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.benchmark.utils.get_corresponding" title="Permalink to this definition">¶</a></dt>
@@ -414,7 +416,7 @@ strings.</p>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.benchmark.botorch_methods">
-<span id="botorch-methods"></span><h2>BoTorch Methods<a class="headerlink" href="#module-ax.benchmark.botorch_methods" title="Permalink to this headline">¶</a></h2>
+<span id="botorch-methods"></span><h3>BoTorch Methods<a class="headerlink" href="#module-ax.benchmark.botorch_methods" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="ax.benchmark.botorch_methods.fixed_noise_gp_model_constructor">
 <code class="sig-prename descclassname">ax.benchmark.botorch_methods.</code><code class="sig-name descname">fixed_noise_gp_model_constructor</code><span class="sig-paren">(</span><em class="sig-param">Xs: List[torch.Tensor], Ys: List[torch.Tensor], Yvars: List[torch.Tensor], task_features: List[int], fidelity_features: List[int], metric_names: List[str], state_dict: Optional[Dict[str, torch.Tensor]] = None, refit_model: bool = True, **kwargs: Any</em><span class="sig-paren">)</span> → botorch.models.model.Model<a class="reference internal" href="_modules/ax/benchmark/botorch_methods.html#fixed_noise_gp_model_constructor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.benchmark.botorch_methods.fixed_noise_gp_model_constructor" title="Permalink to this definition">¶</a></dt>
@@ -429,6 +431,16 @@ strings.</p>
 <dd></dd></dl>
 </div>
 </div>
+<div class="section" id="modular-botorch-benchmarking">
+<h2>Modular Botorch Benchmarking<a class="headerlink" href="#modular-botorch-benchmarking" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-ax.benchmark.botorch_modular.standard_methods">
+<span id="standard-methods"></span><h3>Standard Methods<a class="headerlink" href="#module-ax.benchmark.botorch_modular.standard_methods" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="module-ax.benchmark.botorch_modular.standard_problems">
+<span id="standard-problems"></span><h3>Standard Problems<a class="headerlink" href="#module-ax.benchmark.botorch_modular.standard_problems" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -439,11 +451,8 @@ strings.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ax.html">ax</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ax.benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-ax.benchmark.benchmark_problem">Benchmark Problem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-ax.benchmark.benchmark_result">Benchmark Result</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-ax.benchmark.benchmark">Benchmark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-ax.benchmark.utils">Benchmark Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-ax.benchmark.botorch_methods">BoTorch Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#benchmark">Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modular-botorch-benchmarking">Modular Botorch Benchmarking</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="core.html">ax.core</a></li>

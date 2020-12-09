@@ -29,6 +29,183 @@ src="/js/documentation_options.js">
 <span id="ax-utils"></span><h1>ax.utils<a class="headerlink" href="#module-ax.utils" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="common">
 <h2>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-ax.utils.common.base">
+<span id="base"></span><h3>Base<a class="headerlink" href="#module-ax.utils.common.base" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.utils.common.base.Base">
+<em class="property">class </em><code class="sig-prename descclassname">ax.utils.common.base.</code><code class="sig-name descname">Base</code><a class="reference internal" href="_modules/ax/utils/common/base.html#Base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.common.base.Base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Metaclass for core Ax classes. Provides an equality check and <cite>db_id</cite>
+property for SQA storage.</p>
+<dl class="method">
+<dt id="ax.utils.common.base.Base.db_id">
+<em class="property">property </em><code class="sig-name descname">db_id</code><a class="headerlink" href="#ax.utils.common.base.Base.db_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="module-ax.utils.common.constants">
+<span id="constants"></span><h3>Constants<a class="headerlink" href="#module-ax.utils.common.constants" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.utils.common.constants.Keys">
+<em class="property">class </em><code class="sig-prename descclassname">ax.utils.common.constants.</code><code class="sig-name descname">Keys</code><a class="reference internal" href="_modules/ax/utils/common/constants.html#Keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.common.constants.Keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<p>Enum of reserved keys in options dicts etc, alphabetized.</p>
+<p>NOTE: Useful for keys in dicts that correspond to kwargs to
+classes or functions and/or are used in multiple places.</p>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.ACQF_KWARGS">
+<code class="sig-name descname">ACQF_KWARGS</code><em class="property"> = 'acquisition_function_kwargs'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.ACQF_KWARGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.BATCH_INIT_CONDITIONS">
+<code class="sig-name descname">BATCH_INIT_CONDITIONS</code><em class="property"> = 'batch_initial_conditions'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.BATCH_INIT_CONDITIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.CANDIDATE_SET">
+<code class="sig-name descname">CANDIDATE_SET</code><em class="property"> = 'candidate_set'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.CANDIDATE_SET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.CANDIDATE_SIZE">
+<code class="sig-name descname">CANDIDATE_SIZE</code><em class="property"> = 'candidate_size'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.CANDIDATE_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.COST_AWARE_UTILITY">
+<code class="sig-name descname">COST_AWARE_UTILITY</code><em class="property"> = 'cost_aware_utility'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.COST_AWARE_UTILITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.COST_INTERCEPT">
+<code class="sig-name descname">COST_INTERCEPT</code><em class="property"> = 'cost_intercept'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.COST_INTERCEPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.CURRENT_VALUE">
+<code class="sig-name descname">CURRENT_VALUE</code><em class="property"> = 'current_value'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.CURRENT_VALUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.EXPAND">
+<code class="sig-name descname">EXPAND</code><em class="property"> = 'expand'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.EXPAND" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.EXPECTED_ACQF_VAL">
+<code class="sig-name descname">EXPECTED_ACQF_VAL</code><em class="property"> = 'expected_acquisition_value'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.EXPECTED_ACQF_VAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.FIDELITY_FEATURES">
+<code class="sig-name descname">FIDELITY_FEATURES</code><em class="property"> = 'fidelity_features'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.FIDELITY_FEATURES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.FIDELITY_WEIGHTS">
+<code class="sig-name descname">FIDELITY_WEIGHTS</code><em class="property"> = 'fidelity_weights'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.FIDELITY_WEIGHTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.FRAC_RANDOM">
+<code class="sig-name descname">FRAC_RANDOM</code><em class="property"> = 'frac_random'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.FRAC_RANDOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.IMMUTABLE_SEARCH_SPACE_AND_OPT_CONF">
+<code class="sig-name descname">IMMUTABLE_SEARCH_SPACE_AND_OPT_CONF</code><em class="property"> = 'immutable_search_space_and_opt_config'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.IMMUTABLE_SEARCH_SPACE_AND_OPT_CONF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.MAXIMIZE">
+<code class="sig-name descname">MAXIMIZE</code><em class="property"> = 'maximize'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.MAXIMIZE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.METADATA">
+<code class="sig-name descname">METADATA</code><em class="property"> = 'metadata'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.METADATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.METRIC_NAMES">
+<code class="sig-name descname">METRIC_NAMES</code><em class="property"> = 'metric_names'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.METRIC_NAMES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.NUM_FANTASIES">
+<code class="sig-name descname">NUM_FANTASIES</code><em class="property"> = 'num_fantasies'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.NUM_FANTASIES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.NUM_INNER_RESTARTS">
+<code class="sig-name descname">NUM_INNER_RESTARTS</code><em class="property"> = 'num_inner_restarts'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.NUM_INNER_RESTARTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.NUM_RESTARTS">
+<code class="sig-name descname">NUM_RESTARTS</code><em class="property"> = 'num_restarts'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.NUM_RESTARTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.NUM_TRACE_OBSERVATIONS">
+<code class="sig-name descname">NUM_TRACE_OBSERVATIONS</code><em class="property"> = 'num_trace_observations'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.NUM_TRACE_OBSERVATIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.OBJECTIVE">
+<code class="sig-name descname">OBJECTIVE</code><em class="property"> = 'objective'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.OBJECTIVE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.OPTIMIZER_KWARGS">
+<code class="sig-name descname">OPTIMIZER_KWARGS</code><em class="property"> = 'optimizer_kwargs'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.OPTIMIZER_KWARGS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.PREFERENCE_DATA">
+<code class="sig-name descname">PREFERENCE_DATA</code><em class="property"> = 'preference_data'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.PREFERENCE_DATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.PROJECT">
+<code class="sig-name descname">PROJECT</code><em class="property"> = 'project'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.PROJECT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.QMC">
+<code class="sig-name descname">QMC</code><em class="property"> = 'qmc'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.QMC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.RAW_INNER_SAMPLES">
+<code class="sig-name descname">RAW_INNER_SAMPLES</code><em class="property"> = 'raw_inner_samples'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.RAW_INNER_SAMPLES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.RAW_SAMPLES">
+<code class="sig-name descname">RAW_SAMPLES</code><em class="property"> = 'raw_samples'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.RAW_SAMPLES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.REFIT_ON_UPDATE">
+<code class="sig-name descname">REFIT_ON_UPDATE</code><em class="property"> = 'refit_on_update'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.REFIT_ON_UPDATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.SAMPLER">
+<code class="sig-name descname">SAMPLER</code><em class="property"> = 'sampler'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.SAMPLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.SEED_INNER">
+<code class="sig-name descname">SEED_INNER</code><em class="property"> = 'seed_inner'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.SEED_INNER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.SEQUENTIAL">
+<code class="sig-name descname">SEQUENTIAL</code><em class="property"> = 'sequential'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.SEQUENTIAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.STATE_DICT">
+<code class="sig-name descname">STATE_DICT</code><em class="property"> = 'state_dict'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.STATE_DICT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.SUBCLASS">
+<code class="sig-name descname">SUBCLASS</code><em class="property"> = 'subclass'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.SUBCLASS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.SUBSET_MODEL">
+<code class="sig-name descname">SUBSET_MODEL</code><em class="property"> = 'subset_model'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.SUBSET_MODEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.TASK_FEATURES">
+<code class="sig-name descname">TASK_FEATURES</code><em class="property"> = 'task_features'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.TASK_FEATURES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.TRIAL_COMPLETION_TIMESTAMP">
+<code class="sig-name descname">TRIAL_COMPLETION_TIMESTAMP</code><em class="property"> = 'trial_completion_timestamp'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.TRIAL_COMPLETION_TIMESTAMP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.WARM_START_REFITTING">
+<code class="sig-name descname">WARM_START_REFITTING</code><em class="property"> = 'warm_start_refitting'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.WARM_START_REFITTING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.common.constants.Keys.X_BASELINE">
+<code class="sig-name descname">X_BASELINE</code><em class="property"> = 'X_baseline'</em><a class="headerlink" href="#ax.utils.common.constants.Keys.X_BASELINE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+</div>
 <div class="section" id="module-ax.utils.common.docutils">
 <span id="docutils"></span><h3>Docutils<a class="headerlink" href="#module-ax.utils.common.docutils" title="Permalink to this headline">¶</a></h3>
 <p>Support functions for sphinx et. al</p>
@@ -112,6 +289,50 @@ and collect all unequal ones.</p></li>
 </dl>
 <p>Checking equality is then the same as checking that the lists are the same
 length, and that one is a subset of the other.</p>
+</dd></dl>
+</div>
+<div class="section" id="id1">
+<h3>Equality<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-ax.utils.common.executils"></span><dl class="function">
+<dt id="ax.utils.common.executils.retry_on_exception">
+<code class="sig-prename descclassname">ax.utils.common.executils.</code><code class="sig-name descname">retry_on_exception</code><span class="sig-paren">(</span><em class="sig-param">exception_types: Optional[Tuple[Type[Exception], ...]] = None, no_retry_on_exception_types: Optional[Tuple[Type[Exception], ...]] = None, check_message_contains: Optional[List[str]] = None, retries: int = 3, suppress_all_errors: bool = False, logger: Optional[logging.Logger] = None, default_return_on_suppression: Optional[Any] = None, wrap_error_message_in: Optional[str] = None</em><span class="sig-paren">)</span> → Optional[Any]<a class="reference internal" href="_modules/ax/utils/common/executils.html#retry_on_exception"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.common.executils.retry_on_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>A decorator for instance methods or standalone functions that makes them
+retry on failure and allows to specify on which types of exceptions the
+function should and should not retry.</p>
+<p>NOTE: If the argument <cite>suppress_all_errors</cite> is supplied and set to True,
+the error will be suppressed  and default value returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exception_types</strong> – A tuple of exception(s) types to catch in the decorated
+function. If none is provided, baseclass Exception will be used.</p></li>
+<li><p><strong>no_retry_on_exception_types</strong> – Exception types to consider non-retryable even
+if their supertype appears in <cite>exception_types</cite> or the only exceptions to
+not retry on if no <cite>exception_types</cite> are specified.</p></li>
+<li><p><strong>check_message_contains</strong> – A list of strings, against which to match error
+messages. If the error message contains any one of these strings,
+the exception will cause a retry. NOTE: This argument works in
+addition to <cite>exception_types</cite>; if those are specified, only the
+specified types of exceptions will be caught and retried on if they
+contain the strings provided as <cite>check_message_contains</cite>.</p></li>
+<li><p><strong>retries</strong> – Number of retries to perform.</p></li>
+<li><p><strong>suppress_all_errors</strong> – If true, after all the retries are exhausted, the
+error will still be suppressed and <cite>default_return_on_suppresion</cite>
+will be returned from the function. NOTE: If using this argument,
+the decorated function may not actually get fully executed, if
+it consistently raises an exception.</p></li>
+<li><p><strong>logger</strong> – A handle for the logger to be used.</p></li>
+<li><p><strong>default_return_on_suppression</strong> – If the error is suppressed after all the
+retries, then this default value will be returned from the function.
+Defaults to None.</p></li>
+<li><p><strong>wrap_error_message_in</strong> – If raising the error message after all the retries,
+a string wrapper for the error message (useful for making error
+messages more user-friendly). NOTE: Format of resulting error will be:
+“&lt;wrap_error_message_in&gt;: &lt;original_error_type&gt;: &lt;original_error_msg&gt;”,
+with the stack trace of the original message.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.utils.common.kwargs">
@@ -400,6 +621,107 @@ This is necessary because some of our transforms return Numpy values.</p>
 <code class="sig-prename descclassname">ax.utils.common.typeutils.</code><code class="sig-name descname">torch_type_to_str</code><span class="sig-paren">(</span><em class="sig-param">value: Any</em><span class="sig-paren">)</span> → str<a class="reference internal" href="_modules/ax/utils/common/typeutils.html#torch_type_to_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.common.typeutils.torch_type_to_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts torch types, commonly used in Ax, to string representations.</p>
 </dd></dl>
+</div>
+</div>
+<div class="section" id="flake8-plugins">
+<h2>Flake8 Plugins<a class="headerlink" href="#flake8-plugins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-ax.utils.flake8_plugins.docstring_checker">
+<span id="docstring-checker"></span><h3>Docstring Checker<a class="headerlink" href="#module-ax.utils.flake8_plugins.docstring_checker" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="ax.utils.flake8_plugins.docstring_checker.A000">
+<code class="sig-prename descclassname">ax.utils.flake8_plugins.docstring_checker.</code><code class="sig-name descname">A000</code><span class="sig-paren">(</span><em class="sig-param">node: _ast.AST</em><span class="sig-paren">)</span> → ax.utils.flake8_plugins.docstring_checker.Error<a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.A000" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="class">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringChecker">
+<em class="property">class </em><code class="sig-prename descclassname">ax.utils.flake8_plugins.docstring_checker.</code><code class="sig-name descname">DocstringChecker</code><span class="sig-paren">(</span><em class="sig-param">tree</em>, <em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#DocstringChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A flake8 plug-in that makes sure all public functions have a docstring</p>
+<dl class="attribute">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringChecker.fikename">
+<code class="sig-name descname">fikename</code><em class="property">: str</em><em class="property"> = None</em><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringChecker.fikename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringChecker.name">
+<code class="sig-name descname">name</code><em class="property">: str</em><em class="property"> = 'docstring checker'</em><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringChecker.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringChecker.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#DocstringChecker.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringChecker.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringChecker.tree">
+<code class="sig-name descname">tree</code><em class="property">: ast.Module</em><em class="property"> = None</em><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringChecker.tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringChecker.version">
+<code class="sig-name descname">version</code><em class="property">: str</em><em class="property"> = '1.0.0'</em><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringChecker.version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="class">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor">
+<em class="property">class </em><code class="sig-prename descclassname">ax.utils.flake8_plugins.docstring_checker.</code><code class="sig-name descname">DocstringCheckerVisitor</code><a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#DocstringCheckerVisitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/ast.html#ast.NodeVisitor" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ast.NodeVisitor</span></code></a></p>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.check_A000">
+<code class="sig-name descname">check_A000</code><span class="sig-paren">(</span><em class="sig-param">node: _ast.AST</em><span class="sig-paren">)</span> → None<a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#DocstringCheckerVisitor.check_A000"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.check_A000" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="attribute">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.errors">
+<code class="sig-name descname">errors</code><em class="property">: List[Error]</em><em class="property"> = None</em><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.errors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.visit_AsyncFunctionDef">
+<code class="sig-name descname">visit_AsyncFunctionDef</code><span class="sig-paren">(</span><em class="sig-param">node: _ast.ClassDef</em><span class="sig-paren">)</span> → None<a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#DocstringCheckerVisitor.visit_AsyncFunctionDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.visit_AsyncFunctionDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.visit_ClassDef">
+<code class="sig-name descname">visit_ClassDef</code><span class="sig-paren">(</span><em class="sig-param">node: _ast.ClassDef</em><span class="sig-paren">)</span> → None<a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#DocstringCheckerVisitor.visit_ClassDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.visit_ClassDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.visit_FunctionDef">
+<code class="sig-name descname">visit_FunctionDef</code><span class="sig-paren">(</span><em class="sig-param">node: _ast.FunctionDef</em><span class="sig-paren">)</span> → None<a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#DocstringCheckerVisitor.visit_FunctionDef"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.DocstringCheckerVisitor.visit_FunctionDef" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+<dl class="class">
+<dt id="ax.utils.flake8_plugins.docstring_checker.Error">
+<em class="property">class </em><code class="sig-prename descclassname">ax.utils.flake8_plugins.docstring_checker.</code><code class="sig-name descname">Error</code><span class="sig-paren">(</span><em class="sig-param">lineno</em>, <em class="sig-param">col</em>, <em class="sig-param">message</em>, <em class="sig-param">type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#Error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a></p>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.Error.col">
+<em class="property">property </em><code class="sig-name descname">col</code><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.Error.col" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.Error.lineno">
+<em class="property">property </em><code class="sig-name descname">lineno</code><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.Error.lineno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.Error.message">
+<em class="property">property </em><code class="sig-name descname">message</code><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.Error.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+<dl class="method">
+<dt id="ax.utils.flake8_plugins.docstring_checker.Error.type">
+<em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.Error.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+</dd></dl>
+<dl class="function">
+<dt id="ax.utils.flake8_plugins.docstring_checker.is_copy_doc_call">
+<code class="sig-prename descclassname">ax.utils.flake8_plugins.docstring_checker.</code><code class="sig-name descname">is_copy_doc_call</code><span class="sig-paren">(</span><em class="sig-param">c</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#is_copy_doc_call"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.is_copy_doc_call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to guess if this is a call to the <code class="docutils literal notranslate"><span class="pre">copy_doc</span></code> decorator. This is
+a purely syntactic check so if the decorator was aliased as another name]
+or wrapped in another function we will fail.</p>
+</dd></dl>
+<dl class="function">
+<dt id="ax.utils.flake8_plugins.docstring_checker.new_error">
+<code class="sig-prename descclassname">ax.utils.flake8_plugins.docstring_checker.</code><code class="sig-name descname">new_error</code><span class="sig-paren">(</span><em class="sig-param">errorid: str</em>, <em class="sig-param">msg: str</em><span class="sig-paren">)</span> → Callable[[_ast.AST], ax.utils.flake8_plugins.docstring_checker.Error]<a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#new_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.new_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.utils.flake8_plugins.docstring_checker.should_check">
+<code class="sig-prename descclassname">ax.utils.flake8_plugins.docstring_checker.</code><code class="sig-name descname">should_check</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/flake8_plugins/docstring_checker.html#should_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.flake8_plugins.docstring_checker.should_check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 </div>
 </div>
 <div class="section" id="measurement">
@@ -809,6 +1131,29 @@ the square root of the total number of observations.</p>
 </div>
 <div class="section" id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-ax.utils.testing.benchmark_stubs">
+<span id="benchmark-stubs"></span><h3>Benchmark Stubs<a class="headerlink" href="#module-ax.utils.testing.benchmark_stubs" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="ax.utils.testing.benchmark_stubs.get_branin_benchmark_problem">
+<code class="sig-prename descclassname">ax.utils.testing.benchmark_stubs.</code><code class="sig-name descname">get_branin_benchmark_problem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → ax.benchmark.benchmark_problem.BenchmarkProblem<a class="reference internal" href="_modules/ax/utils/testing/benchmark_stubs.html#get_branin_benchmark_problem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.benchmark_stubs.get_branin_benchmark_problem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.utils.testing.benchmark_stubs.get_branin_simple_benchmark_problem">
+<code class="sig-prename descclassname">ax.utils.testing.benchmark_stubs.</code><code class="sig-name descname">get_branin_simple_benchmark_problem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → ax.benchmark.benchmark_problem.SimpleBenchmarkProblem<a class="reference internal" href="_modules/ax/utils/testing/benchmark_stubs.html#get_branin_simple_benchmark_problem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.benchmark_stubs.get_branin_simple_benchmark_problem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.utils.testing.benchmark_stubs.get_mult_simple_benchmark_problem">
+<code class="sig-prename descclassname">ax.utils.testing.benchmark_stubs.</code><code class="sig-name descname">get_mult_simple_benchmark_problem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → ax.benchmark.benchmark_problem.SimpleBenchmarkProblem<a class="reference internal" href="_modules/ax/utils/testing/benchmark_stubs.html#get_mult_simple_benchmark_problem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.benchmark_stubs.get_mult_simple_benchmark_problem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.utils.testing.benchmark_stubs.get_sum_simple_benchmark_problem">
+<code class="sig-prename descclassname">ax.utils.testing.benchmark_stubs.</code><code class="sig-name descname">get_sum_simple_benchmark_problem</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → ax.benchmark.benchmark_problem.SimpleBenchmarkProblem<a class="reference internal" href="_modules/ax/utils/testing/benchmark_stubs.html#get_sum_simple_benchmark_problem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.benchmark_stubs.get_sum_simple_benchmark_problem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.utils.testing.benchmark_stubs.sample_multiplication_fxn">
+<code class="sig-prename descclassname">ax.utils.testing.benchmark_stubs.</code><code class="sig-name descname">sample_multiplication_fxn</code><span class="sig-paren">(</span><em class="sig-param">*args: Any</em><span class="sig-paren">)</span> → float<a class="reference internal" href="_modules/ax/utils/testing/benchmark_stubs.html#sample_multiplication_fxn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.benchmark_stubs.sample_multiplication_fxn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</div>
 <div class="section" id="module-ax.utils.testing.core_stubs">
 <span id="core-stubs"></span><h3>Core Stubs<a class="headerlink" href="#module-ax.utils.testing.core_stubs" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
@@ -1402,6 +1747,49 @@ transform (does nothing).</p>
 </dd></dl>
 </dd></dl>
 </div>
+<div class="section" id="module-ax.utils.testing.test_init_files">
+<span id="test-init-files"></span><h3>Test Init Files<a class="headerlink" href="#module-ax.utils.testing.test_init_files" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.utils.testing.test_init_files.InitTest">
+<em class="property">class </em><code class="sig-prename descclassname">ax.utils.testing.test_init_files.</code><code class="sig-name descname">InitTest</code><span class="sig-paren">(</span><em class="sig-param">methodName: str = 'runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/testing/test_init_files.html#InitTest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.test_init_files.InitTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.utils.common.testutils.TestCase" title="ax.utils.common.testutils.TestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.utils.common.testutils.TestCase</span></code></a></p>
+<dl class="method">
+<dt id="ax.utils.testing.test_init_files.InitTest.testInitFiles">
+<code class="sig-name descname">testInitFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → None<a class="reference internal" href="_modules/ax/utils/testing/test_init_files.html#InitTest.testInitFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.test_init_files.InitTest.testInitFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="module-ax.utils.testing.torch_stubs">
+<span id="torch-stubs"></span><h3>Torch Stubs<a class="headerlink" href="#module-ax.utils.testing.torch_stubs" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="ax.utils.testing.torch_stubs.get_optimizer_kwargs">
+<code class="sig-prename descclassname">ax.utils.testing.torch_stubs.</code><code class="sig-name descname">get_optimizer_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → Dict[str, int]<a class="reference internal" href="_modules/ax/utils/testing/torch_stubs.html#get_optimizer_kwargs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.torch_stubs.get_optimizer_kwargs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="function">
+<dt id="ax.utils.testing.torch_stubs.get_torch_test_data">
+<code class="sig-prename descclassname">ax.utils.testing.torch_stubs.</code><code class="sig-name descname">get_torch_test_data</code><span class="sig-paren">(</span><em class="sig-param">dtype=torch.float32</em>, <em class="sig-param">cuda=False</em>, <em class="sig-param">constant_noise=True</em>, <em class="sig-param">task_features=None</em>, <em class="sig-param">offset=0.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/testing/torch_stubs.html#get_torch_test_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.torch_stubs.get_torch_test_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</div>
+<div class="section" id="module-ax.utils.testing.unittest_conventions">
+<span id="unittest-conventions"></span><h3>Unittest Conventions<a class="headerlink" href="#module-ax.utils.testing.unittest_conventions" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ax.utils.testing.unittest_conventions.TestUnittestConventions">
+<em class="property">class </em><code class="sig-prename descclassname">ax.utils.testing.unittest_conventions.</code><code class="sig-name descname">TestUnittestConventions</code><span class="sig-paren">(</span><em class="sig-param">methodName: str = 'runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/testing/unittest_conventions.html#TestUnittestConventions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.unittest_conventions.TestUnittestConventions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ax.utils.common.testutils.TestCase" title="ax.utils.common.testutils.TestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.utils.common.testutils.TestCase</span></code></a></p>
+<dl class="method">
+<dt id="ax.utils.testing.unittest_conventions.TestUnittestConventions.test_uses_ae_unittest">
+<code class="sig-name descname">test_uses_ae_unittest</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/testing/unittest_conventions.html#TestUnittestConventions.test_uses_ae_unittest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.unittest_conventions.TestUnittestConventions.test_uses_ae_unittest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check that all of our tests are inheriting from our own base class</p>
+<p>Our base class does a bit more (like making sure we don’t use any of python’s
+deprecated <cite>assert</cite> functions) so we want to enforce its usage everywhere.</p>
+</dd></dl>
+</dd></dl>
+<dl class="function">
+<dt id="ax.utils.testing.unittest_conventions.get_all_subclasses">
+<code class="sig-prename descclassname">ax.utils.testing.unittest_conventions.</code><code class="sig-name descname">get_all_subclasses</code><span class="sig-paren">(</span><em class="sig-param">cls</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/utils/testing/unittest_conventions.html#get_all_subclasses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.utils.testing.unittest_conventions.get_all_subclasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reccursively get all the subclasses of cls</p>
+</dd></dl>
+</div>
 </div>
 <div class="section" id="tutorials">
 <h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
@@ -1587,6 +1975,7 @@ data in a deterministic fashion</p></li>
 <li class="toctree-l1"><a class="reference internal" href="storage.html">ax.storage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ax.utils</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#common">Common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flake8-plugins">Flake8 Plugins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#measurement">Measurement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#notebook">Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#report">Report</a></li>

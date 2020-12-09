@@ -80,57 +80,57 @@ src="/js/documentation_options.js">
 <span class="c1"># to `CLASS_TO_REGISTRY` and `CLASS_TO_REVERSE_REGISTRY` in this file.</span>
 
 <span class="sd">"""</span>
-<span class="sd">Mapping of modular Ax `Acquisition` classes to ints.</span>
+<span class="sd">Mapping of modular Ax `Acquisition` classes to class name strings.</span>
 <span class="sd">"""</span>
-<span class="n">ACQUISITION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">Acquisition</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="n">KnowledgeGradient</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">MultiFidelityKnowledgeGradient</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">MaxValueEntropySearch</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="n">MultiFidelityMaxValueEntropySearch</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+<span class="n">ACQUISITION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Acquisition</span><span class="p">:</span> <span class="s2">"Acquisition"</span><span class="p">,</span>
+    <span class="n">KnowledgeGradient</span><span class="p">:</span> <span class="s2">"KnowledgeGradient"</span><span class="p">,</span>
+    <span class="n">MaxValueEntropySearch</span><span class="p">:</span> <span class="s2">"MaxValueEntropySearch"</span><span class="p">,</span>
+    <span class="n">MultiFidelityKnowledgeGradient</span><span class="p">:</span> <span class="s2">"MultiFidelityKnowledgeGradient"</span><span class="p">,</span>
+    <span class="n">MultiFidelityMaxValueEntropySearch</span><span class="p">:</span> <span class="s2">"MultiFidelityMaxValueEntropySearch"</span><span class="p">,</span>
 <span class="p">}</span>
 
 
 <span class="sd">"""</span>
-<span class="sd">Mapping of BoTorch `Model` classes to ints.</span>
+<span class="sd">Mapping of BoTorch `Model` classes to class name strings.</span>
 <span class="sd">"""</span>
-<span class="n">MODEL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Model</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">FixedNoiseGP</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="n">SingleTaskGP</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">FixedNoiseMultiFidelityGP</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">SingleTaskMultiFidelityGP</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="n">ModelListGP</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="n">FixedNoiseMultiTaskGP</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="n">MultiTaskGP</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+<span class="n">MODEL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Model</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">FixedNoiseGP</span><span class="p">:</span> <span class="s2">"FixedNoiseGP"</span><span class="p">,</span>
+    <span class="n">FixedNoiseMultiFidelityGP</span><span class="p">:</span> <span class="s2">"FixedNoiseMultiFidelityGP"</span><span class="p">,</span>
+    <span class="n">FixedNoiseMultiTaskGP</span><span class="p">:</span> <span class="s2">"FixedNoiseMultiTaskGP"</span><span class="p">,</span>
+    <span class="n">ModelListGP</span><span class="p">:</span> <span class="s2">"ModelListGP"</span><span class="p">,</span>
+    <span class="n">MultiTaskGP</span><span class="p">:</span> <span class="s2">"MultiTaskGP"</span><span class="p">,</span>
+    <span class="n">SingleTaskGP</span><span class="p">:</span> <span class="s2">"SingleTaskGP"</span><span class="p">,</span>
+    <span class="n">SingleTaskMultiFidelityGP</span><span class="p">:</span> <span class="s2">"SingleTaskMultiFidelityGP"</span><span class="p">,</span>
 <span class="p">}</span>
 
 
 <span class="sd">"""</span>
-<span class="sd">Mapping of Botorch `AcquisitionFunction` classes to ints.</span>
+<span class="sd">Mapping of Botorch `AcquisitionFunction` classes to class name strings.</span>
 <span class="sd">"""</span>
-<span class="n">ACQUISITION_FUNCTION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">AcquisitionFunction</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">qExpectedImprovement</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="n">qNoisyExpectedImprovement</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="n">qKnowledgeGradient</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">qMultiFidelityKnowledgeGradient</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="n">qMaxValueEntropy</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="n">qMultiFidelityMaxValueEntropy</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="n">ACQUISITION_FUNCTION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">AcquisitionFunction</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">qExpectedImprovement</span><span class="p">:</span> <span class="s2">"qExpectedImprovement"</span><span class="p">,</span>
+    <span class="n">qKnowledgeGradient</span><span class="p">:</span> <span class="s2">"qKnowledgeGradient"</span><span class="p">,</span>
+    <span class="n">qMaxValueEntropy</span><span class="p">:</span> <span class="s2">"qMaxValueEntropy"</span><span class="p">,</span>
+    <span class="n">qMultiFidelityKnowledgeGradient</span><span class="p">:</span> <span class="s2">"qMultiFidelityKnowledgeGradient"</span><span class="p">,</span>
+    <span class="n">qMultiFidelityMaxValueEntropy</span><span class="p">:</span> <span class="s2">"qMultiFidelityMaxValueEntropy"</span><span class="p">,</span>
+    <span class="n">qNoisyExpectedImprovement</span><span class="p">:</span> <span class="s2">"qNoisyExpectedImprovement"</span><span class="p">,</span>
 <span class="p">}</span>
 
 
 <span class="sd">"""</span>
-<span class="sd">Mapping of BoTorch `MarginalLogLikelihood` classes to ints.</span>
+<span class="sd">Mapping of BoTorch `MarginalLogLikelihood` classes to class name strings.</span>
 <span class="sd">"""</span>
-<span class="n">MLL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">MarginalLogLikelihood</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">ExactMarginalLogLikelihood</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="n">SumMarginalLogLikelihood</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="n">MLL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">MarginalLogLikelihood</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">ExactMarginalLogLikelihood</span><span class="p">:</span> <span class="s2">"ExactMarginalLogLikelihood"</span><span class="p">,</span>
+    <span class="n">SumMarginalLogLikelihood</span><span class="p">:</span> <span class="s2">"SumMarginalLogLikelihood"</span><span class="p">,</span>
 <span class="p">}</span>
 
 
 <span class="sd">"""</span>
 <span class="sd">Overarching mapping from encoded classes to registry map.</span>
 <span class="sd">"""</span>
-<span class="n">CLASS_TO_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">CLASS_TO_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">Acquisition</span><span class="p">:</span> <span class="n">ACQUISITION_REGISTRY</span><span class="p">,</span>
     <span class="n">AcquisitionFunction</span><span class="p">:</span> <span class="n">ACQUISITION_FUNCTION_REGISTRY</span><span class="p">,</span>
     <span class="n">MarginalLogLikelihood</span><span class="p">:</span> <span class="n">MLL_REGISTRY</span><span class="p">,</span>
@@ -141,22 +141,22 @@ src="/js/documentation_options.js">
 <span class="sd">"""</span>
 <span class="sd">Reverse registries for decoding.</span>
 <span class="sd">"""</span>
-<span class="n">REVERSE_ACQUISITION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">REVERSE_ACQUISITION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ACQUISITION_REGISTRY</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
 
 
-<span class="n">REVERSE_MODEL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">Model</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">REVERSE_MODEL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">Model</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">MODEL_REGISTRY</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
 
 
-<span class="n">REVERSE_ACQUISITION_FUNCTION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">AcquisitionFunction</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">REVERSE_ACQUISITION_FUNCTION_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">AcquisitionFunction</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ACQUISITION_FUNCTION_REGISTRY</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
 
 
-<span class="n">REVERSE_MLL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">MarginalLogLikelihood</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">REVERSE_MLL_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">MarginalLogLikelihood</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">MLL_REGISTRY</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
 
@@ -164,7 +164,7 @@ src="/js/documentation_options.js">
 <span class="sd">"""</span>
 <span class="sd">Overarching mapping from encoded classes to reverse registry map.</span>
 <span class="sd">"""</span>
-<span class="n">CLASS_TO_REVERSE_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">CLASS_TO_REVERSE_REGISTRY</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">Acquisition</span><span class="p">:</span> <span class="n">REVERSE_ACQUISITION_REGISTRY</span><span class="p">,</span>
     <span class="n">AcquisitionFunction</span><span class="p">:</span> <span class="n">REVERSE_ACQUISITION_FUNCTION_REGISTRY</span><span class="p">,</span>
     <span class="n">MarginalLogLikelihood</span><span class="p">:</span> <span class="n">REVERSE_MLL_REGISTRY</span><span class="p">,</span>
@@ -174,10 +174,9 @@ src="/js/documentation_options.js">
 
 <div class="viewcode-block" id="register_acquisition"><a class="viewcode-back" href="../../../storage.html#ax.storage.botorch_modular_registry.register_acquisition">[docs]</a><span class="k">def</span> <span class="nf">register_acquisition</span><span class="p">(</span><span class="n">acq_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">"""Add a custom acquisition class to the SQA and JSON registries."""</span>
-    <span class="n">ACQUISITION_REGISTRY</span> <span class="o">=</span> <span class="n">CLASS_TO_REGISTRY</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ACQUISITION_REGISTRY</span><span class="p">)</span>
-    <span class="n">CLASS_TO_REGISTRY</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">acq_class</span><span class="p">:</span> <span class="n">index</span><span class="p">})</span>
-    <span class="n">CLASS_TO_REVERSE_REGISTRY</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">index</span><span class="p">:</span> <span class="n">acq_class</span><span class="p">})</span></div>
+    <span class="n">class_name</span> <span class="o">=</span> <span class="n">acq_class</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="n">CLASS_TO_REGISTRY</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">acq_class</span><span class="p">:</span> <span class="n">class_name</span><span class="p">})</span>
+    <span class="n">CLASS_TO_REVERSE_REGISTRY</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">class_name</span><span class="p">:</span> <span class="n">acq_class</span><span class="p">})</span></div>
 </pre></div>
 </div>
 </div>
