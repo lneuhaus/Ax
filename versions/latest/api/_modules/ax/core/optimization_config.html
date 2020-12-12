@@ -50,7 +50,6 @@ src="/js/documentation_options.js">
 
 <span class="n">TRefPoint</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="n">ObjectiveThreshold</span><span class="p">]</span>
 
-<span class="n">MAX_OBJECTIVES</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">OC_TEMPLATE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">"OptimizationConfig(objective=</span><span class="si">{objective}</span><span class="s2">, outcome_constraints=[</span><span class="si">{constraints}</span><span class="s2">])"</span>
 <span class="p">)</span>
@@ -356,11 +355,6 @@ src="/js/documentation_options.js">
         <span class="n">objective_metrics_by_name</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">metric</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">metric</span> <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">objective</span><span class="o">.</span><span class="n">metrics</span>
         <span class="p">}</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">objective_metrics_by_name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_OBJECTIVES</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">"Objective: </span><span class="si">{</span><span class="n">objective</span><span class="si">}</span><span class="s2"> optimizes more than the maximum allowed "</span>
-                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">MAX_OBJECTIVES</span><span class="si">}</span><span class="s2"> metrics."</span>
-            <span class="p">)</span>
         <span class="c1"># Warn if thresholds on objective_metrics bound from the wrong direction.</span>
         <span class="k">for</span> <span class="n">threshold</span> <span class="ow">in</span> <span class="n">objective_thresholds</span><span class="p">:</span>
             <span class="n">metric_name</span> <span class="o">=</span> <span class="n">threshold</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">name</span>

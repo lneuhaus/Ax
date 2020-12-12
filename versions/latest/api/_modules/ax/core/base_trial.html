@@ -125,6 +125,7 @@ src="/js/documentation_options.js">
         <span class="sd">"""True if this trial is a running one."""</span>
         <span class="k">return</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">TrialStatus</span><span class="o">.</span><span class="n">RUNNING</span>
 
+    <span class="c1"># pyre-fixme[14]: `__format__` overrides method defined in `object` inconsistently.</span>
     <span class="k">def</span> <span class="fm">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fmt</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">"""Define `__format__` to avoid pulling the `__format__` from the `int`</span>
 <span class="sd">        mixin (since its better for statuses to show up as `RUNNING` than as</span>
