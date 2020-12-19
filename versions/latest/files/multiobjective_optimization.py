@@ -74,6 +74,9 @@ init_notebook_plotting()
 # Factory methods for creating multi-objective optimization modesl.
 from ax.modelbridge.factory import get_MOO_EHVI, get_MOO_PAREGO
 
+# Analysis utilities, including a method to evaluate hypervolumes
+from ax.modelbridge.modelbridge_utils import observed_hypervolume
+
 
 # ### Load our sample 2-objective problem
 
@@ -219,7 +222,7 @@ for i in range(N_BATCH):
         data=sobol_experiment.fetch_data(),
     )
     try:
-        hv = dummy_model.observed_hypervolume()
+        hv = observed_hypervolume(modelbridge=dummy_model)
     except:
         hv = 0
         print("Failed to compute hv")
@@ -257,7 +260,7 @@ for i in range(N_BATCH):
     exp_df = exp_to_df(ehvi_experiment)
     outcomes = np.array(exp_df[['a', 'b']], dtype=np.double)
     try:
-        hv = ehvi_model.observed_hypervolume()
+        hv = observed_hypervolume(modelbridge=ehvi_model)
     except:
         hv = 0
         print("Failed to compute hv")
@@ -314,7 +317,7 @@ for i in range(N_BATCH):
     exp_df = exp_to_df(parego_experiment)
     outcomes = np.array(exp_df[['a', 'b']], dtype=np.double)
     try:
-        hv = parego_model.observed_hypervolume()
+        hv = observed_hypervolume(modelbridge=parego_model)
     except:
         hv = 0
         print("Failed to compute hv")

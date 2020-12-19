@@ -208,7 +208,7 @@ src="/js/documentation_options.js">
 </li>
 <li><a href="core.html#ax.core.generator_run.ArmWeight">ArmWeight (class in ax.core.generator_run)</a>
 </li>
-<li><a href="modelbridge.html#ax.modelbridge.array.array_to_observation_data">array_to_observation_data() (in module ax.modelbridge.array)</a>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.array_to_observation_data">array_to_observation_data() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
 <li><a href="modelbridge.html#ax.modelbridge.array.ArrayModelBridge">ArrayModelBridge (class in ax.modelbridge.array)</a>
 </li>
@@ -2906,10 +2906,10 @@ src="/js/documentation_options.js">
 </li>
 <li><a href="metrics.html#ax.metrics.hartmann6.Hartmann6Metric">Hartmann6Metric (class in ax.metrics.hartmann6)</a>
 </li>
-</ul></td>
-<td style="width: 33%; vertical-align: top;"><ul>
 <li><a href="core.html#ax.core.simple_experiment.SimpleExperiment.has_evaluation_function">has_evaluation_function() (ax.core.simple_experiment.SimpleExperiment property)</a>
 </li>
+</ul></td>
+<td style="width: 33%; vertical-align: top;"><ul>
 <li><a href="core.html#ax.core.arm.Arm.has_name">has_name() (ax.core.arm.Arm property)</a>
 <ul>
 <li><a href="core.html#ax.core.experiment.Experiment.has_name">(ax.core.experiment.Experiment property)</a>
@@ -2918,6 +2918,8 @@ src="/js/documentation_options.js">
 <li><a href="modelbridge.html#ax.modelbridge.strategies.rembo.HeSBOStrategy">HeSBOStrategy (class in ax.modelbridge.strategies.rembo)</a>
 </li>
 <li><a href="plot.html#ax.plot.base.AxPlotTypes.HTML">HTML (ax.plot.base.AxPlotTypes attribute)</a>
+</li>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.hypervolume">hypervolume() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
 </ul></td>
 </tr></table>
@@ -3926,9 +3928,9 @@ src="/js/documentation_options.js">
 </li>
 <li><a href="core.html#ax.core.observation.Observation">Observation (class in ax.core.observation)</a>
 </li>
-<li><a href="modelbridge.html#ax.modelbridge.array.observation_data_to_array">observation_data_to_array() (in module ax.modelbridge.array)</a>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.observation_data_to_array">observation_data_to_array() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
-<li><a href="modelbridge.html#ax.modelbridge.array.observation_features_to_array">observation_features_to_array() (in module ax.modelbridge.array)</a>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.observation_features_to_array">observation_features_to_array() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
 <li><a href="storage.html#ax.storage.json_store.encoders.observation_features_to_dict">observation_features_to_dict() (in module ax.storage.json_store.encoders)</a>
 </li>
@@ -3940,9 +3942,9 @@ src="/js/documentation_options.js">
 </li>
 <li><a href="modelbridge.html#ax.modelbridge.cross_validation.CVResult.observed">observed() (ax.modelbridge.cross_validation.CVResult property)</a>
 </li>
-<li><a href="modelbridge.html#ax.modelbridge.base.ModelBridge.observed_hypervolume">observed_hypervolume() (ax.modelbridge.base.ModelBridge method)</a>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.observed_hypervolume">observed_hypervolume() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
-<li><a href="modelbridge.html#ax.modelbridge.base.ModelBridge.observed_pareto_frontier">observed_pareto_frontier() (ax.modelbridge.base.ModelBridge method)</a>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.observed_pareto_frontier">observed_pareto_frontier() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
 <li><a href="modelbridge.html#ax.modelbridge.transforms.one_hot.OneHot">OneHot (class in ax.modelbridge.transforms.one_hot)</a>
 </li>
@@ -4113,7 +4115,10 @@ src="/js/documentation_options.js">
 <li><a href="core.html#ax.core.parameter.ParameterType">ParameterType (class in ax.core.parameter)</a>
 </li>
 <li><a href="models.html#ax.models.torch.botorch_modular.surrogate.Surrogate.pareto_frontier">pareto_frontier() (ax.models.torch.botorch_modular.surrogate.Surrogate method)</a>
+<ul>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.pareto_frontier">(in module ax.modelbridge.modelbridge_utils)</a>
 </li>
+</ul></li>
 <li><a href="models.html#ax.models.torch.botorch_moo_defaults.pareto_frontier_evaluator">pareto_frontier_evaluator() (in module ax.models.torch.botorch_moo_defaults)</a>
 </li>
 <li><a href="plot.html#ax.plot.pareto_utils.ParetoFrontierResults">ParetoFrontierResults (class in ax.plot.pareto_utils)</a>
@@ -4141,12 +4146,12 @@ src="/js/documentation_options.js">
 </li>
 <li><a href="plot.html#ax.plot.feature_importances.plot_feature_importance_by_feature">plot_feature_importance_by_feature() (in module ax.plot.feature_importances)</a>
 </li>
+</ul></td>
+<td style="width: 33%; vertical-align: top;"><ul>
 <li><a href="plot.html#ax.plot.feature_importances.plot_feature_importance_by_metric">plot_feature_importance_by_metric() (in module ax.plot.feature_importances)</a>
 </li>
 <li><a href="plot.html#ax.plot.scatter.plot_fitted">plot_fitted() (in module ax.plot.scatter)</a>
 </li>
-</ul></td>
-<td style="width: 33%; vertical-align: top;"><ul>
 <li><a href="plot.html#ax.plot.marginal_effects.plot_marginal_effects">plot_marginal_effects() (in module ax.plot.marginal_effects)</a>
 </li>
 <li><a href="plot.html#ax.plot.scatter.plot_multiple_metrics">plot_multiple_metrics() (in module ax.plot.scatter)</a>
@@ -4202,16 +4207,10 @@ src="/js/documentation_options.js">
 </li>
 <li><a href="modelbridge.html#ax.modelbridge.cross_validation.CVResult.predicted">predicted() (ax.modelbridge.cross_validation.CVResult property)</a>
 </li>
-<li><a href="modelbridge.html#ax.modelbridge.array.ArrayModelBridge.predicted_hypervolume">predicted_hypervolume() (ax.modelbridge.array.ArrayModelBridge method)</a>
-<ul>
-<li><a href="modelbridge.html#ax.modelbridge.base.ModelBridge.predicted_hypervolume">(ax.modelbridge.base.ModelBridge method)</a>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.predicted_hypervolume">predicted_hypervolume() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
-</ul></li>
-<li><a href="modelbridge.html#ax.modelbridge.array.ArrayModelBridge.predicted_pareto_frontier">predicted_pareto_frontier() (ax.modelbridge.array.ArrayModelBridge method)</a>
-<ul>
-<li><a href="modelbridge.html#ax.modelbridge.base.ModelBridge.predicted_pareto_frontier">(ax.modelbridge.base.ModelBridge method)</a>
+<li><a href="modelbridge.html#ax.modelbridge.modelbridge_utils.predicted_pareto_frontier">predicted_pareto_frontier() (in module ax.modelbridge.modelbridge_utils)</a>
 </li>
-</ul></li>
 <li><a href="utils.html#ax.utils.common.constants.Keys.PREFERENCE_DATA">PREFERENCE_DATA (ax.utils.common.constants.Keys attribute)</a>
 </li>
 <li><a href="plot.html#ax.plot.pareto_utils.ParetoFrontierResults.primary_metric">primary_metric() (ax.plot.pareto_utils.ParetoFrontierResults property)</a>

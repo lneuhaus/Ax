@@ -288,7 +288,7 @@ def run_mtbo():
         gr = m.gen(
             n=n_opt_offline,
             optimization_config=exp_multitask.optimization_config,
-            fixed_features=ObservationFeatures(parameters={'trial_type': 'online'}),
+            fixed_features=ObservationFeatures(parameters={}, trial_index=online_trials[-1]),
         )
 
         # 4. But launch them offline
