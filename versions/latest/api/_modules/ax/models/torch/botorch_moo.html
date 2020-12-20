@@ -231,6 +231,7 @@ src="/js/documentation_options.js">
         <span class="n">refit_on_update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">warm_start_refitting</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">use_input_warping</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">use_loocv_pseudo_likelihood</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model_constructor</span> <span class="o">=</span> <span class="n">model_constructor</span>
@@ -244,6 +245,7 @@ src="/js/documentation_options.js">
         <span class="bp">self</span><span class="o">.</span><span class="n">refit_on_update</span> <span class="o">=</span> <span class="n">refit_on_update</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">warm_start_refitting</span> <span class="o">=</span> <span class="n">warm_start_refitting</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">use_input_warping</span> <span class="o">=</span> <span class="n">use_input_warping</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">use_loocv_pseudo_likelihood</span> <span class="o">=</span> <span class="n">use_loocv_pseudo_likelihood</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Model</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Xs</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Ys</span> <span class="o">=</span> <span class="p">[]</span>
