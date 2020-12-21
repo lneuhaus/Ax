@@ -890,7 +890,7 @@ and session factory.</p></li>
 <span id="ax-storage-sqa-store-json-module"></span><h3>ax.storage.sqa_store.json module<a class="headerlink" href="#module-ax.storage.sqa_store.json" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="ax.storage.sqa_store.json.JSONEncodedMediumText">
-<em class="property">class </em><code class="sig-prename descclassname">ax.storage.sqa_store.json.</code><code class="sig-name descname">JSONEncodedMediumText</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_pairs_hook</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>Any<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/storage/sqa_store/json.html#JSONEncodedMediumText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedMediumText" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ax.storage.sqa_store.json.</code><code class="sig-name descname">JSONEncodedMediumText</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_pairs_hook</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>Any<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/storage/sqa_store/json.html#JSONEncodedMediumText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedMediumText" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ax.storage.sqa_store.json.JSONEncodedObject" title="ax.storage.sqa_store.json.JSONEncodedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.storage.sqa_store.json.JSONEncodedObject</span></code></a></p>
 <p>Class for JSON-encoding objects in SQLAlchemy, backed by MEDIUMTEXT
 (MySQL).</p>
@@ -902,7 +902,7 @@ and session factory.</p></li>
 </dd></dl>
 <dl class="py class">
 <dt id="ax.storage.sqa_store.json.JSONEncodedObject">
-<em class="property">class </em><code class="sig-prename descclassname">ax.storage.sqa_store.json.</code><code class="sig-name descname">JSONEncodedObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_pairs_hook</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>Any<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/storage/sqa_store/json.html#JSONEncodedObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ax.storage.sqa_store.json.</code><code class="sig-name descname">JSONEncodedObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_pairs_hook</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>Any<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/storage/sqa_store/json.html#JSONEncodedObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.sql.type_api.TypeDecorator</span></code></p>
 <p>Class for JSON-encoding objects in SQLAlchemy.</p>
 <p>Represents an object that is automatically marshalled and unmarshalled
@@ -911,6 +911,10 @@ not track any changes.</p>
 <dl class="py attribute">
 <dt id="ax.storage.sqa_store.json.JSONEncodedObject.impl">
 <code class="sig-name descname">impl</code><em class="property">: sqlalchemy.sql.sqltypes.VARCHAR</em><em class="property"> = VARCHAR(length=4096)</em><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedObject.impl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py attribute">
+<dt id="ax.storage.sqa_store.json.JSONEncodedObject.object_pairs_hook">
+<code class="sig-name descname">object_pairs_hook</code><em class="property">: Any</em><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedObject.object_pairs_hook" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.storage.sqa_store.json.JSONEncodedObject.process_bind_param">
@@ -965,7 +969,7 @@ the “process_bind_param” method of this class.</p>
 </dd></dl>
 <dl class="py class">
 <dt id="ax.storage.sqa_store.json.JSONEncodedText">
-<em class="property">class </em><code class="sig-prename descclassname">ax.storage.sqa_store.json.</code><code class="sig-name descname">JSONEncodedText</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_pairs_hook</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>Any<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/storage/sqa_store/json.html#JSONEncodedText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedText" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">ax.storage.sqa_store.json.</code><code class="sig-name descname">JSONEncodedText</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_pairs_hook</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>Any<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/storage/sqa_store/json.html#JSONEncodedText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedText" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ax.storage.sqa_store.json.JSONEncodedObject" title="ax.storage.sqa_store.json.JSONEncodedObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.storage.sqa_store.json.JSONEncodedObject</span></code></a></p>
 <p>Class for JSON-encoding objects in SQLAlchemy, backed by TEXT (MySQL).</p>
 <p>See description in JSONEncodedObject.</p>
@@ -974,6 +978,10 @@ the “process_bind_param” method of this class.</p>
 <code class="sig-name descname">impl</code><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedText.impl" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.sql.sqltypes.Text</span></code></p>
 </dd></dl>
+<dl class="py attribute">
+<dt id="ax.storage.sqa_store.json.JSONEncodedText.object_pairs_hook">
+<code class="sig-name descname">object_pairs_hook</code><em class="property">: Any</em><a class="headerlink" href="#ax.storage.sqa_store.json.JSONEncodedText.object_pairs_hook" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.storage.sqa_store.load">
@@ -1089,16 +1097,31 @@ Either creator or url must be specified as a way to connect to the SQL db.</p>
 <dd><p>Mapping of user-facing class to SQLAlchemy class
 that it will be encoded to. This allows overwriting of the default
 classes to provide custom save functionality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Dict[Type[<a class="reference internal" href="utils.html#ax.utils.common.base.Base" title="ax.utils.common.base.Base">ax.utils.common.base.Base</a>], Type[<a class="reference internal" href="#ax.storage.sqa_store.db.SQABase" title="ax.storage.sqa_store.db.SQABase">ax.storage.sqa_store.db.SQABase</a>]]</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">experiment_type_enum</code></dt>
 <dd><p>Enum containing valid Experiment types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)">enum.Enum</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="py attribute">
 <dt>
 <code class="sig-name descname">generator_run_type_enum</code></dt>
 <dd><p>Enum containing valid Generator Run types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.9)">enum.Enum</a>]</p>
+</dd>
+</dl>
 </dd></dl>
 <dl class="py method">
 <dt>
