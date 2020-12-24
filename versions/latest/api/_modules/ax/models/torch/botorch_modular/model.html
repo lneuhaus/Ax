@@ -32,7 +32,8 @@ src="/js/documentation_options.js">
 <span class="c1"># This source code is licensed under the MIT license found in the</span>
 <span class="c1"># LICENSE file in the root directory of this source tree.</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">ax.core.types</span> <span class="kn">import</span> <span class="n">TCandidateMetadata</span><span class="p">,</span> <span class="n">TConfig</span><span class="p">,</span> <span class="n">TGenMetadata</span>
@@ -56,6 +57,7 @@ src="/js/documentation_options.js">
 <span class="kn">from</span> <span class="nn">ax.utils.common.docutils</span> <span class="kn">import</span> <span class="n">copy_doc</span>
 <span class="kn">from</span> <span class="nn">ax.utils.common.typeutils</span> <span class="kn">import</span> <span class="n">checked_cast</span><span class="p">,</span> <span class="n">not_none</span>
 <span class="kn">from</span> <span class="nn">botorch.acquisition.acquisition</span> <span class="kn">import</span> <span class="n">AcquisitionFunction</span>
+<span class="kn">from</span> <span class="nn">botorch.utils.containers</span> <span class="kn">import</span> <span class="n">TrainingData</span>
 <span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">Tensor</span>
 
 
@@ -85,18 +87,28 @@ src="/js/documentation_options.js">
 <span class="sd">            applied.</span>
 <span class="sd">        surrogate_options: Optional dict of kwargs for `Surrogate`</span>
 <span class="sd">            (used if no pre-instantiated Surrogate via is passed via `surrogate`).</span>
-<span class="sd">        surrogate_fit_options: Optional dict of kwargs, passed to</span>
-<span class="sd">            `Surrogate.fit`, including:</span>
-<span class="sd">            - state_dict: `state_dict` for the underlying BoTorch `Model`,</span>
-<span class="sd">            - refit_on_update: Whether to re-fit the underlying BoTorch `Model`</span>
-<span class="sd">            when updating it with new data.</span>
-
+<span class="sd">            Can include:</span>
+<span class="sd">            - model_options: Dict of options to surrogate's underlying</span>
+<span class="sd">            BoTorch `Model`,</span>
+<span class="sd">            - submodel_options or submodel_options_per_outcome:</span>
+<span class="sd">            Options for submodels in `ListSurrogate`, see documentation</span>
+<span class="sd">            for `ListSurrogate`.</span>
+<span class="sd">        refit_on_update: Whether to reoptimize model parameters during call</span>
+<span class="sd">            to `BoTorchModel.update`. If false, training data for the model</span>
+<span class="sd">            (used for inference) is still swapped for new training data, but</span>
+<span class="sd">            model parameters are not reoptimized.</span>
+<span class="sd">        refit_on_cv: Whether to reoptimize model parameters during call to</span>
+<span class="sd">            `BoTorchmodel.cross_validate`.</span>
+<span class="sd">        warm_start_refit: Whether to load parameters from either the provided</span>
+<span class="sd">            state dict or the state dict of the current BoTorch `Model` during</span>
+<span class="sd">            refitting. If False, model parameters will be reoptimized from</span>
+<span class="sd">            scratch on refit. NOTE: This setting is ignored during `update` or</span>
+<span class="sd">            `cross_validate` if the corresponding `refit_on_...` is False.</span>
 <span class="sd">    """</span>
 
     <span class="n">acquisition_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Acquisition</span><span class="p">]</span>
     <span class="n">acquisition_options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="n">surrogate_options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
-    <span class="n">surrogate_fit_options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
     <span class="n">_surrogate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Surrogate</span><span class="p">]</span>
     <span class="n">_botorch_acqf_class</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">AcquisitionFunction</span><span class="p">]]</span>
 
@@ -107,7 +119,9 @@ src="/js/documentation_options.js">
         <span class="n">botorch_acqf_class</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">AcquisitionFunction</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">surrogate</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Surrogate</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">surrogate_options</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">surrogate_fit_options</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">refit_on_update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">refit_on_cv</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">warm_start_refit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_surrogate</span> <span class="o">=</span> <span class="n">surrogate</span>
         <span class="k">if</span> <span class="n">surrogate</span> <span class="ow">and</span> <span class="n">surrogate_options</span><span class="p">:</span>
@@ -117,7 +131,6 @@ src="/js/documentation_options.js">
                 <span class="s2">" arguments is expected."</span>
             <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">surrogate_options</span> <span class="o">=</span> <span class="n">surrogate_options</span> <span class="ow">or</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">surrogate_fit_options</span> <span class="o">=</span> <span class="n">surrogate_fit_options</span> <span class="ow">or</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">acquisition_class</span> <span class="o">=</span> <span class="n">acquisition_class</span> <span class="ow">or</span> <span class="n">Acquisition</span>
         <span class="c1"># `_botorch_acqf_class` can be set to `None` here. If so,</span>
         <span class="c1"># `Model.gen` will set it with `choose_botorch_acqf_class`.</span>
@@ -125,6 +138,9 @@ src="/js/documentation_options.js">
             <span class="n">botorch_acqf_class</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">acquisition_class</span><span class="o">.</span><span class="n">default_botorch_acqf_class</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">acquisition_options</span> <span class="o">=</span> <span class="n">acquisition_options</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refit_on_update</span> <span class="o">=</span> <span class="n">refit_on_update</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refit_on_cv</span> <span class="o">=</span> <span class="n">refit_on_cv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">warm_start_refit</span> <span class="o">=</span> <span class="n">warm_start_refit</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">surrogate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Surrogate</span><span class="p">:</span>
@@ -151,6 +167,8 @@ src="/js/documentation_options.js">
         <span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
         <span class="n">target_fidelities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">TCandidateMetadata</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">state_dict</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">refit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># Ensure that parts of data all have equal lengths.</span>
         <span class="n">validate_data_format</span><span class="p">(</span><span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">,</span> <span class="n">metric_names</span><span class="o">=</span><span class="n">metric_names</span><span class="p">)</span>
@@ -166,21 +184,11 @@ src="/js/documentation_options.js">
                 <span class="n">metric_names</span><span class="o">=</span><span class="n">metric_names</span><span class="p">,</span>
             <span class="p">)</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surrogate</span><span class="p">,</span> <span class="n">ListSurrogate</span><span class="p">):</span>
-            <span class="n">training_data</span> <span class="o">=</span> <span class="n">construct_training_data_list</span><span class="p">(</span><span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">training_data</span> <span class="o">=</span> <span class="n">construct_single_training_data</span><span class="p">(</span><span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">)</span>
-
-        <span class="c1"># Fit the model.</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">surrogate_fit_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="n">Keys</span><span class="o">.</span><span class="n">REFIT_ON_UPDATE</span><span class="p">,</span> <span class="kc">True</span>
-        <span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">surrogate_fit_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">WARM_START_REFITTING</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">surrogate_fit_options</span><span class="p">[</span><span class="n">Keys</span><span class="o">.</span><span class="n">STATE_DICT</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">surrogate</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
             <span class="c1"># pyre-ignore[6]: Base `Surrogate` expects only single `TrainingData`,</span>
-            <span class="c1"># but `ListSurrogate` expects a list of them, to `training_data` here is</span>
+            <span class="c1"># but `ListSurrogate` expects a list of them, so `training_data` here is</span>
             <span class="c1"># a union of the two.</span>
-            <span class="n">training_data</span><span class="o">=</span><span class="n">training_data</span><span class="p">,</span>
+            <span class="n">training_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mk_training_data</span><span class="p">(</span><span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">),</span>
             <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
             <span class="n">task_features</span><span class="o">=</span><span class="n">task_features</span><span class="p">,</span>
             <span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span>
@@ -188,8 +196,51 @@ src="/js/documentation_options.js">
             <span class="n">target_fidelities</span><span class="o">=</span><span class="n">target_fidelities</span><span class="p">,</span>
             <span class="n">metric_names</span><span class="o">=</span><span class="n">metric_names</span><span class="p">,</span>
             <span class="n">candidate_metadata</span><span class="o">=</span><span class="n">candidate_metadata</span><span class="p">,</span>
-            <span class="n">state_dict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">surrogate_fit_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">STATE_DICT</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-            <span class="n">refit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">surrogate_fit_options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">REFIT_ON_UPDATE</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="n">state_dict</span><span class="o">=</span><span class="n">state_dict</span><span class="p">,</span>
+            <span class="n">refit</span><span class="o">=</span><span class="n">refit</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="BoTorchModel.update"><a class="viewcode-back" href="../../../../../models.html#ax.models.torch.botorch_modular.model.BoTorchModel.update">[docs]</a>    <span class="nd">@copy_doc</span><span class="p">(</span><span class="n">TorchModel</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">Xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">Ys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">Yvars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">bounds</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
+        <span class="n">task_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+        <span class="n">feature_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">metric_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+        <span class="n">target_fidelities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">TCandidateMetadata</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_surrogate</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Cannot update model that has not been fitted."</span><span class="p">)</span>
+
+        <span class="c1"># Sometimes the model fit should be restarted from scratch on update, for models</span>
+        <span class="c1"># that are prone to overfitting. In those cases, `self.warm_start_refit` should</span>
+        <span class="c1"># be false and `Surrogate.update` will not receive a state dict and will not</span>
+        <span class="c1"># pass it to the underlying `Surrogate.fit`.</span>
+        <span class="n">state_dict</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="kc">None</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refit_on_update</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">warm_start_refit</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">surrogate</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">surrogate</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="c1"># pyre-ignore[6]: Base `Surrogate` expects only single `TrainingData`,</span>
+            <span class="c1"># but `ListSurrogate` expects a list of them, so `training_data` here is</span>
+            <span class="c1"># a union of the two.</span>
+            <span class="n">training_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_mk_training_data</span><span class="p">(</span><span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">),</span>
+            <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+            <span class="n">task_features</span><span class="o">=</span><span class="n">task_features</span><span class="p">,</span>
+            <span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span>
+            <span class="n">metric_names</span><span class="o">=</span><span class="n">metric_names</span><span class="p">,</span>
+            <span class="n">fidelity_features</span><span class="o">=</span><span class="n">fidelity_features</span><span class="p">,</span>
+            <span class="n">target_fidelities</span><span class="o">=</span><span class="n">target_fidelities</span><span class="p">,</span>
+            <span class="n">candidate_metadata</span><span class="o">=</span><span class="n">candidate_metadata</span><span class="p">,</span>
+            <span class="n">state_dict</span><span class="o">=</span><span class="n">state_dict</span><span class="p">,</span>
+            <span class="n">refit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refit_on_update</span><span class="p">,</span>
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="BoTorchModel.predict"><a class="viewcode-back" href="../../../../../models.html#ax.models.torch.botorch_modular.model.BoTorchModel.predict">[docs]</a>    <span class="nd">@copy_doc</span><span class="p">(</span><span class="n">TorchModel</span><span class="o">.</span><span class="n">predict</span><span class="p">)</span>
@@ -280,6 +331,54 @@ src="/js/documentation_options.js">
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">acqf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">)</span></div>
 
+<div class="viewcode-block" id="BoTorchModel.cross_validate"><a class="viewcode-back" href="../../../../../models.html#ax.models.torch.botorch_modular.model.BoTorchModel.cross_validate">[docs]</a>    <span class="k">def</span> <span class="nf">cross_validate</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">Xs_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">Ys_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">Yvars_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">X_test</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">,</span>
+        <span class="n">bounds</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
+        <span class="n">task_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+        <span class="n">feature_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">metric_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">]:</span>
+        <span class="n">current_surrogate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surrogate</span>
+        <span class="c1"># If we should be refitting but not warm-starting the refit, set</span>
+        <span class="c1"># `state_dict` to None to avoid loading it.</span>
+        <span class="n">state_dict</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="kc">None</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">refit_on_cv</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">warm_start_refit</span>
+            <span class="k">else</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">current_surrogate</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">())</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Temporarily set `_surrogate` to cloned surrogate to set</span>
+        <span class="c1"># the training data on cloned surrogate to train set and</span>
+        <span class="c1"># use it to predict the test point.</span>
+        <span class="n">surrogate_clone</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surrogate</span><span class="o">.</span><span class="n">clone_reset</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_surrogate</span> <span class="o">=</span> <span class="n">surrogate_clone</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+                <span class="n">Xs</span><span class="o">=</span><span class="n">Xs_train</span><span class="p">,</span>
+                <span class="n">Ys</span><span class="o">=</span><span class="n">Ys_train</span><span class="p">,</span>
+                <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars_train</span><span class="p">,</span>
+                <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+                <span class="n">task_features</span><span class="o">=</span><span class="n">task_features</span><span class="p">,</span>
+                <span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span>
+                <span class="n">metric_names</span><span class="o">=</span><span class="n">metric_names</span><span class="p">,</span>
+                <span class="n">fidelity_features</span><span class="o">=</span><span class="n">fidelity_features</span><span class="p">,</span>
+                <span class="n">state_dict</span><span class="o">=</span><span class="n">state_dict</span><span class="p">,</span>
+                <span class="n">refit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refit_on_cv</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">X_test_prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="c1"># Reset the surrogate back to this model's surrogate, make</span>
+            <span class="c1"># sure the cloned surrogate doesn't stay around if fit or</span>
+            <span class="c1"># predict fail.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_surrogate</span> <span class="o">=</span> <span class="n">current_surrogate</span>
+        <span class="k">return</span> <span class="n">X_test_prediction</span></div>
+
     <span class="k">def</span> <span class="nf">_autoset_surrogate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">Xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
@@ -313,7 +412,7 @@ src="/js/documentation_options.js">
             <span class="p">}</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_surrogate</span> <span class="o">=</span> <span class="n">ListSurrogate</span><span class="p">(</span>
                 <span class="n">botorch_submodel_class_per_outcome</span><span class="o">=</span><span class="n">botorch_submodel_class_per_outcome</span><span class="p">,</span>
-                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">surrogate_options</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">surrogate_options</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># Using regular `Surrogate`, so botorch model picked at the beginning</span>
@@ -353,7 +452,17 @@ src="/js/documentation_options.js">
             <span class="n">pending_observations</span><span class="o">=</span><span class="n">pending_observations</span><span class="p">,</span>
             <span class="n">target_fidelities</span><span class="o">=</span><span class="n">target_fidelities</span><span class="p">,</span>
             <span class="n">options</span><span class="o">=</span><span class="n">acq_options</span><span class="p">,</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_mk_training_data</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">Xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">Ys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+        <span class="n">Yvars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">TrainingData</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">TrainingData</span><span class="p">]]:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">surrogate</span><span class="p">,</span> <span class="n">ListSurrogate</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">construct_training_data_list</span><span class="p">(</span><span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">construct_single_training_data</span><span class="p">(</span><span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">)</span></div>
 </pre></div>
 </div>
 </div>

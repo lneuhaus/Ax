@@ -566,12 +566,17 @@ src="/js/documentation_options.js">
             <span class="n">transforms</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_raw_transforms</span><span class="p">,</span>
             <span class="n">transform_configs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_transform_configs</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">(</span><span class="n">observation_features</span><span class="o">=</span><span class="n">obs_feats</span><span class="p">,</span> <span class="n">observation_data</span><span class="o">=</span><span class="n">obs_data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">(</span>
+            <span class="n">search_space</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+            <span class="n">observation_features</span><span class="o">=</span><span class="n">obs_feats</span><span class="p">,</span>
+            <span class="n">observation_data</span><span class="o">=</span><span class="n">obs_data</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fit_time</span> <span class="o">+=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t_update_start</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fit_time_since_gen</span> <span class="o">+=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t_update_start</span></div>
 
     <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
+        <span class="n">search_space</span><span class="p">:</span> <span class="n">SearchSpace</span><span class="p">,</span>
         <span class="n">observation_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationFeatures</span><span class="p">],</span>
         <span class="n">observation_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationData</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -759,14 +764,19 @@ src="/js/documentation_options.js">
         <span class="n">obs_feats</span><span class="p">,</span> <span class="n">obs_data</span> <span class="o">=</span> <span class="n">separate_observations</span><span class="p">(</span>
             <span class="n">observations</span><span class="o">=</span><span class="n">cv_training_data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span>
         <span class="p">)</span>
+        <span class="n">search_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_space</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="n">obs_feats</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">transform_observation_features</span><span class="p">(</span><span class="n">obs_feats</span><span class="p">)</span>
             <span class="n">obs_data</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">transform_observation_data</span><span class="p">(</span><span class="n">obs_data</span><span class="p">,</span> <span class="n">obs_feats</span><span class="p">)</span>
             <span class="n">cv_test_points</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">transform_observation_features</span><span class="p">(</span><span class="n">cv_test_points</span><span class="p">)</span>
+            <span class="n">search_space</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">transform_search_space</span><span class="p">(</span><span class="n">search_space</span><span class="p">)</span>
 
         <span class="c1"># Apply terminal transform, and get predictions.</span>
         <span class="n">cv_predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cross_validate</span><span class="p">(</span>
-            <span class="n">obs_feats</span><span class="o">=</span><span class="n">obs_feats</span><span class="p">,</span> <span class="n">obs_data</span><span class="o">=</span><span class="n">obs_data</span><span class="p">,</span> <span class="n">cv_test_points</span><span class="o">=</span><span class="n">cv_test_points</span>
+            <span class="n">search_space</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
+            <span class="n">obs_feats</span><span class="o">=</span><span class="n">obs_feats</span><span class="p">,</span>
+            <span class="n">obs_data</span><span class="o">=</span><span class="n">obs_data</span><span class="p">,</span>
+            <span class="n">cv_test_points</span><span class="o">=</span><span class="n">cv_test_points</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="c1"># Apply reverse transforms, in reverse order</span>
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
@@ -778,6 +788,7 @@ src="/js/documentation_options.js">
 
     <span class="k">def</span> <span class="nf">_cross_validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
+        <span class="n">search_space</span><span class="p">:</span> <span class="n">SearchSpace</span><span class="p">,</span>
         <span class="n">obs_feats</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationFeatures</span><span class="p">],</span>
         <span class="n">obs_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationData</span><span class="p">],</span>
         <span class="n">cv_test_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationFeatures</span><span class="p">],</span>

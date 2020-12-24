@@ -146,6 +146,7 @@ src="/js/documentation_options.js">
 
     <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
+        <span class="n">search_space</span><span class="p">:</span> <span class="n">SearchSpace</span><span class="p">,</span>
         <span class="n">observation_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationFeatures</span><span class="p">],</span>
         <span class="n">observation_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationData</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -156,12 +157,23 @@ src="/js/documentation_options.js">
             <span class="n">outcomes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">,</span>
             <span class="n">parameters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
         <span class="p">)</span>
+
+        <span class="n">bounds</span><span class="p">,</span> <span class="n">task_features</span><span class="p">,</span> <span class="n">target_fidelities</span> <span class="o">=</span> <span class="n">get_bounds_and_task</span><span class="p">(</span>
+            <span class="n">search_space</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span> <span class="n">param_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span>
+        <span class="p">)</span>
+
         <span class="c1"># Update in-design status for these new points.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model_update</span><span class="p">(</span>
             <span class="n">Xs</span><span class="o">=</span><span class="n">Xs_array</span><span class="p">,</span>
             <span class="n">Ys</span><span class="o">=</span><span class="n">Ys_array</span><span class="p">,</span>
             <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars_array</span><span class="p">,</span>
             <span class="n">candidate_metadata</span><span class="o">=</span><span class="n">candidate_metadata</span><span class="p">,</span>
+            <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+            <span class="n">task_features</span><span class="o">=</span><span class="n">task_features</span><span class="p">,</span>
+            <span class="n">feature_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
+            <span class="n">metric_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">,</span>
+            <span class="n">fidelity_features</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">target_fidelities</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
+            <span class="n">target_fidelities</span><span class="o">=</span><span class="n">target_fidelities</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_model_update</span><span class="p">(</span>
@@ -169,10 +181,26 @@ src="/js/documentation_options.js">
         <span class="n">Xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">Ys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">Yvars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
-        <span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">TCandidateMetadata</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">TCandidateMetadata</span><span class="p">]]],</span>
+        <span class="n">bounds</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
+        <span class="n">task_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+        <span class="n">feature_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">metric_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+        <span class="n">target_fidelities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
-            <span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span> <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span> <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">,</span> <span class="n">candidate_metadata</span><span class="o">=</span><span class="n">candidate_metadata</span>
+            <span class="n">Xs</span><span class="o">=</span><span class="n">Xs</span><span class="p">,</span>
+            <span class="n">Ys</span><span class="o">=</span><span class="n">Ys</span><span class="p">,</span>
+            <span class="n">Yvars</span><span class="o">=</span><span class="n">Yvars</span><span class="p">,</span>
+            <span class="n">candidate_metadata</span><span class="o">=</span><span class="n">candidate_metadata</span><span class="p">,</span>
+            <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+            <span class="n">task_features</span><span class="o">=</span><span class="n">task_features</span><span class="p">,</span>
+            <span class="n">feature_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
+            <span class="n">metric_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">,</span>
+            <span class="n">fidelity_features</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">target_fidelities</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">target_fidelities</span>
+            <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_predict</span><span class="p">(</span>
@@ -219,9 +247,7 @@ src="/js/documentation_options.js">
         <span class="n">bounds</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">target_fidelities</span> <span class="o">=</span> <span class="n">get_bounds_and_task</span><span class="p">(</span>
             <span class="n">search_space</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span> <span class="n">param_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span>
         <span class="p">)</span>
-        <span class="n">target_fidelities</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="n">i</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">target_fidelities</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>  <span class="c1"># pyre-ignore [6]</span>
-        <span class="p">}</span>
+        <span class="n">target_fidelities</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">target_fidelities</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
         <span class="k">if</span> <span class="n">optimization_config</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
@@ -343,6 +369,7 @@ src="/js/documentation_options.js">
 
     <span class="k">def</span> <span class="nf">_cross_validate</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
+        <span class="n">search_space</span><span class="p">:</span> <span class="n">SearchSpace</span><span class="p">,</span>
         <span class="n">obs_feats</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationFeatures</span><span class="p">],</span>
         <span class="n">obs_data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationData</span><span class="p">],</span>
         <span class="n">cv_test_points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ObservationFeatures</span><span class="p">],</span>
@@ -356,12 +383,24 @@ src="/js/documentation_options.js">
             <span class="n">outcomes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">,</span>
             <span class="n">parameters</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
         <span class="p">)</span>
+        <span class="n">bounds</span><span class="p">,</span> <span class="n">task_features</span><span class="p">,</span> <span class="n">target_fidelities</span> <span class="o">=</span> <span class="n">get_bounds_and_task</span><span class="p">(</span>
+            <span class="n">search_space</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span> <span class="n">param_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span>
+        <span class="p">)</span>
+
         <span class="n">X_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
             <span class="p">[[</span><span class="n">obsf</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">]</span> <span class="k">for</span> <span class="n">obsf</span> <span class="ow">in</span> <span class="n">cv_test_points</span><span class="p">]</span>
         <span class="p">)</span>
         <span class="c1"># Use the model to do the cross validation</span>
         <span class="n">f_test</span><span class="p">,</span> <span class="n">cov_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model_cross_validate</span><span class="p">(</span>
-            <span class="n">Xs_train</span><span class="o">=</span><span class="n">Xs_train</span><span class="p">,</span> <span class="n">Ys_train</span><span class="o">=</span><span class="n">Ys_train</span><span class="p">,</span> <span class="n">Yvars_train</span><span class="o">=</span><span class="n">Yvars_train</span><span class="p">,</span> <span class="n">X_test</span><span class="o">=</span><span class="n">X_test</span>
+            <span class="n">Xs_train</span><span class="o">=</span><span class="n">Xs_train</span><span class="p">,</span>
+            <span class="n">Ys_train</span><span class="o">=</span><span class="n">Ys_train</span><span class="p">,</span>
+            <span class="n">Yvars_train</span><span class="o">=</span><span class="n">Yvars_train</span><span class="p">,</span>
+            <span class="n">X_test</span><span class="o">=</span><span class="n">X_test</span><span class="p">,</span>
+            <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+            <span class="n">task_features</span><span class="o">=</span><span class="n">task_features</span><span class="p">,</span>
+            <span class="n">feature_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">,</span>
+            <span class="n">metric_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">,</span>
+            <span class="n">fidelity_features</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">target_fidelities</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
         <span class="p">)</span>
         <span class="c1"># Convert array back to ObservationData</span>
         <span class="k">return</span> <span class="n">array_to_observation_data</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f_test</span><span class="p">,</span> <span class="n">cov</span><span class="o">=</span><span class="n">cov_test</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">)</span>
@@ -372,9 +411,22 @@ src="/js/documentation_options.js">
         <span class="n">Ys_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">Yvars_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span>
         <span class="n">X_test</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+        <span class="n">bounds</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]],</span>
+        <span class="n">task_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+        <span class="n">feature_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">metric_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>  <span class="c1"># pragma: no cover</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">cross_validate</span><span class="p">(</span>
-            <span class="n">Xs_train</span><span class="o">=</span><span class="n">Xs_train</span><span class="p">,</span> <span class="n">Ys_train</span><span class="o">=</span><span class="n">Ys_train</span><span class="p">,</span> <span class="n">Yvars_train</span><span class="o">=</span><span class="n">Yvars_train</span><span class="p">,</span> <span class="n">X_test</span><span class="o">=</span><span class="n">X_test</span>
+            <span class="n">Xs_train</span><span class="o">=</span><span class="n">Xs_train</span><span class="p">,</span>
+            <span class="n">Ys_train</span><span class="o">=</span><span class="n">Ys_train</span><span class="p">,</span>
+            <span class="n">Yvars_train</span><span class="o">=</span><span class="n">Yvars_train</span><span class="p">,</span>
+            <span class="n">X_test</span><span class="o">=</span><span class="n">X_test</span><span class="p">,</span>
+            <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span>
+            <span class="n">task_features</span><span class="o">=</span><span class="n">task_features</span><span class="p">,</span>
+            <span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span>
+            <span class="n">metric_names</span><span class="o">=</span><span class="n">metric_names</span><span class="p">,</span>
+            <span class="n">fidelity_features</span><span class="o">=</span><span class="n">fidelity_features</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_evaluate_acquisition_function</span><span class="p">(</span>

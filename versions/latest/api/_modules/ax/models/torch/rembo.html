@@ -262,6 +262,7 @@ src="/js/documentation_options.js">
         <span class="n">Ys_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">Yvars_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">X_test</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">]:</span>
         <span class="n">X_D</span> <span class="o">=</span> <span class="n">_get_single_X</span><span class="p">(</span><span class="n">Xs_train</span><span class="p">)</span>
         <span class="n">X_train_d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_down</span><span class="p">(</span><span class="n">X_D</span><span class="p">)</span>
@@ -280,6 +281,7 @@ src="/js/documentation_options.js">
         <span class="n">Ys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">Yvars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">TCandidateMetadata</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">X_D</span> <span class="o">=</span> <span class="n">_get_single_X</span><span class="p">(</span><span class="n">Xs</span><span class="p">)</span>
         <span class="n">X_d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project_down</span><span class="p">(</span><span class="n">X_D</span><span class="p">)</span>

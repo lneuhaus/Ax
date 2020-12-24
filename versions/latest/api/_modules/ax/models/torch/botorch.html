@@ -455,12 +455,13 @@ src="/js/documentation_options.js">
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="BotorchModel.cross_validate"><a class="viewcode-back" href="../../../../models.html#ax.models.torch.botorch.BotorchModel.cross_validate">[docs]</a>    <span class="nd">@copy_doc</span><span class="p">(</span><span class="n">TorchModel</span><span class="o">.</span><span class="n">cross_validate</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">cross_validate</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">cross_validate</span><span class="p">(</span>  <span class="c1"># pyre-ignore[14]: Some `TorchModel.cross_validate` kwargs</span>
+        <span class="bp">self</span><span class="p">,</span>  <span class="c1"># are not needed here and therefore we just use `**kwargs` catchall.</span>
         <span class="n">Xs_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">Ys_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">Yvars_train</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">X_test</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">]:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Cannot cross-validate model that has not been fitted"</span><span class="p">)</span>
@@ -484,12 +485,13 @@ src="/js/documentation_options.js">
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_predictor</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">X_test</span><span class="p">)</span>  <span class="c1"># pyre-ignore: [28]</span></div>
 
 <div class="viewcode-block" id="BotorchModel.update"><a class="viewcode-back" href="../../../../models.html#ax.models.torch.botorch.BotorchModel.update">[docs]</a>    <span class="nd">@copy_doc</span><span class="p">(</span><span class="n">TorchModel</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>  <span class="c1"># pyre-ignore[14]: Some `TorchModel.update` kwargs are not</span>
+        <span class="bp">self</span><span class="p">,</span>  <span class="c1"># needed here and therefore we just use `**kwargs` catchall.</span>
         <span class="n">Xs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">Ys</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">Yvars</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tensor</span><span class="p">],</span>
         <span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">TCandidateMetadata</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Cannot update model that has not been fitted"</span><span class="p">)</span>
