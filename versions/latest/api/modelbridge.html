@@ -1684,10 +1684,6 @@ online metric names.</p>
 By default, this transform is turned off. It can be enabled by passing the
 “perform_untransform” flag to the config.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.convert_metric_names.ConvertMetricNames.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.convert_metric_names.ConvertMetricNames.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.convert_metric_names.ConvertMetricNames.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.convert_metric_names.ConvertMetricNames.config" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1758,24 +1754,8 @@ estimate of the status quo value.</p>
 raw observation at status quo.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.derelativize.Derelativize.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.derelativize.Derelativize.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.derelativize.Derelativize.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.derelativize.Derelativize.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.derelativize.Derelativize.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.derelativize.Derelativize.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.derelativize.Derelativize.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.derelativize.Derelativize.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.derelativize.Derelativize.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.derelativize.Derelativize.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.derelativize.Derelativize.transform_optimization_config">
@@ -1790,10 +1770,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed optimization config.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.derelativize.Derelativize.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.derelativize.Derelativize.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.modelbridge.transforms.int_range_to_choice">
@@ -1805,24 +1781,8 @@ transform (does nothing).</p>
 <p>Convert a RangeParameter of type int to a ordered ChoiceParameter.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.transform_search_space">
@@ -1837,10 +1797,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_range_to_choice.IntRangeToChoice.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.modelbridge.transforms.int_to_float">
@@ -1854,24 +1810,8 @@ transform (does nothing).</p>
 depending on ‘rounding’ flag.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.transform_observation_features">
@@ -1886,10 +1826,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/int_to_float.html#IntToFloat.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -1903,10 +1839,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.int_to_float.IntToFloat.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/int_to_float.html#IntToFloat.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.int_to_float.IntToFloat.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -1931,24 +1863,8 @@ transform (does nothing).</p>
 <p>If an observation data contains multiple observations of a metric, they
 are combined using inverse variance weighting.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ivw.IVW.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ivw.IVW.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.ivw.IVW.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ivw.IVW.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ivw.IVW.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ivw.IVW.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ivw.IVW.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ivw.IVW.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ivw.IVW.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ivw.IVW.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.ivw.IVW.transform_observation_data">
@@ -1968,14 +1884,6 @@ conditional on features, but observation_features are notmutated.</p>
 </dl>
 <p>Returns: transformed observation data</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ivw.IVW.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ivw.IVW.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ivw.IVW.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ivw.IVW.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 </dd></dl>
 <dl class="py function">
 <dt id="ax.modelbridge.transforms.ivw.ivw_metric_merge">
@@ -2011,38 +1919,14 @@ log a warning. “raise” will raise an exception.</p>
 <p>Apply inverse CDF transform to Y.</p>
 <p>This means that we model uniform distributions as gaussian-distributed.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.transform_observation_data">
 <code class="sig-name descname">transform_observation_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/inverse_gaussian_cdf_y.html#InverseGaussianCdfY.transform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.transform_observation_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map to inverse Gaussian CDF in place.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.inverse_gaussian_cdf_y.InverseGaussianCdfY.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 </dd></dl>
 <dl class="py function">
 <dt id="ax.modelbridge.transforms.inverse_gaussian_cdf_y.match_ci_width_truncated">
@@ -2061,24 +1945,8 @@ within a [0,1] interval after transformation.</p>
 <p>Apply log base 10 to a float RangeParameter domain.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log.Log.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.log.Log.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log.Log.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log.Log.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log.Log.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.log.Log.transform_observation_features">
@@ -2093,10 +1961,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log.Log.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.log.Log.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/log.html#Log.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -2110,10 +1974,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log.Log.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.log.Log.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/log.html#Log.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log.Log.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -2143,24 +2003,8 @@ delta method,</p>
 <p>Transform is applied only for the metrics specified in the transform config.
 Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log_y.LogY.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.log_y.LogY.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log_y.LogY.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log_y.LogY.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log_y.LogY.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.log_y.LogY.transform_observation_data">
@@ -2193,14 +2037,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed optimization config.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log_y.LogY.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.log_y.LogY.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.log_y.LogY.untransform_observation_data">
 <code class="sig-name descname">untransform_observation_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/log_y.html#LogY.untransform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.log_y.LogY.untransform_observation_data" title="Permalink to this definition">¶</a></dt>
@@ -2274,24 +2110,8 @@ or ‘c’.</p>
 ‘strict’ or ‘randomized’. Defaults to strict.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.one_hot.OneHot.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.one_hot.OneHot.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.one_hot.OneHot.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.one_hot.OneHot.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.one_hot.OneHot.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.one_hot.OneHot.transform_observation_features">
@@ -2306,10 +2126,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.one_hot.OneHot.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.one_hot.OneHot.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/one_hot.html#OneHot.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -2323,10 +2139,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.one_hot.OneHot.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.one_hot.OneHot.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/one_hot.html#OneHot.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.one_hot.OneHot.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -2384,32 +2196,8 @@ Does not transform task parameters.</p>
 <p>In the inverse transform, parameters will be mapped back onto the original domain.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.transform_observation_features">
@@ -2424,10 +2212,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/ordered_choice_encode.html#OrderedChoiceEncode.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -2441,10 +2225,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/ordered_choice_encode.html#OrderedChoiceEncode.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.ordered_choice_encode.OrderedChoiceEncode.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -2468,50 +2248,14 @@ transform (does nothing).</p>
 <dd><p>Bases: <a class="reference internal" href="#ax.modelbridge.transforms.base.Transform" title="ax.modelbridge.transforms.base.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.modelbridge.transforms.base.Transform</span></code></a></p>
 <p>Map Y values to percentiles based on their empirical CDF.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.percentile_y.PercentileY.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.percentile_y.PercentileY.transform_observation_data">
 <code class="sig-name descname">transform_observation_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/percentile_y.html#PercentileY.transform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.transform_observation_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map observation data to empirical CDF quantiles in place.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.percentile_y.PercentileY.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.percentile_y.PercentileY.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 </dd></dl>
 </div>
 <div class="section" id="module-ax.modelbridge.transforms.remove_fixed">
@@ -2525,36 +2269,8 @@ transform (does nothing).</p>
 This transform removes these parameters, leaving only tunable parameters.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.transform_observation_features">
@@ -2569,10 +2285,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/remove_fixed.html#RemoveFixed.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -2586,10 +2298,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.remove_fixed.RemoveFixed.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/remove_fixed.html#RemoveFixed.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.remove_fixed.RemoveFixed.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -2646,40 +2354,8 @@ are the signatures of the arms observed in the data.</p>
 <p>This transform is meant to be used with ThompsonSampler.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.fixed_parameters">
-<code class="sig-name descname">fixed_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>FixedParameter<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.fixed_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.transform_observation_features">
@@ -2694,10 +2370,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/search_space_to_choice.html#SearchSpaceToChoice.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -2711,10 +2383,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/search_space_to_choice.html#SearchSpaceToChoice.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.search_space_to_choice.SearchSpaceToChoice.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -2739,40 +2407,8 @@ transform (does nothing).</p>
 <p>Standardize Y, separately for each metric.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.fixed_parameters">
-<code class="sig-name descname">fixed_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>FixedParameter<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.fixed_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.transform_observation_data">
@@ -2805,14 +2441,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed optimization config.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.standardize_y.StandardizeY.untransform_observation_data">
 <code class="sig-name descname">untransform_observation_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/standardize_y.html#StandardizeY.untransform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.standardize_y.StandardizeY.untransform_observation_data" title="Permalink to this definition">¶</a></dt>
@@ -2854,40 +2482,8 @@ outcome constraints, in order to apply the standardization to the
 constraints.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.fixed_parameters">
-<code class="sig-name descname">fixed_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>FixedParameter<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.fixed_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.transform_observation_data">
@@ -2920,14 +2516,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed optimization config.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.untransform_observation_data">
 <code class="sig-name descname">untransform_observation_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/stratified_standardize_y.html#StratifiedStandardizeY.untransform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.stratified_standardize_y.StratifiedStandardizeY.untransform_observation_data" title="Permalink to this definition">¶</a></dt>
@@ -2959,52 +2547,16 @@ mapped from the original choice domain to a contiguous range from [0, n_choices]
 <p>In the inverse transform, parameters will be mapped back onto the original domain.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.task_encode.TaskEncode.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.config" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.modelbridge.transforms.task_encode.TaskEncode.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.encoded_parameters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span>Optional<span class="p">[</span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span><span class="p">]</span><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.encoded_parameters" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.modelbridge.transforms.task_encode.TaskEncode.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.fixed_parameters">
-<code class="sig-name descname">fixed_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>FixedParameter<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.fixed_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.p_name">
-<code class="sig-name descname">p_name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.p_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.task_encode.TaskEncode.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>Optional<span class="p">[</span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.task_encode.TaskEncode.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 </div>
@@ -3030,44 +2582,8 @@ the trial will not be set.</p>
 <p>Will raise if trial not specified for every point in the training data.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.fixed_parameters">
-<code class="sig-name descname">fixed_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>FixedParameter<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.fixed_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.p_name">
-<code class="sig-name descname">p_name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.p_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.transform_observation_features">
@@ -3082,10 +2598,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/trial_as_task.html#TrialAsTask.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -3099,10 +2611,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.trial_as_task.TrialAsTask.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/trial_as_task.html#TrialAsTask.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.trial_as_task.TrialAsTask.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -3130,48 +2638,8 @@ Constraints wTx &lt;= b are converted to gTx_tilde &lt;= h, where
 g_i = w_i (u_i - l_i) and h = b - wTl.</p>
 <p>Transform is done in-place.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.unit_x.UnitX.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.fixed_parameters">
-<code class="sig-name descname">fixed_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>FixedParameter<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.fixed_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.inverse_map">
-<code class="sig-name descname">inverse_map</code><em class="property">: Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.inverse_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.p_name">
-<code class="sig-name descname">p_name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.p_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.unit_x.UnitX.transform_observation_features">
@@ -3186,10 +2654,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed observation features</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.unit_x.UnitX.transform_search_space">
 <code class="sig-name descname">transform_search_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_space</span><span class="p">:</span> <span class="n"><a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a></span></em><span class="sig-paren">)</span> → <a class="reference internal" href="core.html#ax.core.search_space.SearchSpace" title="ax.core.search_space.SearchSpace">ax.core.search_space.SearchSpace</a><a class="reference internal" href="_modules/ax/modelbridge/transforms/unit_x.html#UnitX.transform_search_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.transform_search_space" title="Permalink to this definition">¶</a></dt>
@@ -3203,14 +2667,6 @@ transform (does nothing).</p>
 </dl>
 <p>Returns: transformed search space.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.unit_x.UnitX.trial_level_map">
-<code class="sig-name descname">trial_level_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.trial_level_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.unit_x.UnitX.untransform_observation_features">
 <code class="sig-name descname">untransform_observation_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/unit_x.html#UnitX.untransform_observation_features"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.unit_x.UnitX.untransform_observation_features" title="Permalink to this definition">¶</a></dt>
@@ -3248,66 +2704,14 @@ specified as a float in [0.0, 1). To clip to the 10th and 90th percentile,
 for instance, you’ll pass (0.1, 0.1). Config should include those bounds
 under the key “winsorization_limits”.</p>
 <dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.bounds">
-<code class="sig-name descname">bounds</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.bounds" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
 <dt id="ax.modelbridge.transforms.winsorize.Winsorize.config">
 <code class="sig-name descname">config</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>botorch.acquisition.acquisition.AcquisitionFunction<span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.config" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.encoded_parameters">
-<code class="sig-name descname">encoded_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.encoded_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.encoded_parameters_inverse">
-<code class="sig-name descname">encoded_parameters_inverse</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span>TParamValue<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.encoded_parameters_inverse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.encoder">
-<code class="sig-name descname">encoder</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>OneHotEncoder<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.encoder" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.fixed_parameters">
-<code class="sig-name descname">fixed_parameters</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>FixedParameter<span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.fixed_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.inverse_map">
-<code class="sig-name descname">inverse_map</code><em class="property">: Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.inverse_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.metric_name_map">
-<code class="sig-name descname">metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.metric_name_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.metric_name_to_trial_type">
-<code class="sig-name descname">metric_name_to_trial_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.metric_name_to_trial_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.p_name">
-<code class="sig-name descname">p_name</code><em class="property">: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.p_name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.reverse_metric_name_map">
-<code class="sig-name descname">reverse_metric_name_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.reverse_metric_name_map" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.modelbridge.transforms.winsorize.Winsorize.transform_observation_data">
 <code class="sig-name descname">transform_observation_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">observation_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">observation_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationFeatures" title="ax.core.observation.ObservationFeatures">ax.core.observation.ObservationFeatures</a><span class="p">]</span></span></em><span class="sig-paren">)</span> → List<span class="p">[</span><a class="reference internal" href="core.html#ax.core.observation.ObservationData" title="ax.core.observation.ObservationData">ax.core.observation.ObservationData</a><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/transforms/winsorize.html#Winsorize.transform_observation_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.transform_observation_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Winsorize observation data in place.</p>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.transform_parameters">
-<code class="sig-name descname">transform_parameters</code><em class="property">: Set<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.transform_parameters" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.trial_index_to_type">
-<code class="sig-name descname">trial_index_to_type</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.trial_index_to_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.modelbridge.transforms.winsorize.Winsorize.trial_level_map">
-<code class="sig-name descname">trial_level_map</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#ax.modelbridge.transforms.winsorize.Winsorize.trial_level_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 </dd></dl>
 </div>
 </div>

@@ -1405,15 +1405,15 @@ hyperparameters.</p></li>
 </dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.alebo.ALEBO.Xs">
-<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.alebo.ALEBO.Xs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.alebo.ALEBO.Xs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.alebo.ALEBO.Ys">
-<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.alebo.ALEBO.Ys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.alebo.ALEBO.Ys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.alebo.ALEBO.Yvars">
-<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.alebo.ALEBO.Yvars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.alebo.ALEBO.Yvars" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.alebo.ALEBO.best_point">
@@ -2017,10 +2017,6 @@ cov[j, m1, m2] is Cov[m1@j, m2@j].</p></li>
 <dt id="ax.models.torch.botorch.BotorchModel.feature_importances">
 <code class="sig-name descname">feature_importances</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → numpy.ndarray<a class="reference internal" href="_modules/ax/models/torch/botorch.html#BotorchModel.feature_importances"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.feature_importances" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.models.torch.botorch.BotorchModel.fidelity_features">
-<code class="sig-name descname">fidelity_features</code><em class="property">: List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.fidelity_features" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch.BotorchModel.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Xs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>torch.Tensor<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">Ys</span><span class="p">:</span> <span class="n">List<span class="p">[</span>torch.Tensor<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">Yvars</span><span class="p">:</span> <span class="n">List<span class="p">[</span>torch.Tensor<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">bounds</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">task_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">feature_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">metric_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>List<span class="p">[</span>Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> → <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="reference internal" href="_modules/ax/models/torch/botorch.html#BotorchModel.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.fit" title="Permalink to this definition">¶</a></dt>
@@ -2092,14 +2088,6 @@ multi-fidelity optimization.</p></li>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.models.torch.botorch.BotorchModel.metric_names">
-<code class="sig-name descname">metric_names</code><em class="property">: List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.metric_names" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.models.torch.botorch.BotorchModel.model">
-<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>botorch.models.model.Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.model" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch.BotorchModel.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span><span class="p">:</span> <span class="n">torch.Tensor</span></em><span class="sig-paren">)</span> → Tuple<span class="p">[</span>torch.Tensor<span class="p">, </span>torch.Tensor<span class="p">]</span><a class="reference internal" href="_modules/ax/models/torch/botorch.html#BotorchModel.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.predict" title="Permalink to this definition">¶</a></dt>
@@ -2119,10 +2107,6 @@ cov[j, m1, m2] is Cov[m1@j, m2@j].</p></li>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py attribute">
-<dt id="ax.models.torch.botorch.BotorchModel.task_features">
-<code class="sig-name descname">task_features</code><em class="property">: List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.task_features" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch.BotorchModel.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Xs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>torch.Tensor<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">Ys</span><span class="p">:</span> <span class="n">List<span class="p">[</span>torch.Tensor<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">Yvars</span><span class="p">:</span> <span class="n">List<span class="p">[</span>torch.Tensor<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>List<span class="p">[</span>Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> → <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="reference internal" href="_modules/ax/models/torch/botorch.html#BotorchModel.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch.BotorchModel.update" title="Permalink to this definition">¶</a></dt>
@@ -3027,7 +3011,7 @@ candidates and their associated acquisition function values.</p>
 <dd><p>Bases: <a class="reference internal" href="#ax.models.torch.botorch_modular.kg.OneShotAcquisition" title="ax.models.torch.botorch_modular.kg.OneShotAcquisition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.kg.OneShotAcquisition</span></code></a></p>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.kg.KnowledgeGradient.acqf">
-<code class="sig-name descname">acqf</code><em class="property">: botorch.acquisition.acquisition.AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.KnowledgeGradient.acqf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">acqf</code><em class="property">: AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.KnowledgeGradient.acqf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.kg.KnowledgeGradient.default_botorch_acqf_class">
@@ -3036,7 +3020,7 @@ candidates and their associated acquisition function values.</p>
 </dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.kg.KnowledgeGradient.surrogate">
-<code class="sig-name descname">surrogate</code><em class="property">: <a class="reference internal" href="#ax.models.torch.botorch_modular.surrogate.Surrogate" title="ax.models.torch.botorch_modular.surrogate.Surrogate">ax.models.torch.botorch_modular.surrogate.Surrogate</a></em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.KnowledgeGradient.surrogate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">surrogate</code><em class="property">: Surrogate</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.KnowledgeGradient.surrogate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
@@ -3045,7 +3029,7 @@ candidates and their associated acquisition function values.</p>
 <dd><p>Bases: <a class="reference internal" href="#ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition" title="ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition</span></code></a>, <a class="reference internal" href="#ax.models.torch.botorch_modular.kg.KnowledgeGradient" title="ax.models.torch.botorch_modular.kg.KnowledgeGradient"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.kg.KnowledgeGradient</span></code></a></p>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.kg.MultiFidelityKnowledgeGradient.acqf">
-<code class="sig-name descname">acqf</code><em class="property">: botorch.acquisition.acquisition.AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.MultiFidelityKnowledgeGradient.acqf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">acqf</code><em class="property">: AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.MultiFidelityKnowledgeGradient.acqf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.kg.MultiFidelityKnowledgeGradient.compute_model_dependencies">
@@ -3100,7 +3084,7 @@ the <cite>Acquisition</cite> object.</p></li>
 </dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.kg.MultiFidelityKnowledgeGradient.surrogate">
-<code class="sig-name descname">surrogate</code><em class="property">: <a class="reference internal" href="#ax.models.torch.botorch_modular.surrogate.Surrogate" title="ax.models.torch.botorch_modular.surrogate.Surrogate">ax.models.torch.botorch_modular.surrogate.Surrogate</a></em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.MultiFidelityKnowledgeGradient.surrogate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">surrogate</code><em class="property">: Surrogate</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.MultiFidelityKnowledgeGradient.surrogate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
@@ -3109,7 +3093,7 @@ the <cite>Acquisition</cite> object.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#ax.models.torch.botorch_modular.acquisition.Acquisition" title="ax.models.torch.botorch_modular.acquisition.Acquisition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.acquisition.Acquisition</span></code></a></p>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.kg.OneShotAcquisition.acqf">
-<code class="sig-name descname">acqf</code><em class="property">: botorch.acquisition.acquisition.AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.OneShotAcquisition.acqf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">acqf</code><em class="property">: AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.OneShotAcquisition.acqf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.kg.OneShotAcquisition.optimize">
@@ -3119,7 +3103,7 @@ candidates and their associated acquisition function values.</p>
 </dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.kg.OneShotAcquisition.surrogate">
-<code class="sig-name descname">surrogate</code><em class="property">: <a class="reference internal" href="#ax.models.torch.botorch_modular.surrogate.Surrogate" title="ax.models.torch.botorch_modular.surrogate.Surrogate">ax.models.torch.botorch_modular.surrogate.Surrogate</a></em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.OneShotAcquisition.surrogate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">surrogate</code><em class="property">: Surrogate</em><a class="headerlink" href="#ax.models.torch.botorch_modular.kg.OneShotAcquisition.surrogate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 </div>
@@ -3265,7 +3249,7 @@ the order corresponding to the Xs.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#ax.models.torch.botorch_modular.acquisition.Acquisition" title="ax.models.torch.botorch_modular.acquisition.Acquisition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.acquisition.Acquisition</span></code></a></p>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.mes.MaxValueEntropySearch.acqf">
-<code class="sig-name descname">acqf</code><em class="property">: botorch.acquisition.acquisition.AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MaxValueEntropySearch.acqf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">acqf</code><em class="property">: AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MaxValueEntropySearch.acqf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.mes.MaxValueEntropySearch.compute_model_dependencies">
@@ -3326,7 +3310,7 @@ candidates and their associated acquisition function values.</p>
 </dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.mes.MaxValueEntropySearch.surrogate">
-<code class="sig-name descname">surrogate</code><em class="property">: <a class="reference internal" href="#ax.models.torch.botorch_modular.surrogate.Surrogate" title="ax.models.torch.botorch_modular.surrogate.Surrogate">ax.models.torch.botorch_modular.surrogate.Surrogate</a></em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MaxValueEntropySearch.surrogate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">surrogate</code><em class="property">: Surrogate</em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MaxValueEntropySearch.surrogate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 <dl class="py class">
@@ -3335,7 +3319,7 @@ candidates and their associated acquisition function values.</p>
 <dd><p>Bases: <a class="reference internal" href="#ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition" title="ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition</span></code></a>, <a class="reference internal" href="#ax.models.torch.botorch_modular.mes.MaxValueEntropySearch" title="ax.models.torch.botorch_modular.mes.MaxValueEntropySearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.mes.MaxValueEntropySearch</span></code></a></p>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.mes.MultiFidelityMaxValueEntropySearch.acqf">
-<code class="sig-name descname">acqf</code><em class="property">: botorch.acquisition.acquisition.AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MultiFidelityMaxValueEntropySearch.acqf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">acqf</code><em class="property">: AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MultiFidelityMaxValueEntropySearch.acqf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.mes.MultiFidelityMaxValueEntropySearch.compute_model_dependencies">
@@ -3390,7 +3374,7 @@ the <cite>Acquisition</cite> object.</p></li>
 </dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.mes.MultiFidelityMaxValueEntropySearch.surrogate">
-<code class="sig-name descname">surrogate</code><em class="property">: <a class="reference internal" href="#ax.models.torch.botorch_modular.surrogate.Surrogate" title="ax.models.torch.botorch_modular.surrogate.Surrogate">ax.models.torch.botorch_modular.surrogate.Surrogate</a></em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MultiFidelityMaxValueEntropySearch.surrogate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">surrogate</code><em class="property">: Surrogate</em><a class="headerlink" href="#ax.models.torch.botorch_modular.mes.MultiFidelityMaxValueEntropySearch.surrogate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 </div>
@@ -3676,7 +3660,7 @@ the order corresponding to the Xs.</p></li>
 <dd><p>Bases: <a class="reference internal" href="#ax.models.torch.botorch_modular.acquisition.Acquisition" title="ax.models.torch.botorch_modular.acquisition.Acquisition"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.acquisition.Acquisition</span></code></a></p>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition.acqf">
-<code class="sig-name descname">acqf</code><em class="property">: botorch.acquisition.acquisition.AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition.acqf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">acqf</code><em class="property">: AcquisitionFunction</em><a class="headerlink" href="#ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition.acqf" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition.compute_model_dependencies">
@@ -3726,7 +3710,7 @@ the <cite>Acquisition</cite> object.</p></li>
 </dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition.surrogate">
-<code class="sig-name descname">surrogate</code><em class="property">: <a class="reference internal" href="#ax.models.torch.botorch_modular.surrogate.Surrogate" title="ax.models.torch.botorch_modular.surrogate.Surrogate">ax.models.torch.botorch_modular.surrogate.Surrogate</a></em><a class="headerlink" href="#ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition.surrogate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">surrogate</code><em class="property">: Surrogate</em><a class="headerlink" href="#ax.models.torch.botorch_modular.multi_fidelity.MultiFidelityAcquisition.surrogate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
 </div>
@@ -4050,15 +4034,15 @@ Default is True.</p></li>
 </dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcea.LCEABO.Xs">
-<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.Xs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.Xs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcea.LCEABO.Ys">
-<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.Ys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.Ys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcea.LCEABO.Yvars">
-<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.Yvars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.Yvars" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.cbo_lcea.LCEABO.best_point">
@@ -4144,7 +4128,7 @@ the order corresponding to the Xs.</p></li>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcea.LCEABO.model">
-<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>botorch.models.model.Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcea.LCEABO.model" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcea.LCEABO.task_features">
@@ -4166,15 +4150,15 @@ the order corresponding to the Xs.</p></li>
 <p>Does Bayesian optimization with LCE-M GP.</p>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.Xs">
-<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.Xs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.Xs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.Ys">
-<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.Ys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.Ys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.Yvars">
-<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.Yvars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.Yvars" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.device">
@@ -4183,10 +4167,6 @@ the order corresponding to the Xs.</p></li>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.dtype">
 <code class="sig-name descname">dtype</code><em class="property">: Optional<span class="p">[</span>torch.dtype<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.dtype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.models.torch.cbo_lcem.LCEMBO.feature_names">
-<code class="sig-name descname">feature_names</code><em class="property">: List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.feature_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.fidelity_features">
@@ -4207,7 +4187,7 @@ the order corresponding to the Xs.</p></li>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.model">
-<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>botorch.models.model.Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_lcem.LCEMBO.model" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_lcem.LCEMBO.task_features">
@@ -4232,15 +4212,15 @@ names belong to the context, e.g.
 </dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.Xs">
-<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.Xs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.Xs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.Ys">
-<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.Ys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.Ys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.Yvars">
-<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.Yvars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.Yvars" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.device">
@@ -4249,10 +4229,6 @@ names belong to the context, e.g.
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.dtype">
 <code class="sig-name descname">dtype</code><em class="property">: Optional<span class="p">[</span>torch.dtype<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.dtype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.models.torch.cbo_sac.SACBO.feature_names">
-<code class="sig-name descname">feature_names</code><em class="property">: List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.feature_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.fidelity_features">
@@ -4298,7 +4274,7 @@ the order corresponding to the Xs.</p></li>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.model">
-<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>botorch.models.model.Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.cbo_sac.SACBO.model" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.cbo_sac.SACBO.task_features">
@@ -4405,15 +4381,15 @@ arms in high-D space back to their low-d point on update.</p>
 </dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.rembo.REMBO.Xs">
-<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.Xs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Xs</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.Xs" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.rembo.REMBO.Ys">
-<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.Ys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Ys</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.Ys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.rembo.REMBO.Yvars">
-<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>torch.Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.Yvars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Yvars</code><em class="property">: List<span class="p">[</span>Tensor<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.Yvars" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.rembo.REMBO.best_point">
@@ -4489,10 +4465,6 @@ cov[j, m1, m2] is Cov[m1@j, m2@j].</p></li>
 <dl class="py attribute">
 <dt id="ax.models.torch.rembo.REMBO.dtype">
 <code class="sig-name descname">dtype</code><em class="property">: Optional<span class="p">[</span>torch.dtype<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.dtype" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py attribute">
-<dt id="ax.models.torch.rembo.REMBO.feature_names">
-<code class="sig-name descname">feature_names</code><em class="property">: List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.feature_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.rembo.REMBO.fidelity_features">
@@ -4586,7 +4558,7 @@ multi-fidelity optimization.</p></li>
 <dd></dd></dl>
 <dl class="py attribute">
 <dt id="ax.models.torch.rembo.REMBO.model">
-<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>botorch.models.model.Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">model</code><em class="property">: Optional<span class="p">[</span>Model<span class="p">]</span></em><a class="headerlink" href="#ax.models.torch.rembo.REMBO.model" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <dl class="py method">
 <dt id="ax.models.torch.rembo.REMBO.predict">

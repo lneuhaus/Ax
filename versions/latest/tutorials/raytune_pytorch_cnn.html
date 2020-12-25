@@ -380,7 +380,7 @@ function slice_config_to_trace(
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 12-24 05:32:41] ax.utils.notebook.plotting: Injecting Plotly library into cell. Do not overwrite or delete cell.
+<pre>[INFO 12-25 05:28:08] ax.utils.notebook.plotting: Injecting Plotly library into cell. Do not overwrite or delete cell.
 </pre>
 </div>
 </div>
@@ -488,7 +488,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 12-24 05:32:41] ax.service.ax_client: Starting optimization with verbose logging. To disable logging, set the `verbose_logging` argument to `False`. Note that float values in the logs are rounded to 2 decimal points.
+<pre>[INFO 12-25 05:28:08] ax.service.ax_client: Starting optimization with verbose logging. To disable logging, set the `verbose_logging` argument to `False`. Note that float values in the logs are rounded to 2 decimal points.
 </pre>
 </div>
 </div>
@@ -524,9 +524,9 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 12-24 05:32:41] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter lr. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
-[INFO 12-24 05:32:41] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter momentum. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
-[INFO 12-24 05:32:41] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name='Sobol+GPEI', steps=[Sobol for 5 trials, GPEI for subsequent trials]). Iterations after 5 will take longer to generate due to  model-fitting.
+<pre>[INFO 12-25 05:28:08] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter lr. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
+[INFO 12-25 05:28:08] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter momentum. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
+[INFO 12-25 05:28:08] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name='Sobol+GPEI', steps=[Sobol for 5 trials, GPEI for subsequent trials]). Iterations after 5 will take longer to generate due to  model-fitting.
 </pre>
 </div>
 </div>
@@ -596,360 +596,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-12-24 05:32:41,769	INFO services.py:1092 -- View the Ray dashboard at <span class="ansi-green-intense-fg ansi-bold">http://127.0.0.1:8265</span>
-[INFO 12-24 05:32:42] ax.service.ax_client: Generated new trial 0 with parameters {'lr': 0.1, 'momentum': 0.57}.
-[INFO 12-24 05:32:42] ax.service.ax_client: Generated new trial 1 with parameters {'lr': 0.0, 'momentum': 0.72}.
-[INFO 12-24 05:32:42] ax.service.ax_client: Generated new trial 2 with parameters {'lr': 0.09, 'momentum': 0.22}.
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3712)</span> Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre><span class="ansi-cyan-fg">(pid=3712)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3712)</span> 
-<span class="ansi-cyan-fg">(pid=3712)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3712)</span> 
-0.1%
-5.2%
-59.0%
-60.6%
-100.1%
-<span class="ansi-cyan-fg">(pid=3713)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3713)</span> 
-<span class="ansi-cyan-fg">(pid=3713)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3713)</span> 
-0.1%
-<span class="ansi-cyan-fg">(pid=3712)</span> 2020-12-24 05:32:44,538	ERROR function_runner.py:254 -- Runner Thread raised error.
-<span class="ansi-cyan-fg">(pid=3712)</span> Traceback (most recent call last):
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 248, in run
-<span class="ansi-cyan-fg">(pid=3712)</span>     self._entrypoint()
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 316, in entrypoint
-<span class="ansi-cyan-fg">(pid=3712)</span>     self._status_reporter.get_checkpoint())
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 575, in _trainable_func
-<span class="ansi-cyan-fg">(pid=3712)</span>     output = fn()
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "&lt;ipython-input-5-1cf44b20faf9&gt;", line 3, in train_evaluate
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/home/runner/work/Ax/Ax/ax/utils/tutorials/cnn_utils.py", line 76, in load_mnist
-<span class="ansi-cyan-fg">(pid=3712)</span>     root=data_path, train=True, download=True, transform=transform
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 79, in __init__
-<span class="ansi-cyan-fg">(pid=3712)</span>     self.download()
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 146, in download
-<span class="ansi-cyan-fg">(pid=3712)</span>     download_and_extract_archive(url, download_root=self.raw_folder, filename=filename, md5=md5)
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/utils.py", line 260, in download_and_extract_archive
-<span class="ansi-cyan-fg">(pid=3712)</span>     extract_archive(archive, extract_root, remove_finished)
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/utils.py", line 231, in extract_archive
-<span class="ansi-cyan-fg">(pid=3712)</span>     out_f.write(zip_f.read())
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/gzip.py", line 287, in read
-<span class="ansi-cyan-fg">(pid=3712)</span>     return self._buffer.read(size)
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/gzip.py", line 493, in read
-<span class="ansi-cyan-fg">(pid=3712)</span>     raise EOFError("Compressed file ended before the "
-<span class="ansi-cyan-fg">(pid=3712)</span> EOFError: Compressed file ended before the end-of-stream marker was reached
-<span class="ansi-cyan-fg">(pid=3712)</span> Exception in thread Thread-2:
-<span class="ansi-cyan-fg">(pid=3712)</span> Traceback (most recent call last):
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/threading.py", line 926, in _bootstrap_inner
-<span class="ansi-cyan-fg">(pid=3712)</span>     self.run()
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 267, in run
-<span class="ansi-cyan-fg">(pid=3712)</span>     raise e
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 248, in run
-<span class="ansi-cyan-fg">(pid=3712)</span>     self._entrypoint()
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 316, in entrypoint
-<span class="ansi-cyan-fg">(pid=3712)</span>     self._status_reporter.get_checkpoint())
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 575, in _trainable_func
-<span class="ansi-cyan-fg">(pid=3712)</span>     output = fn()
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "&lt;ipython-input-5-1cf44b20faf9&gt;", line 3, in train_evaluate
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/home/runner/work/Ax/Ax/ax/utils/tutorials/cnn_utils.py", line 76, in load_mnist
-<span class="ansi-cyan-fg">(pid=3712)</span>     root=data_path, train=True, download=True, transform=transform
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 79, in __init__
-<span class="ansi-cyan-fg">(pid=3712)</span>     self.download()
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 146, in download
-<span class="ansi-cyan-fg">(pid=3712)</span>     download_and_extract_archive(url, download_root=self.raw_folder, filename=filename, md5=md5)
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/utils.py", line 260, in download_and_extract_archive
-<span class="ansi-cyan-fg">(pid=3712)</span>     extract_archive(archive, extract_root, remove_finished)
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/utils.py", line 231, in extract_archive
-<span class="ansi-cyan-fg">(pid=3712)</span>     out_f.write(zip_f.read())
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/gzip.py", line 287, in read
-<span class="ansi-cyan-fg">(pid=3712)</span>     return self._buffer.read(size)
-<span class="ansi-cyan-fg">(pid=3712)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/gzip.py", line 493, in read
-<span class="ansi-cyan-fg">(pid=3712)</span>     raise EOFError("Compressed file ended before the "
-<span class="ansi-cyan-fg">(pid=3712)</span> EOFError: Compressed file ended before the end-of-stream marker was reached
-<span class="ansi-cyan-fg">(pid=3712)</span> 
-1.4%
-28.8%
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3713)</span> Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3712)</span> Extracting /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 12-24 05:32:44] ax.service.ax_client: Generated new trial 3 with parameters {'lr': 0.25, 'momentum': 0.2}.
-62.1%
-98.8%
-100.1%
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3713)</span> Extracting /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3713)</span> Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3713)</span> Extracting /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3713)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>113.5%
-5.5%
-100.4%
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3713)</span> Extracting /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3713)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3713)</span> Extracting /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3713)</span> Processing...
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>180.4%
-<span class="ansi-cyan-fg">(pid=3713)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py:480: UserWarning:
-<span class="ansi-cyan-fg">(pid=3713)</span> 
-<span class="ansi-cyan-fg">(pid=3713)</span> The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /pytorch/torch/csrc/utils/tensor_numpy.cpp:141.)
-<span class="ansi-cyan-fg">(pid=3713)</span> 
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3713)</span> Done!
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre><span class="ansi-cyan-fg">(pid=3818)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3818)</span> 
-<span class="ansi-cyan-fg">(pid=3818)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3818)</span> 
-[INFO 12-24 05:32:54] ax.service.ax_client: Completed trial 1 with data: {'mean_accuracy': (0.93, 0.0)}.
-<span class="ansi-cyan-fg">(pid=3713)</span> 2020-12-24 05:32:54,521	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:32:54] ax.service.ax_client: Generated new trial 4 with parameters {'lr': 0.04, 'momentum': 0.51}.
-[INFO 12-24 05:32:55] ax.service.ax_client: Completed trial 2 with data: {'mean_accuracy': (0.1, 0.0)}.
-<span class="ansi-cyan-fg">(pid=3818)</span> 2020-12-24 05:32:55,448	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:32:55] ax.service.ax_client: Generated new trial 5 with parameters {'lr': 0.01, 'momentum': 0.74}.
-<span class="ansi-cyan-fg">(pid=3848)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3848)</span> 
-<span class="ansi-cyan-fg">(pid=3848)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3848)</span> 
-<span class="ansi-cyan-fg">(pid=3868)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3868)</span> 
-<span class="ansi-cyan-fg">(pid=3868)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3868)</span> 
-[INFO 12-24 05:33:05] ax.service.ax_client: Completed trial 3 with data: {'mean_accuracy': (0.1, 0.0)}.
-<span class="ansi-cyan-fg">(pid=3848)</span> 2020-12-24 05:33:05,364	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:06] ax.service.ax_client: Generated new trial 6 with parameters {'lr': 0.0, 'momentum': 0.83}.
-[INFO 12-24 05:33:07] ax.service.ax_client: Completed trial 4 with data: {'mean_accuracy': (0.11, 0.0)}.
-<span class="ansi-cyan-fg">(pid=3868)</span> 2020-12-24 05:33:07,020	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-<span class="ansi-cyan-fg">(pid=3897)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3897)</span> 
-<span class="ansi-cyan-fg">(pid=3897)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3897)</span> 
-[INFO 12-24 05:33:07] ax.service.ax_client: Generated new trial 7 with parameters {'lr': 0.0, 'momentum': 1.0}.
-<span class="ansi-cyan-fg">(pid=3921)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3921)</span> 
-<span class="ansi-cyan-fg">(pid=3921)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3921)</span> 
-<span class="ansi-cyan-fg">(pid=3897)</span> 2020-12-24 05:33:16,610	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:16] ax.service.ax_client: Completed trial 5 with data: {'mean_accuracy': (0.1, 0.0)}.
-[INFO 12-24 05:33:18] ax.service.ax_client: Generated new trial 8 with parameters {'lr': 0.0, 'momentum': 0.48}.
-<span class="ansi-cyan-fg">(pid=3975)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3975)</span> 
-<span class="ansi-cyan-fg">(pid=3975)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3975)</span> 
-[INFO 12-24 05:33:19] ax.service.ax_client: Completed trial 6 with data: {'mean_accuracy': (0.63, 0.0)}.
-<span class="ansi-cyan-fg">(pid=3921)</span> 2020-12-24 05:33:19,652	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:21] ax.service.ax_client: Generated new trial 9 with parameters {'lr': 0.0, 'momentum': 0.77}.
-<span class="ansi-cyan-fg">(pid=3997)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3997)</span> 
-<span class="ansi-cyan-fg">(pid=3997)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3997)</span> 
-<span class="ansi-cyan-fg">(pid=3975)</span> 2020-12-24 05:33:29,093	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:29] ax.service.ax_client: Completed trial 7 with data: {'mean_accuracy': (0.76, 0.0)}.
-[INFO 12-24 05:33:30] ax.service.ax_client: Generated new trial 10 with parameters {'lr': 0.0, 'momentum': 0.33}.
-<span class="ansi-cyan-fg">(pid=4021)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4021)</span> 
-<span class="ansi-cyan-fg">(pid=4021)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4021)</span> 
-<span class="ansi-cyan-fg">(pid=3997)</span> 2020-12-24 05:33:32,637	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:32] ax.service.ax_client: Completed trial 8 with data: {'mean_accuracy': (0.85, 0.0)}.
-[INFO 12-24 05:33:34] ax.service.ax_client: Generated new trial 11 with parameters {'lr': 0.0, 'momentum': 0.63}.
-<span class="ansi-cyan-fg">(pid=4042)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4042)</span> 
-<span class="ansi-cyan-fg">(pid=4042)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4042)</span> 
-<span class="ansi-cyan-fg">(pid=4021)</span> 2020-12-24 05:33:41,578	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:41] ax.service.ax_client: Completed trial 9 with data: {'mean_accuracy': (0.9, 0.0)}.
-2020-12-24 05:33:42,008	WARNING worker.py:1091 -- The actor or task with ID ffffffffffffffffef6d8f9f01000000 is pending and cannot currently be scheduled. It requires {CPU: 1.000000} for execution and {CPU: 1.000000} for placement, but this node only has remaining {node:10.1.0.4: 1.000000}, {object_store_memory: 1.220703 GiB}, {CPU: 1.000000}, {memory: 3.613281 GiB}. In total there are 0 pending tasks and 1 pending actors on this node. This is likely due to all cluster resources being claimed by actors. To resolve the issue, consider creating fewer actors or increase the resources available to this Ray cluster. You can ignore this message if this Ray cluster is expected to auto-scale.
-[INFO 12-24 05:33:42] ax.service.ax_client: Generated new trial 12 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4070)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4070)</span> 
-<span class="ansi-cyan-fg">(pid=4070)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4070)</span> 
-[INFO 12-24 05:33:45] ax.service.ax_client: Completed trial 10 with data: {'mean_accuracy': (0.9, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4042)</span> 2020-12-24 05:33:45,143	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:46] ax.service.ax_client: Generated new trial 13 with parameters {'lr': 0.0, 'momentum': 0.55}.
-<span class="ansi-cyan-fg">(pid=4094)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4094)</span> 
-<span class="ansi-cyan-fg">(pid=4094)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4094)</span> 
-<span class="ansi-cyan-fg">(pid=4070)</span> 2020-12-24 05:33:54,249	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:54] ax.service.ax_client: Completed trial 11 with data: {'mean_accuracy': (0.91, 0.0)}.
-[INFO 12-24 05:33:55] ax.service.ax_client: Generated new trial 14 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4117)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4117)</span> 
-<span class="ansi-cyan-fg">(pid=4117)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4117)</span> 
-[INFO 12-24 05:33:57] ax.service.ax_client: Completed trial 12 with data: {'mean_accuracy': (0.14, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4094)</span> 2020-12-24 05:33:57,228	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:33:58] ax.service.ax_client: Generated new trial 15 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4138)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4138)</span> 
-<span class="ansi-cyan-fg">(pid=4138)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4138)</span> 
-<span class="ansi-cyan-fg">(pid=4117)</span> 2020-12-24 05:34:06,364	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:06] ax.service.ax_client: Completed trial 13 with data: {'mean_accuracy': (0.92, 0.0)}.
-[INFO 12-24 05:34:07] ax.service.ax_client: Generated new trial 16 with parameters {'lr': 0.0, 'momentum': 0.32}.
-<span class="ansi-cyan-fg">(pid=4162)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4162)</span> 
-<span class="ansi-cyan-fg">(pid=4162)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4162)</span> 
-[INFO 12-24 05:34:10] ax.service.ax_client: Completed trial 14 with data: {'mean_accuracy': (0.86, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4138)</span> 2020-12-24 05:34:10,030	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:11] ax.service.ax_client: Generated new trial 17 with parameters {'lr': 0.0, 'momentum': 1.0}.
-<span class="ansi-cyan-fg">(pid=4185)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4185)</span> 
-<span class="ansi-cyan-fg">(pid=4185)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4185)</span> 
-<span class="ansi-cyan-fg">(pid=4162)</span> 2020-12-24 05:34:19,685	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:19] ax.service.ax_client: Completed trial 15 with data: {'mean_accuracy': (0.92, 0.0)}.
-[INFO 12-24 05:34:21] ax.service.ax_client: Generated new trial 18 with parameters {'lr': 0.0, 'momentum': 0.04}.
-<span class="ansi-cyan-fg">(pid=4217)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4217)</span> 
-<span class="ansi-cyan-fg">(pid=4217)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4217)</span> 
-[INFO 12-24 05:34:23] ax.service.ax_client: Completed trial 16 with data: {'mean_accuracy': (0.94, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4185)</span> 2020-12-24 05:34:23,391	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:25] ax.service.ax_client: Generated new trial 19 with parameters {'lr': 0.0, 'momentum': 0.17}.
-<span class="ansi-cyan-fg">(pid=4239)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4239)</span> 
-<span class="ansi-cyan-fg">(pid=4239)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4239)</span> 
-<span class="ansi-cyan-fg">(pid=4217)</span> 2020-12-24 05:34:33,105	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:33] ax.service.ax_client: Completed trial 17 with data: {'mean_accuracy': (0.77, 0.0)}.
-[INFO 12-24 05:34:34] ax.service.ax_client: Generated new trial 20 with parameters {'lr': 0.0, 'momentum': 0.15}.
-<span class="ansi-cyan-fg">(pid=4266)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4266)</span> 
-<span class="ansi-cyan-fg">(pid=4266)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4266)</span> 
-[INFO 12-24 05:34:36] ax.service.ax_client: Completed trial 18 with data: {'mean_accuracy': (0.91, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4239)</span> 2020-12-24 05:34:36,482	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:37] ax.service.ax_client: Generated new trial 21 with parameters {'lr': 0.0, 'momentum': 0.46}.
-<span class="ansi-cyan-fg">(pid=4288)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4288)</span> 
-<span class="ansi-cyan-fg">(pid=4288)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4288)</span> 
-<span class="ansi-cyan-fg">(pid=4266)</span> 2020-12-24 05:34:46,009	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:46] ax.service.ax_client: Completed trial 19 with data: {'mean_accuracy': (0.93, 0.0)}.
-[INFO 12-24 05:34:47] ax.service.ax_client: Generated new trial 22 with parameters {'lr': 0.0, 'momentum': 0.34}.
-<span class="ansi-cyan-fg">(pid=4314)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4314)</span> 
-<span class="ansi-cyan-fg">(pid=4314)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4314)</span> 
-[INFO 12-24 05:34:49] ax.service.ax_client: Completed trial 20 with data: {'mean_accuracy': (0.94, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4288)</span> 2020-12-24 05:34:49,449	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:50] ax.service.ax_client: Generated new trial 23 with parameters {'lr': 0.0, 'momentum': 0.25}.
-<span class="ansi-cyan-fg">(pid=4336)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4336)</span> 
-<span class="ansi-cyan-fg">(pid=4336)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4336)</span> 
-<span class="ansi-cyan-fg">(pid=4314)</span> 2020-12-24 05:34:59,230	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:34:59] ax.service.ax_client: Completed trial 21 with data: {'mean_accuracy': (0.94, 0.0)}.
-[INFO 12-24 05:35:00] ax.service.ax_client: Generated new trial 24 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4359)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4359)</span> 
-<span class="ansi-cyan-fg">(pid=4359)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4359)</span> 
-[INFO 12-24 05:35:02] ax.service.ax_client: Completed trial 22 with data: {'mean_accuracy': (0.93, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4336)</span> 2020-12-24 05:35:02,622	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:03] ax.service.ax_client: Generated new trial 25 with parameters {'lr': 0.0, 'momentum': 0.36}.
-<span class="ansi-cyan-fg">(pid=4389)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4389)</span> 
-<span class="ansi-cyan-fg">(pid=4389)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4389)</span> 
-<span class="ansi-cyan-fg">(pid=4359)</span> 2020-12-24 05:35:12,255	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:12] ax.service.ax_client: Completed trial 23 with data: {'mean_accuracy': (0.95, 0.0)}.
-[INFO 12-24 05:35:13] ax.service.ax_client: Generated new trial 26 with parameters {'lr': 0.0, 'momentum': 0.62}.
-<span class="ansi-cyan-fg">(pid=4414)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4414)</span> 
-<span class="ansi-cyan-fg">(pid=4414)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4414)</span> 
-[INFO 12-24 05:35:15] ax.service.ax_client: Completed trial 24 with data: {'mean_accuracy': (0.95, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4389)</span> 2020-12-24 05:35:15,482	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:16] ax.service.ax_client: Generated new trial 27 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4444)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4444)</span> 
-<span class="ansi-cyan-fg">(pid=4444)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4444)</span> 
-<span class="ansi-cyan-fg">(pid=4414)</span> 2020-12-24 05:35:25,483	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:25] ax.service.ax_client: Completed trial 25 with data: {'mean_accuracy': (0.95, 0.0)}.
-[INFO 12-24 05:35:27] ax.service.ax_client: Generated new trial 28 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4467)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4467)</span> 
-<span class="ansi-cyan-fg">(pid=4467)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4467)</span> 
-[INFO 12-24 05:35:28] ax.service.ax_client: Completed trial 26 with data: {'mean_accuracy': (0.92, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4444)</span> 2020-12-24 05:35:28,275	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:29] ax.service.ax_client: Generated new trial 29 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4489)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4489)</span> 
-<span class="ansi-cyan-fg">(pid=4489)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4489)</span> 
-<span class="ansi-cyan-fg">(pid=4467)</span> 2020-12-24 05:35:38,306	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:38] ax.service.ax_client: Completed trial 27 with data: {'mean_accuracy': (0.97, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4516)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4516)</span> 
-<span class="ansi-cyan-fg">(pid=4516)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4516)</span> 
-<span class="ansi-cyan-fg">(pid=4489)</span> 2020-12-24 05:35:40,808	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:40] ax.service.ax_client: Completed trial 28 with data: {'mean_accuracy': (0.95, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4516)</span> 2020-12-24 05:35:49,081	WARNING __init__.py:20 -- tune.track.log is now deprecated. Use `tune.report` instead. This warning will throw an error in a future version of Ray.
-[INFO 12-24 05:35:49] ax.service.ax_client: Completed trial 29 with data: {'mean_accuracy': (0.96, 0.0)}.
+<pre>2020-12-25 05:28:08,811	INFO services.py:1173 -- View the Ray dashboard at <span class="ansi-green-intense-fg ansi-bold">http://127.0.0.1:8265</span>
 </pre>
 </div>
 </div>
@@ -958,7 +605,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TuneError</span>                                 Traceback (most recent call last)
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
 <span class="ansi-green-fg">&lt;ipython-input-6-9007b87d2ec7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span>     num_samples<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">30</span><span class="ansi-blue-fg">,</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     search_alg<span class="ansi-blue-fg">=</span>AxSearch<span class="ansi-blue-fg">(</span>ax_client<span class="ansi-blue-fg">=</span>ax<span class="ansi-blue-fg">,</span> max_concurrent<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
@@ -966,14 +613,28 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <span class="ansi-green-intense-fg ansi-bold">      6</span>     <span class="ansi-red-fg"># To use GPU, specify: resources_per_trial={"gpu": 1}.</span>
 <span class="ansi-green-intense-fg ansi-bold">      7</span> )
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/tune.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(run_or_experiment, name, metric, mode, stop, time_budget_s, config, resources_per_trial, num_samples, local_dir, search_alg, scheduler, keep_checkpoints_num, checkpoint_score_attr, checkpoint_freq, checkpoint_at_end, verbose, progress_reporter, loggers, log_to_file, trial_name_creator, trial_dirname_creator, sync_config, export_formats, max_failures, fail_fast, restore, server_port, resume, queue_trials, reuse_actors, trial_executor, raise_on_failed_trial, callbacks, ray_auto_init, run_errored_only, global_checkpoint_period, with_server, upload_dir, sync_to_cloud, sync_to_driver, sync_on_checkpoint)</span>
-<span class="ansi-green-intense-fg ansi-bold">    432</span>     <span class="ansi-green-fg">if</span> incomplete_trials<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    433</span>         <span class="ansi-green-fg">if</span> raise_on_failed_trial<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 434</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> TuneError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Trials did not complete"</span><span class="ansi-blue-fg">,</span> incomplete_trials<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    435</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    436</span>             logger<span class="ansi-blue-fg">.</span>error<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Trials did not complete: %s"</span><span class="ansi-blue-fg">,</span> incomplete_trials<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/tune.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(run_or_experiment, name, metric, mode, stop, time_budget_s, config, resources_per_trial, num_samples, local_dir, search_alg, scheduler, keep_checkpoints_num, checkpoint_score_attr, checkpoint_freq, checkpoint_at_end, verbose, progress_reporter, log_to_file, trial_name_creator, trial_dirname_creator, sync_config, export_formats, max_failures, fail_fast, restore, server_port, resume, queue_trials, reuse_actors, trial_executor, raise_on_failed_trial, callbacks, loggers, ray_auto_init, run_errored_only, global_checkpoint_period, with_server, upload_dir, sync_to_cloud, sync_to_driver, sync_on_checkpoint)</span>
+<span class="ansi-green-intense-fg ansi-bold">    360</span>     <span class="ansi-red-fg"># Create syncer callbacks</span>
+<span class="ansi-green-intense-fg ansi-bold">    361</span>     callbacks = create_default_callbacks(
+<span class="ansi-green-fg">--&gt; 362</span><span class="ansi-red-fg">         callbacks, sync_config, metric=metric, loggers=loggers)
+</span><span class="ansi-green-intense-fg ansi-bold">    363</span> 
+<span class="ansi-green-intense-fg ansi-bold">    364</span>     runner = TrialRunner(
 
-<span class="ansi-red-fg">TuneError</span>: ('Trials did not complete', [train_evaluate_71d602ac])</pre>
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/utils/callback.py</span> in <span class="ansi-cyan-fg">create_default_callbacks</span><span class="ansi-blue-fg">(callbacks, sync_config, loggers, metric)</span>
+<span class="ansi-green-intense-fg ansi-bold">    110</span>             last_logger_index <span class="ansi-blue-fg">=</span> len<span class="ansi-blue-fg">(</span>callbacks<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> <span class="ansi-cyan-fg">1</span>
+<span class="ansi-green-intense-fg ansi-bold">    111</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> has_tbx_logger<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 112</span><span class="ansi-red-fg">             </span>callbacks<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>TBXLoggerCallback<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    113</span>             last_logger_index <span class="ansi-blue-fg">=</span> len<span class="ansi-blue-fg">(</span>callbacks<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> <span class="ansi-cyan-fg">1</span>
+<span class="ansi-green-intense-fg ansi-bold">    114</span> 
+
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/logger.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    620</span>     <span class="ansi-green-fg">def</span> __init__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    621</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 622</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">from</span> tensorboardX <span class="ansi-green-fg">import</span> SummaryWriter
+<span class="ansi-green-intense-fg ansi-bold">    623</span>             self<span class="ansi-blue-fg">.</span>_summary_writer_cls <span class="ansi-blue-fg">=</span> SummaryWriter
+<span class="ansi-green-intense-fg ansi-bold">    624</span>         <span class="ansi-green-fg">except</span> ImportError<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'tensorboardX'</pre>
 </div>
 </div>
 </div>
