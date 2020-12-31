@@ -87,6 +87,7 @@ src="/js/documentation_options.js">
 <span class="kn">from</span> <span class="nn">ax.models.torch.botorch_modular.surrogate</span> <span class="kn">import</span> <span class="n">Surrogate</span>
 <span class="kn">from</span> <span class="nn">ax.runners.synthetic</span> <span class="kn">import</span> <span class="n">SyntheticRunner</span>
 <span class="kn">from</span> <span class="nn">ax.utils.common.logger</span> <span class="kn">import</span> <span class="n">get_logger</span>
+<span class="kn">from</span> <span class="nn">ax.utils.common.typeutils</span> <span class="kn">import</span> <span class="n">checked_cast</span><span class="p">,</span> <span class="n">not_none</span>
 <span class="kn">from</span> <span class="nn">ax.utils.measurement.synthetic_functions</span> <span class="kn">import</span> <span class="n">branin</span>
 <span class="kn">from</span> <span class="nn">botorch.acquisition.acquisition</span> <span class="kn">import</span> <span class="n">AcquisitionFunction</span>
 <span class="kn">from</span> <span class="nn">botorch.acquisition.monte_carlo</span> <span class="kn">import</span> <span class="n">qExpectedImprovement</span>
@@ -119,10 +120,12 @@ src="/js/documentation_options.js">
 <div class="viewcode-block" id="get_branin_experiment"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_experiment">[docs]</a><span class="k">def</span> <span class="nf">get_branin_experiment</span><span class="p">(</span>
     <span class="n">has_optimization_config</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">with_batch</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">with_trial</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">with_status_quo</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">with_fidelity_parameter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">with_choice_parameter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">search_space</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SearchSpace</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">minimize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Experiment</span><span class="p">:</span>
     <span class="n">search_space</span> <span class="o">=</span> <span class="n">search_space</span> <span class="ow">or</span> <span class="n">get_branin_search_space</span><span class="p">(</span>
         <span class="n">with_fidelity_parameter</span><span class="o">=</span><span class="n">with_fidelity_parameter</span><span class="p">,</span>
@@ -131,7 +134,7 @@ src="/js/documentation_options.js">
     <span class="n">exp</span> <span class="o">=</span> <span class="n">Experiment</span><span class="p">(</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">"branin_test_experiment"</span><span class="p">,</span>
         <span class="n">search_space</span><span class="o">=</span><span class="n">search_space</span><span class="p">,</span>
-        <span class="n">optimization_config</span><span class="o">=</span><span class="n">get_branin_optimization_config</span><span class="p">()</span>
+        <span class="n">optimization_config</span><span class="o">=</span><span class="n">get_branin_optimization_config</span><span class="p">(</span><span class="n">minimize</span><span class="o">=</span><span class="n">minimize</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">has_optimization_config</span>
         <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">runner</span><span class="o">=</span><span class="n">SyntheticRunner</span><span class="p">(),</span>
@@ -147,6 +150,11 @@ src="/js/documentation_options.js">
         <span class="n">exp</span><span class="o">.</span><span class="n">new_batch_trial</span><span class="p">(</span><span class="n">optimize_for_power</span><span class="o">=</span><span class="n">with_status_quo</span><span class="p">)</span><span class="o">.</span><span class="n">add_generator_run</span><span class="p">(</span>
             <span class="n">sobol_run</span>
         <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">with_trial</span><span class="p">:</span>
+        <span class="n">sobol_generator</span> <span class="o">=</span> <span class="n">get_sobol</span><span class="p">(</span><span class="n">search_space</span><span class="o">=</span><span class="n">exp</span><span class="o">.</span><span class="n">search_space</span><span class="p">)</span>
+        <span class="n">sobol_run</span> <span class="o">=</span> <span class="n">sobol_generator</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">exp</span><span class="o">.</span><span class="n">new_trial</span><span class="p">(</span><span class="n">generator_run</span><span class="o">=</span><span class="n">sobol_run</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">exp</span></div>
 
@@ -704,8 +712,8 @@ src="/js/documentation_options.js">
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="get_branin_objective"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_objective">[docs]</a><span class="k">def</span> <span class="nf">get_branin_objective</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Objective</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">Objective</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">get_branin_metric</span><span class="p">(),</span> <span class="n">minimize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+<div class="viewcode-block" id="get_branin_objective"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_objective">[docs]</a><span class="k">def</span> <span class="nf">get_branin_objective</span><span class="p">(</span><span class="n">minimize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Objective</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">Objective</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">get_branin_metric</span><span class="p">(),</span> <span class="n">minimize</span><span class="o">=</span><span class="n">minimize</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="get_branin_multi_objective"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_multi_objective">[docs]</a><span class="k">def</span> <span class="nf">get_branin_multi_objective</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Objective</span><span class="p">:</span>
@@ -758,8 +766,8 @@ src="/js/documentation_options.js">
     <span class="k">return</span> <span class="n">OptimizationConfig</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="n">Objective</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">Metric</span><span class="p">(</span><span class="s2">"test_metric"</span><span class="p">)))</span></div>
 
 
-<div class="viewcode-block" id="get_branin_optimization_config"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_optimization_config">[docs]</a><span class="k">def</span> <span class="nf">get_branin_optimization_config</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">OptimizationConfig</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">OptimizationConfig</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="n">get_branin_objective</span><span class="p">())</span></div>
+<div class="viewcode-block" id="get_branin_optimization_config"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_optimization_config">[docs]</a><span class="k">def</span> <span class="nf">get_branin_optimization_config</span><span class="p">(</span><span class="n">minimize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OptimizationConfig</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">OptimizationConfig</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="n">get_branin_objective</span><span class="p">(</span><span class="n">minimize</span><span class="o">=</span><span class="n">minimize</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="get_branin_multi_objective_optimization_config"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_multi_objective_optimization_config">[docs]</a><span class="k">def</span> <span class="nf">get_branin_multi_objective_optimization_config</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">OptimizationConfig</span><span class="p">:</span>
@@ -915,17 +923,37 @@ src="/js/documentation_options.js">
     <span class="k">return</span> <span class="n">Data</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">df_dict</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="get_branin_data"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_data">[docs]</a><span class="k">def</span> <span class="nf">get_branin_data</span><span class="p">(</span><span class="n">trial_indices</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span><span class="p">:</span>
-    <span class="n">df_dicts</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"trial_index"</span><span class="p">:</span> <span class="n">trial_index</span><span class="p">,</span>
-            <span class="s2">"metric_name"</span><span class="p">:</span> <span class="s2">"branin"</span><span class="p">,</span>
-            <span class="s2">"arm_name"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">trial_index</span><span class="si">}</span><span class="s2">_0"</span><span class="p">,</span>
-            <span class="s2">"mean"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
-            <span class="s2">"sem"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-        <span class="p">}</span>
-        <span class="k">for</span> <span class="n">trial_index</span> <span class="ow">in</span> <span class="p">(</span><span class="n">trial_indices</span> <span class="ow">or</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="p">]</span>
+<div class="viewcode-block" id="get_branin_data"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_branin_data">[docs]</a><span class="k">def</span> <span class="nf">get_branin_data</span><span class="p">(</span>
+    <span class="n">trial_indices</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">trials</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">Trial</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">trial_indices</span> <span class="ow">and</span> <span class="n">trials</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Expected `trial_indices` or `trials`, not both."</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">trials</span><span class="p">:</span>
+        <span class="n">df_dicts</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"trial_index"</span><span class="p">:</span> <span class="n">trial</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                <span class="s2">"metric_name"</span><span class="p">:</span> <span class="s2">"branin"</span><span class="p">,</span>
+                <span class="s2">"arm_name"</span><span class="p">:</span> <span class="n">not_none</span><span class="p">(</span><span class="n">checked_cast</span><span class="p">(</span><span class="n">Trial</span><span class="p">,</span> <span class="n">trial</span><span class="p">)</span><span class="o">.</span><span class="n">arm</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="s2">"mean"</span><span class="p">:</span> <span class="n">branin</span><span class="p">(</span>
+                    <span class="nb">float</span><span class="p">(</span><span class="n">not_none</span><span class="p">(</span><span class="n">trial</span><span class="o">.</span><span class="n">arm</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s2">"x1"</span><span class="p">]),</span>  <span class="c1"># pyre-ignore[6]</span>
+                    <span class="nb">float</span><span class="p">(</span><span class="n">not_none</span><span class="p">(</span><span class="n">trial</span><span class="o">.</span><span class="n">arm</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">[</span><span class="s2">"x2"</span><span class="p">]),</span>  <span class="c1"># pyre-ignore[6]</span>
+                <span class="p">),</span>
+                <span class="s2">"sem"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="n">trials</span>
+        <span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df_dicts</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"trial_index"</span><span class="p">:</span> <span class="n">trial_index</span><span class="p">,</span>
+                <span class="s2">"metric_name"</span><span class="p">:</span> <span class="s2">"branin"</span><span class="p">,</span>
+                <span class="s2">"arm_name"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">trial_index</span><span class="si">}</span><span class="s2">_0"</span><span class="p">,</span>
+                <span class="s2">"mean"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+                <span class="s2">"sem"</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">trial_index</span> <span class="ow">in</span> <span class="p">(</span><span class="n">trial_indices</span> <span class="ow">or</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="p">]</span>
     <span class="k">return</span> <span class="n">Data</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">df_dicts</span><span class="p">))</span></div>
 
 

@@ -183,15 +183,12 @@ src="/js/documentation_options.js">
         <span class="k">if</span> <span class="n">overriden_X_baseline</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">X_baseline</span> <span class="o">=</span> <span class="n">overriden_X_baseline</span>
             <span class="n">model_deps</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">X_BASELINE</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">acqf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_botorch_acqf_class</span><span class="p">(</span>  <span class="c1"># pyre-ignore[28]: Some kwargs are</span>
-            <span class="c1"># not expected in base `AcquisitionFunction` but are expected in</span>
-            <span class="c1"># its subclasses.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_instantiate_acqf</span><span class="p">(</span>
             <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
             <span class="n">objective</span><span class="o">=</span><span class="n">objective</span><span class="p">,</span>
+            <span class="n">model_dependent_kwargs</span><span class="o">=</span><span class="n">model_deps</span><span class="p">,</span>
             <span class="n">X_pending</span><span class="o">=</span><span class="n">X_pending</span><span class="p">,</span>
             <span class="n">X_baseline</span><span class="o">=</span><span class="n">X_baseline</span><span class="p">,</span>
-            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">,</span>
-            <span class="o">**</span><span class="n">model_deps</span><span class="p">,</span>
         <span class="p">)</span>
 
 <div class="viewcode-block" id="Acquisition.optimize"><a class="viewcode-back" href="../../../../../models.html#ax.models.torch.botorch_modular.acquisition.Acquisition.optimize">[docs]</a>    <span class="k">def</span> <span class="nf">optimize</span><span class="p">(</span>
@@ -323,6 +320,25 @@ src="/js/documentation_options.js">
             <span class="p">),</span>
             <span class="n">outcome_constraints</span><span class="o">=</span><span class="n">outcome_constraints</span><span class="p">,</span>
             <span class="n">X_observed</span><span class="o">=</span><span class="n">X_observed</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_instantiate_acqf</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">:</span> <span class="n">Model</span><span class="p">,</span>
+        <span class="n">objective</span><span class="p">:</span> <span class="n">AcquisitionObjective</span><span class="p">,</span>
+        <span class="n">model_dependent_kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="n">X_pending</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">X_baseline</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">acqf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_botorch_acqf_class</span><span class="p">(</span>  <span class="c1"># pyre-ignore[28]: Some kwargs are</span>
+            <span class="c1"># not expected in base `AcquisitionFunction` but are expected in</span>
+            <span class="c1"># its subclasses.</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">objective</span><span class="o">=</span><span class="n">objective</span><span class="p">,</span>
+            <span class="n">X_pending</span><span class="o">=</span><span class="n">X_pending</span><span class="p">,</span>
+            <span class="n">X_baseline</span><span class="o">=</span><span class="n">X_baseline</span><span class="p">,</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">model_dependent_kwargs</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="nd">@classmethod</span>
