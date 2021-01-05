@@ -380,7 +380,7 @@ function slice_config_to_trace(
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 01-04 05:38:01] ax.utils.notebook.plotting: Injecting Plotly library into cell. Do not overwrite or delete cell.
+<pre>[INFO 01-04 23:44:15] ax.utils.notebook.plotting: Injecting Plotly library into cell. Do not overwrite or delete cell.
 </pre>
 </div>
 </div>
@@ -488,7 +488,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 01-04 05:38:01] ax.service.ax_client: Starting optimization with verbose logging. To disable logging, set the `verbose_logging` argument to `False`. Note that float values in the logs are rounded to 2 decimal points.
+<pre>[INFO 01-04 23:44:15] ax.service.ax_client: Starting optimization with verbose logging. To disable logging, set the `verbose_logging` argument to `False`. Note that float values in the logs are rounded to 2 decimal points.
 </pre>
 </div>
 </div>
@@ -524,9 +524,9 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 01-04 05:38:01] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter lr. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
-[INFO 01-04 05:38:01] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter momentum. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
-[INFO 01-04 05:38:01] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name='Sobol+GPEI', steps=[Sobol for 5 trials, GPEI for subsequent trials]). Iterations after 5 will take longer to generate due to  model-fitting.
+<pre>[INFO 01-04 23:44:15] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter lr. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
+[INFO 01-04 23:44:15] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter momentum. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
+[INFO 01-04 23:44:15] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name='Sobol+GPEI', steps=[Sobol for 5 trials, GPEI for subsequent trials]). Iterations after 5 will take longer to generate due to  model-fitting.
 </pre>
 </div>
 </div>
@@ -596,7 +596,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-01-04 05:38:01,741	INFO services.py:1173 -- View the Ray dashboard at <span class="ansi-green-intense-fg ansi-bold">http://127.0.0.1:8265</span>
+<pre>2021-01-04 23:44:16,290	INFO services.py:1173 -- View the Ray dashboard at <span class="ansi-green-intense-fg ansi-bold">http://127.0.0.1:8265</span>
 </pre>
 </div>
 </div>
@@ -605,7 +605,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
 <span class="ansi-green-fg">&lt;ipython-input-6-9007b87d2ec7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span>     num_samples<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">30</span><span class="ansi-blue-fg">,</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     search_alg<span class="ansi-blue-fg">=</span>AxSearch<span class="ansi-blue-fg">(</span>ax_client<span class="ansi-blue-fg">=</span>ax<span class="ansi-blue-fg">,</span> max_concurrent<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
@@ -614,27 +614,55 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <span class="ansi-green-intense-fg ansi-bold">      7</span> )
 
 <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/tune.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(run_or_experiment, name, metric, mode, stop, time_budget_s, config, resources_per_trial, num_samples, local_dir, search_alg, scheduler, keep_checkpoints_num, checkpoint_score_attr, checkpoint_freq, checkpoint_at_end, verbose, progress_reporter, log_to_file, trial_name_creator, trial_dirname_creator, sync_config, export_formats, max_failures, fail_fast, restore, server_port, resume, queue_trials, reuse_actors, trial_executor, raise_on_failed_trial, callbacks, loggers, ray_auto_init, run_errored_only, global_checkpoint_period, with_server, upload_dir, sync_to_cloud, sync_to_driver, sync_on_checkpoint)</span>
-<span class="ansi-green-intense-fg ansi-bold">    360</span>     <span class="ansi-red-fg"># Create syncer callbacks</span>
-<span class="ansi-green-intense-fg ansi-bold">    361</span>     callbacks = create_default_callbacks(
-<span class="ansi-green-fg">--&gt; 362</span><span class="ansi-red-fg">         callbacks, sync_config, metric=metric, loggers=loggers)
-</span><span class="ansi-green-intense-fg ansi-bold">    363</span> 
-<span class="ansi-green-intense-fg ansi-bold">    364</span>     runner = TrialRunner(
+<span class="ansi-green-intense-fg ansi-bold">    417</span>     tune_start <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    418</span>     <span class="ansi-green-fg">while</span> <span class="ansi-green-fg">not</span> runner<span class="ansi-blue-fg">.</span>is_finished<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 419</span><span class="ansi-red-fg">         </span>runner<span class="ansi-blue-fg">.</span>step<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    420</span>         <span class="ansi-green-fg">if</span> has_verbosity<span class="ansi-blue-fg">(</span>Verbosity<span class="ansi-blue-fg">.</span>V1_EXPERIMENT<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    421</span>             _report_progress<span class="ansi-blue-fg">(</span>runner<span class="ansi-blue-fg">,</span> progress_reporter<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/utils/callback.py</span> in <span class="ansi-cyan-fg">create_default_callbacks</span><span class="ansi-blue-fg">(callbacks, sync_config, loggers, metric)</span>
-<span class="ansi-green-intense-fg ansi-bold">    110</span>             last_logger_index <span class="ansi-blue-fg">=</span> len<span class="ansi-blue-fg">(</span>callbacks<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-intense-fg ansi-bold">    111</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> has_tbx_logger<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 112</span><span class="ansi-red-fg">             </span>callbacks<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>TBXLoggerCallback<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    113</span>             last_logger_index <span class="ansi-blue-fg">=</span> len<span class="ansi-blue-fg">(</span>callbacks<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> <span class="ansi-cyan-fg">1</span>
-<span class="ansi-green-intense-fg ansi-bold">    114</span> 
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/trial_runner.py</span> in <span class="ansi-cyan-fg">step</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    349</span>             self._callbacks.on_step_begin(
+<span class="ansi-green-intense-fg ansi-bold">    350</span>                 iteration=self._iteration, trials=self._trials)
+<span class="ansi-green-fg">--&gt; 351</span><span class="ansi-red-fg">         </span>next_trial <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_get_next_trial<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># blocking</span>
+<span class="ansi-green-intense-fg ansi-bold">    352</span>         <span class="ansi-green-fg">if</span> next_trial <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    353</span>             <span class="ansi-green-fg">with</span> warn_if_slow<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"start_trial"</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/logger.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    620</span>     <span class="ansi-green-fg">def</span> __init__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    621</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 622</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">from</span> tensorboardX <span class="ansi-green-fg">import</span> SummaryWriter
-<span class="ansi-green-intense-fg ansi-bold">    623</span>             self<span class="ansi-blue-fg">.</span>_summary_writer_cls <span class="ansi-blue-fg">=</span> SummaryWriter
-<span class="ansi-green-intense-fg ansi-bold">    624</span>         <span class="ansi-green-fg">except</span> ImportError<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/trial_runner.py</span> in <span class="ansi-cyan-fg">_get_next_trial</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    447</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> any<span class="ansi-blue-fg">(</span>trial<span class="ansi-blue-fg">.</span>status <span class="ansi-blue-fg">==</span> Trial<span class="ansi-blue-fg">.</span>PENDING <span class="ansi-green-fg">for</span> trial <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>_trials<span class="ansi-blue-fg">)</span><span class="ansi-red-fg"> </span><span class="ansi-red-fg">\</span>
+<span class="ansi-green-intense-fg ansi-bold">    448</span>                 <span class="ansi-green-fg">or</span> wait_for_trial<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 449</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>_update_trial_queue<span class="ansi-blue-fg">(</span>blocking<span class="ansi-blue-fg">=</span>wait_for_trial<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    450</span>         <span class="ansi-green-fg">with</span> warn_if_slow<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"choose_trial_to_run"</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    451</span>             trial <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_scheduler_alg<span class="ansi-blue-fg">.</span>choose_trial_to_run<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'tensorboardX'</pre>
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/trial_runner.py</span> in <span class="ansi-cyan-fg">_update_trial_queue</span><span class="ansi-blue-fg">(self, blocking, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    832</span>             timeout <span class="ansi-blue-fg">(</span>int<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span> Seconds before blocking times out<span class="ansi-blue-fg">.</span>
+<span class="ansi-green-intense-fg ansi-bold">    833</span>         """
+<span class="ansi-green-fg">--&gt; 834</span><span class="ansi-red-fg">         </span>trial <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_search_alg<span class="ansi-blue-fg">.</span>next_trial<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    835</span>         <span class="ansi-green-fg">if</span> blocking <span class="ansi-green-fg">and</span> <span class="ansi-green-fg">not</span> trial<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    836</span>             start <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/suggest/search_generator.py</span> in <span class="ansi-cyan-fg">next_trial</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    112</span>         <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> self<span class="ansi-blue-fg">.</span>is_finished<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    113</span>             return self.create_trial_if_possible(self._experiment.spec,
+<span class="ansi-green-fg">--&gt; 114</span><span class="ansi-red-fg">                                                  self._experiment.dir_name)
+</span><span class="ansi-green-intense-fg ansi-bold">    115</span>         <span class="ansi-green-fg">return</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">    116</span> 
+
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/suggest/search_generator.py</span> in <span class="ansi-cyan-fg">create_trial_if_possible</span><span class="ansi-blue-fg">(self, experiment_spec, output_path)</span>
+<span class="ansi-green-intense-fg ansi-bold">    119</span>         logger<span class="ansi-blue-fg">.</span>debug<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"creating trial"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    120</span>         trial_id <span class="ansi-blue-fg">=</span> Trial<span class="ansi-blue-fg">.</span>generate_id<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 121</span><span class="ansi-red-fg">         </span>suggested_config <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>searcher<span class="ansi-blue-fg">.</span>suggest<span class="ansi-blue-fg">(</span>trial_id<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    122</span>         <span class="ansi-green-fg">if</span> suggested_config <span class="ansi-blue-fg">==</span> Searcher<span class="ansi-blue-fg">.</span>FINISHED<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    123</span>             self<span class="ansi-blue-fg">.</span>_finished <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span>
+
+<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/suggest/ax.py</span> in <span class="ansi-cyan-fg">suggest</span><span class="ansi-blue-fg">(self, trial_id)</span>
+<span class="ansi-green-intense-fg ansi-bold">    222</span>                     cls<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>__class__<span class="ansi-blue-fg">.</span>__name__<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    223</span>                     metric<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>_metric<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">--&gt; 224</span><span class="ansi-red-fg">                     mode=self._mode))
+</span><span class="ansi-green-intense-fg ansi-bold">    225</span> 
+<span class="ansi-green-intense-fg ansi-bold">    226</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>max_concurrent<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">RuntimeError</span>: Trying to sample a configuration from AxSearch, but the `metric` (None) or `mode` (None) parameters have not been set. Either pass these arguments when instantiating the search algorithm, or pass them to `tune.run()`.</pre>
 </div>
 </div>
 </div>

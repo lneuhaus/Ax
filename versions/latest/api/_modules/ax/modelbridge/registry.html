@@ -226,34 +226,10 @@ src="/js/documentation_options.js">
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="Models"><a class="viewcode-back" href="../../../modelbridge.html#ax.Models">[docs]</a><span class="k">class</span> <span class="nc">Models</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-    <span class="sd">"""Registry of available models.</span>
-
-<span class="sd">    Uses MODEL_KEY_TO_MODEL_SETUP to retrieve settings for model and model bridge,</span>
-<span class="sd">    by the key stored in the enum value.</span>
-
-<span class="sd">    To instantiate a model in this enum, simply call an enum member like so:</span>
-<span class="sd">    `Models.SOBOL(search_space=search_space)` or</span>
-<span class="sd">    `Models.GPEI(experiment=experiment, data=data)`. Keyword arguments</span>
-<span class="sd">    specified to the call will be passed into the model or the model bridge</span>
-<span class="sd">    constructors according to their keyword.</span>
-
-<span class="sd">    For instance, `Models.SOBOL(search_space=search_space, scramble=False)`</span>
-<span class="sd">    will instantiate a `RandomModelBridge(search_space=search_space)`</span>
-<span class="sd">    with a `SobolGenerator(scramble=False)` underlying model.</span>
+<div class="viewcode-block" id="ModelRegistryBase"><a class="viewcode-back" href="../../../modelbridge.html#ax.ModelRegistryBase">[docs]</a><span class="k">class</span> <span class="nc">ModelRegistryBase</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="sd">"""Base enum that provides instrumentation of `__call__` on enum values,</span>
+<span class="sd">    for enums that link their values to `ModelSetup`-s like `Models`.</span>
 <span class="sd">    """</span>
-
-    <span class="n">SOBOL</span> <span class="o">=</span> <span class="s2">"Sobol"</span>
-    <span class="n">GPEI</span> <span class="o">=</span> <span class="s2">"GPEI"</span>
-    <span class="n">GPKG</span> <span class="o">=</span> <span class="s2">"GPKG"</span>
-    <span class="n">GPMES</span> <span class="o">=</span> <span class="s2">"GPMES"</span>
-    <span class="n">FACTORIAL</span> <span class="o">=</span> <span class="s2">"Factorial"</span>
-    <span class="n">THOMPSON</span> <span class="o">=</span> <span class="s2">"Thompson"</span>
-    <span class="n">BOTORCH</span> <span class="o">=</span> <span class="s2">"BO"</span>
-    <span class="n">BOTORCH_MODULAR</span> <span class="o">=</span> <span class="s2">"BoTorch"</span>
-    <span class="n">EMPIRICAL_BAYES_THOMPSON</span> <span class="o">=</span> <span class="s2">"EB"</span>
-    <span class="n">UNIFORM</span> <span class="o">=</span> <span class="s2">"Uniform"</span>
-    <span class="n">MOO</span> <span class="o">=</span> <span class="s2">"MOO"</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">model_class</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">Model</span><span class="p">]:</span>
@@ -330,7 +306,7 @@ src="/js/documentation_options.js">
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">model_bridge</span>
 
-<div class="viewcode-block" id="Models.view_defaults"><a class="viewcode-back" href="../../../modelbridge.html#ax.Models.view_defaults">[docs]</a>    <span class="k">def</span> <span class="nf">view_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<div class="viewcode-block" id="ModelRegistryBase.view_defaults"><a class="viewcode-back" href="../../../modelbridge.html#ax.ModelRegistryBase.view_defaults">[docs]</a>    <span class="k">def</span> <span class="nf">view_defaults</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
         <span class="sd">"""Obtains the default keyword arguments for the model and the modelbridge</span>
 <span class="sd">        specified through the Models enum, for ease of use in notebook environment,</span>
 <span class="sd">        since models and bridges cannot be inspected directly through the enum.</span>
@@ -344,7 +320,7 @@ src="/js/documentation_options.js">
             <span class="bp">self</span><span class="o">.</span><span class="n">_get_bridge_kwargs</span><span class="p">(</span><span class="n">info</span><span class="o">=</span><span class="n">model_setup_info</span><span class="p">),</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="Models.view_kwargs"><a class="viewcode-back" href="../../../modelbridge.html#ax.Models.view_kwargs">[docs]</a>    <span class="k">def</span> <span class="nf">view_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<div class="viewcode-block" id="ModelRegistryBase.view_kwargs"><a class="viewcode-back" href="../../../modelbridge.html#ax.ModelRegistryBase.view_kwargs">[docs]</a>    <span class="k">def</span> <span class="nf">view_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
         <span class="sd">"""Obtains annotated keyword arguments that the model and the modelbridge</span>
 <span class="sd">        (corresponding to a given member of the Models enum) constructors expect.</span>
 
@@ -384,11 +360,41 @@ src="/js/documentation_options.js">
         <span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="Models"><a class="viewcode-back" href="../../../modelbridge.html#ax.Models">[docs]</a><span class="k">class</span> <span class="nc">Models</span><span class="p">(</span><span class="n">ModelRegistryBase</span><span class="p">):</span>
+    <span class="sd">"""Registry of available models.</span>
+
+<span class="sd">    Uses MODEL_KEY_TO_MODEL_SETUP to retrieve settings for model and model bridge,</span>
+<span class="sd">    by the key stored in the enum value.</span>
+
+<span class="sd">    To instantiate a model in this enum, simply call an enum member like so:</span>
+<span class="sd">    `Models.SOBOL(search_space=search_space)` or</span>
+<span class="sd">    `Models.GPEI(experiment=experiment, data=data)`. Keyword arguments</span>
+<span class="sd">    specified to the call will be passed into the model or the model bridge</span>
+<span class="sd">    constructors according to their keyword.</span>
+
+<span class="sd">    For instance, `Models.SOBOL(search_space=search_space, scramble=False)`</span>
+<span class="sd">    will instantiate a `RandomModelBridge(search_space=search_space)`</span>
+<span class="sd">    with a `SobolGenerator(scramble=False)` underlying model.</span>
+<span class="sd">    """</span>
+
+    <span class="n">SOBOL</span> <span class="o">=</span> <span class="s2">"Sobol"</span>
+    <span class="n">GPEI</span> <span class="o">=</span> <span class="s2">"GPEI"</span>
+    <span class="n">GPKG</span> <span class="o">=</span> <span class="s2">"GPKG"</span>
+    <span class="n">GPMES</span> <span class="o">=</span> <span class="s2">"GPMES"</span>
+    <span class="n">FACTORIAL</span> <span class="o">=</span> <span class="s2">"Factorial"</span>
+    <span class="n">THOMPSON</span> <span class="o">=</span> <span class="s2">"Thompson"</span>
+    <span class="n">BOTORCH</span> <span class="o">=</span> <span class="s2">"BO"</span>
+    <span class="n">BOTORCH_MODULAR</span> <span class="o">=</span> <span class="s2">"BoTorch"</span>
+    <span class="n">EMPIRICAL_BAYES_THOMPSON</span> <span class="o">=</span> <span class="s2">"EB"</span>
+    <span class="n">UNIFORM</span> <span class="o">=</span> <span class="s2">"Uniform"</span>
+    <span class="n">MOO</span> <span class="o">=</span> <span class="s2">"MOO"</span></div>
+
+
 <div class="viewcode-block" id="get_model_from_generator_run"><a class="viewcode-back" href="../../../modelbridge.html#ax.get_model_from_generator_run">[docs]</a><span class="k">def</span> <span class="nf">get_model_from_generator_run</span><span class="p">(</span>
     <span class="n">generator_run</span><span class="p">:</span> <span class="n">GeneratorRun</span><span class="p">,</span>
     <span class="n">experiment</span><span class="p">:</span> <span class="n">Experiment</span><span class="p">,</span>
     <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="p">,</span>
-    <span class="n">models_enum</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">Models</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">models_enum</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">ModelRegistryBase</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">after_gen</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelBridge</span><span class="p">:</span>
     <span class="sd">"""Reinstantiate a model from model key and kwargs stored on a given generator</span>

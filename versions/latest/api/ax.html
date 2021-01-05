@@ -1010,39 +1010,6 @@ constructors according to their keyword.</p>
 <p>For instance, <cite>Models.SOBOL(search_space=search_space, scramble=False)</cite>
 will instantiate a <cite>RandomModelBridge(search_space=search_space)</cite>
 with a <cite>SobolGenerator(scramble=False)</cite> underlying model.</p>
-<dl class="py method">
-<dt>
-<em class="property">property </em><code class="sig-name descname">model_bridge_class</code></dt>
-<dd><p>Type of <cite>ModelBridge</cite> used for the given model+bridge setup.</p>
-</dd></dl>
-<dl class="py method">
-<dt>
-<em class="property">property </em><code class="sig-name descname">model_class</code></dt>
-<dd><p>Type of <cite>Model</cite> used for the given model+bridge setup.</p>
-</dd></dl>
-<dl class="py method">
-<dt>
-<code class="sig-name descname">view_defaults</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → Tuple<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/registry.html#Models.view_defaults"><span class="viewcode-link">[source]</span></a></dt>
-<dd><p>Obtains the default keyword arguments for the model and the modelbridge
-specified through the Models enum, for ease of use in notebook environment,
-since models and bridges cannot be inspected directly through the enum.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A tuple of default keyword arguments for the model and the model bridge.</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt>
-<code class="sig-name descname">view_kwargs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> → Tuple<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">, </span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/ax/modelbridge/registry.html#Models.view_kwargs"><span class="viewcode-link">[source]</span></a></dt>
-<dd><p>Obtains annotated keyword arguments that the model and the modelbridge
-(corresponding to a given member of the Models enum) constructors expect.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A tuple of annotated keyword arguments for the model and the model bridge.</p>
-</dd>
-</dl>
-</dd></dl>
 </dd></dl>
 <dl class="py class">
 <dt>

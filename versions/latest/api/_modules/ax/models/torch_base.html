@@ -239,7 +239,6 @@ src="/js/documentation_options.js">
         <span class="n">feature_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">metric_names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
         <span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
-        <span class="n">target_fidelities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">TCandidateMetadata</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">"""Update the model.</span>
@@ -261,8 +260,6 @@ src="/js/documentation_options.js">
 <span class="sd">            metric_names: Names of each outcome Y in Ys.</span>
 <span class="sd">            fidelity_features: Columns of X that should be treated as fidelity</span>
 <span class="sd">                parameters.</span>
-<span class="sd">            target_fidelities: Target values for fidelity parameters, representing</span>
-<span class="sd">                full-fidelity value.</span>
 <span class="sd">            candidate_metadata: Model-produced metadata for candidates, in</span>
 <span class="sd">                the order corresponding to the Xs.</span>
 <span class="sd">        """</span>
