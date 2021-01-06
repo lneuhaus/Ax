@@ -3191,9 +3191,11 @@ for example).</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>training</em>) – BoTorch <cite>TrainingData</cite> container with Xs, Ys, and
-possibly Yvars, to be passed to <cite>Model.construct_inputs</cite> in
-BoTorch.</p></li>
+<li><p><strong>data</strong> (<em>training</em>) – List of BoTorch <cite>TrainingData</cite> container (with Xs,
+Ys, and possibly Yvars), one per outcome, in order corresponding
+to the order of outcome names in <cite>metric_names</cite>. Each <cite>TrainingData</cite>
+from this list will be passed to <cite>Model.construct_inputs</cite> method
+of the corresponding submodel in <cite>ModelListGP</cite>.</p></li>
 <li><p><strong>bounds</strong> – A list of d (lower, upper) tuples for each column of X.</p></li>
 <li><p><strong>task_features</strong> – Columns of X that take integer values and should be
 treated as task parameters.</p></li>
