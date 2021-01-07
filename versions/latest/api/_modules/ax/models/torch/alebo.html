@@ -684,7 +684,7 @@ src="/js/documentation_options.js">
                 <span class="s2">"B"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span>
             <span class="p">},</span>
         <span class="p">}</span>
-        <span class="n">Xd_opt</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">_gen_metadata</span><span class="p">,</span> <span class="n">_candidate_metadata</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span>
+        <span class="n">Xd_opt</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">gen_metadata</span><span class="p">,</span> <span class="n">candidate_metadata</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span>
             <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span>
             <span class="n">bounds</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mf">1e8</span><span class="p">,</span> <span class="mf">1e8</span><span class="p">)]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
             <span class="n">objective_weights</span><span class="o">=</span><span class="n">objective_weights</span><span class="p">,</span>
@@ -702,7 +702,7 @@ src="/js/documentation_options.js">
         <span class="c1"># pyre-fixme[7]: Expected `Tuple[Tensor, Tensor, Dict[str, typing.Any],</span>
         <span class="c1">#  List[Optional[Dict[str, typing.Any]]]]` but got `Tuple[typing.Any, Tensor,</span>
         <span class="c1">#  Dict[str, typing.Any], None]`.</span>
-        <span class="k">return</span> <span class="n">Xopt</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="p">{},</span> <span class="kc">None</span></div>
+        <span class="k">return</span> <span class="n">Xopt</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">gen_metadata</span><span class="p">,</span> <span class="n">candidate_metadata</span></div>
 
 <div class="viewcode-block" id="ALEBO.update"><a class="viewcode-back" href="../../../../models.html#ax.models.torch.alebo.ALEBO.update">[docs]</a>    <span class="nd">@copy_doc</span><span class="p">(</span><span class="n">TorchModel</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
