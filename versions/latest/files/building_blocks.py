@@ -29,7 +29,7 @@ search_space = SearchSpace(
 )
 
 
-# Note that there are two other types of parameters, FixedParameter and ChoiceParameter. Although we won't use these in this example, you can create them as follows.
+# Note that there are two other parameter classes, FixedParameter and ChoiceParameter. Although we won't use these in this example, you can create them as follows.
 
 # In[3]:
 
@@ -81,7 +81,7 @@ experiment.status_quo = Arm(
 
 # ## 3. Generate arms
 
-# We can now generate arms, i.e. assignments of parameters to values, that lie within the search space. Below we use a Sobol generator to generate ten quasi-random arms. The `Models` registry provides a set of standard models Ax contains.
+# We can now generate arms, i.e. assignments of parameters to values, that lie within the search space. Below we use a Sobol generator to generate five quasi-random arms. The `Models` registry provides a set of standard models Ax contains.
 
 # In[7]:
 
@@ -109,7 +109,7 @@ Models.SOBOL.view_kwargs()  # Shows keyword argument names and typing.
 # 
 # In order to define an objective or outcome constraint, we first need to subclass `Metric`. Metrics are used to evaluate trials, which are individual steps of the experiment sequence. Each trial contains one or more arms for which we will collect data at the same time.
 # 
-# Our custom metric(s) will determine how, given a trial, to compute the mean and sem of each of the trial's arms.
+# Our custom metric(s) will determine how, given a trial, to compute the mean and SEM of each of the trial's arms.
 # 
 # The only method that needs to be defined for most metric subclasses is `fetch_trial_data`, which defines how a single trial is evaluated, and returns a pandas dataframe.
 
@@ -131,7 +131,7 @@ class BoothMetric(Metric):
         return Data(df=pd.DataFrame.from_records(records))
 
 
-# Once we have our metric subclasses, we can define on optimization config.
+# Once we have our metric subclasses, we can define an optimization config.
 
 # In[10]:
 
@@ -146,7 +146,7 @@ optimization_config = OptimizationConfig(
 experiment.optimization_config = optimization_config
 
 
-# Outcome constraints can also be defined as follows and passed into the optimization config.
+# Outcome constraints can also be defined as follows. We won't use outcome constraints in this example, but they can be passed into the optimization config via the `outcome_constraints` argument.
 
 # In[11]:
 
@@ -218,7 +218,7 @@ print(experiment.trials[1].arm)
 
 # To fetch trial data, we need to run it and mark it completed. For most metrics in Ax, data is only available once the [status of the trial](https://ax.dev/api/core.html#ax.core.base_trial.TrialStatus) is `COMPLETED`, since in real-worlds scenarios, metrics can typically only be fetched after the trial finished running.
 # 
-# NOTE: Some metrics implement is_available_while_running class method and return True from it, in which case data for such metrics is available when the trials are `RUNNING` or `COMPLETED`. This case is mostly for online metrics for A/B tests (to report intermediate results on trial's performance) or synthetic metrics that are just computed based on the values of parameters in trials' arms (since no evaluation is really needed for those). See the API documentation for [Metrics.is_available_while_running](https://ax.dev/api/core.html#ax.core.metric.Metric.is_available_while_running) for more info.
+# NOTE: Metrics classes may implement the [`is_available_while_running`](https://ax.dev/api/core.html#ax.core.metric.Metric.is_available_while_running) method. When this method returns `True`, data is available when trials are either `RUNNING` or `COMPLETED`. This can be used to obtain intermediate results from A/B test trials and other online experiments, or when metric values are available immediately, like in the case of synthetic problem metrics.
 
 # In[17]:
 
@@ -242,7 +242,7 @@ data.df
 
 # ## 8. Iterate using GP+EI
 
-# Now we can model the data collected for the initial set of arms via Bayesian optimization (using the Botorch model default of Gaussian Process with Expected Improvement acquisition function) to determine the new arms for which to fetch data next.
+# Now we can model the data collected for the initial set of arms via Bayesian optimization (using the Botorch model default of [Gaussian Process with Expected Improvement acquisition function](https://botorch.org/api/acquisition.html#botorch.acquisition.analytic.ExpectedImprovement)) to determine the new arms for which to fetch data next.
 
 # In[20]:
 
@@ -320,7 +320,7 @@ load_experiment(experiment.name)
 
 # `SimpleExperiment` is a subclass of `Experiment` that assumes synchronous evaluation of trials and is therefore able to abstract away certain details and enable faster instantiation.
 # 
-# Rather than defining custom metrics and an optimization config, we define an evaluation function that determines the mean and sem for a given parameterization.
+# Rather than defining custom metrics and an optimization config, we define an evaluation function that determines the mean and SEM for a given parameterization.
 
 # In[28]:
 
