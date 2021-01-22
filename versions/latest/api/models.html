@@ -3113,26 +3113,26 @@ candidates and their associated acquisition function values.</p>
 <dt id="ax.models.torch.botorch_modular.list_surrogate.ListSurrogate">
 <em class="property">class </em><code class="sig-prename descclassname">ax.models.torch.botorch_modular.list_surrogate.</code><code class="sig-name descname">ListSurrogate</code><span class="sig-paren">(</span><em class="sig-param">botorch_submodel_class_per_outcome: Optional[Dict[str</em>, <em class="sig-param">Type[botorch.models.model.Model]]] = None</em>, <em class="sig-param">botorch_submodel_class: Optional[Type[botorch.models.model.Model]] = None</em>, <em class="sig-param">submodel_options_per_outcome: Optional[Dict[str</em>, <em class="sig-param">Dict[str</em>, <em class="sig-param">Any]]] = None</em>, <em class="sig-param">submodel_options: Optional[Dict[str</em>, <em class="sig-param">Any]] = None</em>, <em class="sig-param">mll_class: Type[gpytorch.mlls.marginal_log_likelihood.MarginalLogLikelihood] = &lt;class 'gpytorch.mlls.sum_marginal_log_likelihood.SumMarginalLogLikelihood'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ax/models/torch/botorch_modular/list_surrogate.html#ListSurrogate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch_modular.list_surrogate.ListSurrogate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ax.models.torch.botorch_modular.surrogate.Surrogate" title="ax.models.torch.botorch_modular.surrogate.Surrogate"><code class="xref py py-class docutils literal notranslate"><span class="pre">ax.models.torch.botorch_modular.surrogate.Surrogate</span></code></a></p>
-<p>Special type of <cite>Surrogate</cite> that wraps a set of submodels into
-<cite>ModelListGP</cite> under the hood for multi-outcome or multi-task
+<p>Special type of <code class="docutils literal notranslate"><span class="pre">Surrogate</span></code> that wraps a set of submodels into
+<code class="docutils literal notranslate"><span class="pre">ModelListGP</span></code> under the hood for multi-outcome or multi-task
 models.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>botorch_submodel_class_per_outcome</strong> – Mapping from metric name to
 BoTorch model class that should be used as surrogate model for
-that metric. Use instead of <cite>botorch_submodel_class</cite>.</p></li>
-<li><p><strong>botorch_submodel_class</strong> – BoTorch <cite>Model</cite> class, shortcut for when
-all submodels of this surrogate’s underlying <cite>ModelListGP</cite> are
-of the same type. Use instead of <cite>botorch_submodel_class_per_
-outcome</cite>.</p></li>
+that metric. Use instead of <code class="docutils literal notranslate"><span class="pre">botorch_submodel_class</span></code>.</p></li>
+<li><p><strong>botorch_submodel_class</strong> – BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> class, shortcut for when
+all submodels of this surrogate’s underlying <code class="docutils literal notranslate"><span class="pre">ModelListGP</span></code> are
+of the same type.
+Use instead of <code class="docutils literal notranslate"><span class="pre">botorch_submodel_class_per_outcome</span></code>.</p></li>
 <li><p><strong>submodel_options_per_outcome</strong> – Optional mapping from metric name to
 dictionary of kwargs for the submodel for that outcome.</p></li>
 <li><p><strong>submodel_options</strong> – Optional dictionary of kwargs, shared between all
 submodels.
-NOTE: kwargs for submodel are <cite>submodel_options</cite> (shared) +
-<cite>submodel_outions_per_outcome[submodel_outcome]</cite> (individual).</p></li>
-<li><p><strong>mll_class</strong> – <cite>MarginalLogLikelihood</cite> class to use for model-fitting.</p></li>
+NOTE: kwargs for submodel are <code class="docutils literal notranslate"><span class="pre">submodel_options</span></code> (shared) +
+<code class="docutils literal notranslate"><span class="pre">submodel_outions_per_outcome[submodel_outcome]</span></code> (individual).</p></li>
+<li><p><strong>mll_class</strong> – <code class="docutils literal notranslate"><span class="pre">MarginalLogLikelihood</span></code> class to use for model-fitting.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3147,21 +3147,22 @@ NOTE: kwargs for submodel are <cite>submodel_options</cite> (shared) +
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.list_surrogate.ListSurrogate.construct">
 <code class="sig-name descname">construct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">training_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>botorch.utils.containers.TrainingData<span class="p">]</span></span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> → <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="reference internal" href="_modules/ax/models/torch/botorch_modular/list_surrogate.html#ListSurrogate.construct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch_modular.list_surrogate.ListSurrogate.construct" title="Permalink to this definition">¶</a></dt>
-<dd><p>Constructs the underlying BoTorch <cite>Model</cite> using the training data.</p>
+<dd><p>Constructs the underlying BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> using the training data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>training_data</strong> – List of <cite>TrainingData</cite> for the submodels of <cite>ModelListGP</cite>.
-Each training data is for one outcome, and the order of outcomes
-should match the order of metrics in <cite>metric_names</cite> argument.</p></li>
+<li><p><strong>training_data</strong> – List of <code class="docutils literal notranslate"><span class="pre">TrainingData</span></code> for the submodels of
+<code class="docutils literal notranslate"><span class="pre">ModelListGP</span></code>. Each training data is for one outcome,
+and the order of outcomes should match the order of metrics
+in <code class="docutils literal notranslate"><span class="pre">metric_names</span></code> argument.</p></li>
 <li><p><strong>**kwargs</strong> – Keyword arguments, accepts:
-- <cite>metric_names</cite> (required): Names of metrics, in the same order
-as training data (so if training data is <cite>[tr_A, tr_B]</cite>, the metrics
-would be <cite>[“A” and “B”]</cite>). These are used to match training data
-with correct submodels of <cite>ModelListGP</cite>,
-- <cite>fidelity_features</cite>: Indices of columns in X that represent
+- <code class="docutils literal notranslate"><span class="pre">metric_names</span></code> (required): Names of metrics, in the same order
+as training data (so if training data is <code class="docutils literal notranslate"><span class="pre">[tr_A,</span> <span class="pre">tr_B]</span></code>, the
+metrics are <code class="docutils literal notranslate"><span class="pre">["A"</span> <span class="pre">and</span> <span class="pre">"B"]</span></code>). These are used to match training data
+with correct submodels of <code class="docutils literal notranslate"><span class="pre">ModelListGP</span></code>,
+- <code class="docutils literal notranslate"><span class="pre">fidelity_features</span></code>: Indices of columns in X that represent
 fidelity,
-- <cite>task_features</cite>: Indices of columns in X that represent tasks.</p></li>
+- <code class="docutils literal notranslate"><span class="pre">task_features</span></code>: Indices of columns in X that represent tasks.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3177,31 +3178,29 @@ fidelity,
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.list_surrogate.ListSurrogate.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">training_data</span><span class="p">:</span> <span class="n">List<span class="p">[</span>botorch.utils.containers.TrainingData<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">bounds</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">task_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">feature_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">metric_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target_fidelities</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>List<span class="p">[</span>Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">state_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>torch.Tensor<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">refit</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> → <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="reference internal" href="_modules/ax/models/torch/botorch_modular/list_surrogate.html#ListSurrogate.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch_modular.list_surrogate.ListSurrogate.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fits the underlying BoTorch <cite>Model</cite> to <cite>m</cite> outcomes.</p>
-<p>NOTE: <cite>state_dict</cite> and <cite>refit</cite> keyword arguments control how the
-undelying BoTorch <cite>Model</cite> will be fit: whether its parameters will
-be reoptimized and whether it will be warm-started from a given state.
-There are three possbilities:
-1. <cite>fit(state_dict=None)</cite>: fit model from stratch (optimize model</p>
-<blockquote>
-<div><p>parameters and set its training data used for inference),</p>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p><cite>fit(state_dict=some_state_dict, refit=True)</cite>: warm-start refit
+<dd><p>Fits the underlying BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> to <code class="docutils literal notranslate"><span class="pre">m</span></code> outcomes.</p>
+<p>NOTE: <code class="docutils literal notranslate"><span class="pre">state_dict</span></code> and <code class="docutils literal notranslate"><span class="pre">refit</span></code> keyword arguments control how the
+underlying BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> will be fit: whether its parameters will
+be reoptimized and whether it will be warm-started from a given state.</p>
+<p>There are three possibilities:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fit(state_dict=None)</span></code>: fit model from stratch (optimize model
+parameters and set its training data used for inference),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit(state_dict=some_state_dict,</span> <span class="pre">refit=True)</span></code>: warm-start refit
 with a state dict of parameters (still re-optimize model parameters
 and set the training data),</p></li>
-<li><p><cite>fit(state_dict=some_state_dict, refit=False)</cite>: load model parameters
+<li><p><code class="docutils literal notranslate"><span class="pre">fit(state_dict=some_state_dict,</span> <span class="pre">refit=False)</span></code>: load model parameters
 without refitting, but set new training data (used in cross-validation,
 for example).</p></li>
-</ol>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>training</em>) – List of BoTorch <cite>TrainingData</cite> container (with Xs,
+<li><p><strong>data</strong> (<em>training</em>) – List of BoTorch <code class="docutils literal notranslate"><span class="pre">TrainingData</span></code> container (with Xs,
 Ys, and possibly Yvars), one per outcome, in order corresponding
-to the order of outcome names in <cite>metric_names</cite>. Each <cite>TrainingData</cite>
-from this list will be passed to <cite>Model.construct_inputs</cite> method
-of the corresponding submodel in <cite>ModelListGP</cite>.</p></li>
+to the order of outcome names in <code class="docutils literal notranslate"><span class="pre">metric_names</span></code>. Each <code class="docutils literal notranslate"><span class="pre">TrainingData</span></code>
+from this list will be passed to <code class="docutils literal notranslate"><span class="pre">Model.construct_inputs</span></code> method
+of the corresponding submodel in <code class="docutils literal notranslate"><span class="pre">ModelListGP</span></code>.</p></li>
 <li><p><strong>bounds</strong> – A list of d (lower, upper) tuples for each column of X.</p></li>
 <li><p><strong>task_features</strong> – Columns of X that take integer values and should be
 treated as task parameters.</p></li>
@@ -3725,22 +3724,22 @@ the <cite>Acquisition</cite> object.</p></li>
 <p><strong>All classes in ‘botorch_modular’ directory are under
 construction, incomplete, and should be treated as alpha
 versions only.</strong></p>
-<p>Ax wrapper for BoTorch <cite>Model</cite>, subcomponent of <cite>BoTorchModel</cite>
+<p>Ax wrapper for BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code>, subcomponent of <code class="docutils literal notranslate"><span class="pre">BoTorchModel</span></code>
 and is not meant to be used outside of it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>botorch_model_class</strong> – <cite>Model</cite> class to be used as the underlying
+<li><p><strong>botorch_model_class</strong> – <code class="docutils literal notranslate"><span class="pre">Model</span></code> class to be used as the underlying
 BoTorch model.</p></li>
-<li><p><strong>mll_class</strong> – <cite>MarginalLogLikelihood</cite> class to use for model-fitting.</p></li>
+<li><p><strong>mll_class</strong> – <code class="docutils literal notranslate"><span class="pre">MarginalLogLikelihood</span></code> class to use for model-fitting.</p></li>
 <li><p><strong>model_options</strong> – Dictionary of options / kwargs for the BoTorch
-<cite>Model</cite> constructed during <cite>Surrogate.fit</cite>.</p></li>
-<li><p><strong>kernel_class</strong> – <cite>Kernel</cite> class, not yet used. Will be used to
-construct custom BoTorch <cite>Model</cite> in the future.</p></li>
+<code class="docutils literal notranslate"><span class="pre">Model</span></code> constructed during <code class="docutils literal notranslate"><span class="pre">Surrogate.fit</span></code>.</p></li>
+<li><p><strong>kernel_class</strong> – <code class="docutils literal notranslate"><span class="pre">Kernel</span></code> class, not yet used. Will be used to
+construct custom BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> in the future.</p></li>
 <li><p><strong>kernel_options</strong> – Kernel kwargs, not yet used. Will be used to
-construct custom BoTorch <cite>Model</cite> in the future.</p></li>
-<li><p><strong>likelihood</strong> – <cite>Likelihood</cite> class, not yet used. Will be used to
-construct custom BoTorch <cite>Model</cite> in the future.</p></li>
+construct custom BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> in the future.</p></li>
+<li><p><strong>likelihood</strong> – <code class="docutils literal notranslate"><span class="pre">Likelihood</span></code> class, not yet used. Will be used to
+construct custom BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> in the future.</p></li>
 </ul>
 </dd>
 </dl>
@@ -3772,12 +3771,12 @@ appropriate best point acquisition function.</p>
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.surrogate.Surrogate.construct">
 <code class="sig-name descname">construct</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">training_data</span><span class="p">:</span> <span class="n">botorch.utils.containers.TrainingData</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> → <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="reference internal" href="_modules/ax/models/torch/botorch_modular/surrogate.html#Surrogate.construct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch_modular.surrogate.Surrogate.construct" title="Permalink to this definition">¶</a></dt>
-<dd><p>Constructs the underlying BoTorch <cite>Model</cite> using the training data.</p>
+<dd><p>Constructs the underlying BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> using the training data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>training_data</strong> – Training data for the model (for one outcome for
-the default <cite>Surrogate</cite>, with the exception of batched
+the default <code class="docutils literal notranslate"><span class="pre">Surrogate</span></code>, with the exception of batched
 multi-output case, where training data is formatted with just
 one X and concatenated Ys).</p></li>
 <li><p><strong>**kwargs</strong> – Optional keyword arguments, expects any of:
@@ -3798,28 +3797,26 @@ fidelity.</p></li>
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.surrogate.Surrogate.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">training_data</span><span class="p">:</span> <span class="n">botorch.utils.containers.TrainingData</span></em>, <em class="sig-param"><span class="n">bounds</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">task_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">feature_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">metric_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target_fidelities</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>List<span class="p">[</span>Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">state_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>torch.Tensor<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">refit</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> → <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="reference internal" href="_modules/ax/models/torch/botorch_modular/surrogate.html#Surrogate.fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch_modular.surrogate.Surrogate.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fits the underlying BoTorch <cite>Model</cite> to <cite>m</cite> outcomes.</p>
-<p>NOTE: <cite>state_dict</cite> and <cite>refit</cite> keyword arguments control how the
-undelying BoTorch <cite>Model</cite> will be fit: whether its parameters will
-be reoptimized and whether it will be warm-started from a given state.
-There are three possbilities:
-1. <cite>fit(state_dict=None)</cite>: fit model from stratch (optimize model</p>
-<blockquote>
-<div><p>parameters and set its training data used for inference),</p>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p><cite>fit(state_dict=some_state_dict, refit=True)</cite>: warm-start refit
+<dd><p>Fits the underlying BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> to <code class="docutils literal notranslate"><span class="pre">m</span></code> outcomes.</p>
+<p>NOTE: <code class="docutils literal notranslate"><span class="pre">state_dict</span></code> and <code class="docutils literal notranslate"><span class="pre">refit</span></code> keyword arguments control how the
+undelying BoTorch <code class="docutils literal notranslate"><span class="pre">Model</span></code> will be fit: whether its parameters will
+be reoptimized and whether it will be warm-started from a given state.</p>
+<p>There are three possibilities:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fit(state_dict=None)</span></code>: fit model from stratch (optimize model
+parameters and set its training data used for inference),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit(state_dict=some_state_dict,</span> <span class="pre">refit=True)</span></code>: warm-start refit
 with a state dict of parameters (still re-optimize model parameters
 and set the training data),</p></li>
-<li><p><cite>fit(state_dict=some_state_dict, refit=False)</cite>: load model parameters
+<li><p><code class="docutils literal notranslate"><span class="pre">fit(state_dict=some_state_dict,</span> <span class="pre">refit=False)</span></code>: load model parameters
 without refitting, but set new training data (used in cross-validation,
 for example).</p></li>
-</ol>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>training</em>) – BoTorch <cite>TrainingData</cite> container with Xs, Ys, and
-possibly Yvars, to be passed to <cite>Model.construct_inputs</cite> in
+<li><p><strong>data</strong> (<em>training</em>) – BoTorch <code class="docutils literal notranslate"><span class="pre">TrainingData</span></code> container with Xs, Ys, and
+possibly Yvars, to be passed to <code class="docutils literal notranslate"><span class="pre">Model.construct_inputs</span></code> in
 BoTorch.</p></li>
 <li><p><strong>bounds</strong> – A list of d (lower, upper) tuples for each column of X.</p></li>
 <li><p><strong>task_features</strong> – Columns of X that take integer values and should be
@@ -3878,12 +3875,12 @@ of best point.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> – A botorch Model.</p></li>
-<li><p><strong>X</strong> – A <cite>n x d</cite> tensor of input parameters.</p></li>
+<li><p><strong>X</strong> – A <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">d</span></code> tensor of input parameters.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The predicted posterior mean as an <cite>n x o</cite>-dim tensor.
-Tensor: The predicted posterior covariance as a <cite>n x o x o</cite>-dim tensor.</p>
+<dd class="field-even"><p>The predicted posterior mean as an <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">o</span></code>-dim tensor.
+Tensor: The predicted posterior covariance as a <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">o</span> <span class="pre">x</span> <span class="pre">o</span></code>-dim tensor.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Tensor</p>
@@ -3901,10 +3898,10 @@ Tensor: The predicted posterior covariance as a <cite>n x o x o</cite>-dim tenso
 <dl class="py method">
 <dt id="ax.models.torch.botorch_modular.surrogate.Surrogate.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">training_data</span><span class="p">:</span> <span class="n">botorch.utils.containers.TrainingData</span></em>, <em class="sig-param"><span class="n">bounds</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">task_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">feature_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">metric_names</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">fidelity_features</span><span class="p">:</span> <span class="n">List<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target_fidelities</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">candidate_metadata</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>List<span class="p">[</span>Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">state_dict</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span>torch.Tensor<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">refit</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a></span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> → <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a><a class="reference internal" href="_modules/ax/models/torch/botorch_modular/surrogate.html#Surrogate.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ax.models.torch.botorch_modular.surrogate.Surrogate.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the surrogate model with new data. In the base <cite>Surrogate</cite>,
-just calls <cite>fit</cite> after checking that this surrogate was not created
-via <cite>Surrogate.from_BoTorch</cite> (in which case the <cite>Model</cite> comes premade,
-constructed manually and then supplied to <a href="#id2"><span class="problematic" id="id3">`</span></a>Surrogate).</p>
+<dd><p>Updates the surrogate model with new data. In the base <code class="docutils literal notranslate"><span class="pre">Surrogate</span></code>,
+just calls <code class="docutils literal notranslate"><span class="pre">fit</span></code> after checking that this surrogate was not created
+via <code class="docutils literal notranslate"><span class="pre">Surrogate.from_BoTorch</span></code> (in which case the <code class="docutils literal notranslate"><span class="pre">Model</span></code> comes premade,
+constructed manually and then supplied to <code class="docutils literal notranslate"><span class="pre">Surrogate</span></code>).</p>
 <p>NOTE: Expects <cite>training_data</cite> to be all available data,
 not just the new data since the last time the model was updated.</p>
 <dl class="field-list simple">
