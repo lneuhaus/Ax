@@ -380,7 +380,7 @@ function slice_config_to_trace(
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 01-23 05:54:20] ax.utils.notebook.plotting: Injecting Plotly library into cell. Do not overwrite or delete cell.
+<pre>[INFO 01-24 05:55:36] ax.utils.notebook.plotting: Injecting Plotly library into cell. Do not overwrite or delete cell.
 </pre>
 </div>
 </div>
@@ -488,7 +488,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 01-23 05:54:20] ax.service.ax_client: Starting optimization with verbose logging. To disable logging, set the `verbose_logging` argument to `False`. Note that float values in the logs are rounded to 2 decimal points.
+<pre>[INFO 01-24 05:55:36] ax.service.ax_client: Starting optimization with verbose logging. To disable logging, set the `verbose_logging` argument to `False`. Note that float values in the logs are rounded to 2 decimal points.
 </pre>
 </div>
 </div>
@@ -536,9 +536,9 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[INFO 01-23 05:54:20] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter lr. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
-[INFO 01-23 05:54:20] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter momentum. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
-[INFO 01-23 05:54:20] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name='Sobol+GPEI', steps=[Sobol for 5 trials, GPEI for subsequent trials]). Iterations after 5 will take longer to generate due to  model-fitting.
+<pre>[INFO 01-24 05:55:36] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter lr. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
+[INFO 01-24 05:55:36] ax.service.utils.instantiation: Inferred value type of ParameterType.FLOAT for parameter momentum. If that is not the expected value type, you can explicity specify 'value_type' ('int', 'float', 'bool' or 'str') in parameter dict.
+[INFO 01-24 05:55:36] ax.modelbridge.dispatch_utils: Using Bayesian Optimization generation strategy: GenerationStrategy(name='Sobol+GPEI', steps=[Sobol for 5 trials, GPEI for subsequent trials]). Iterations after 5 will take longer to generate due to  model-fitting.
 </pre>
 </div>
 </div>
@@ -633,32 +633,74 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-01-23 05:54:21,381	INFO services.py:1173 -- View the Ray dashboard at <span class="ansi-green-intense-fg ansi-bold">http://127.0.0.1:8265</span>
-[INFO 01-23 05:54:23] ax.service.ax_client: Generated new trial 0 with parameters {'lr': 0.0, 'momentum': 0.71}.
-[INFO 01-23 05:54:23] ax.service.ax_client: Generated new trial 1 with parameters {'lr': 0.0, 'momentum': 0.89}.
-[INFO 01-23 05:54:23] ax.service.ax_client: Generated new trial 2 with parameters {'lr': 0.0, 'momentum': 0.19}.
-<span class="ansi-cyan-fg">(pid=3692)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3692)</span> 
-<span class="ansi-cyan-fg">(pid=3692)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3692)</span> 
-0.1%
-<span class="ansi-cyan-fg">(pid=3693)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3693)</span> 
-<span class="ansi-cyan-fg">(pid=3693)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3693)</span> 
-11.8%
-0.4%
-12.0%
-66.2%
-5.0%
+<pre>2021-01-24 05:55:37,396	INFO services.py:1173 -- View the Ray dashboard at <span class="ansi-green-intense-fg ansi-bold">http://127.0.0.1:8265</span>
+[INFO 01-24 05:55:39] ax.service.ax_client: Generated new trial 0 with parameters {'lr': 0.28, 'momentum': 0.73}.
+[INFO 01-24 05:55:39] ax.service.ax_client: Generated new trial 1 with parameters {'lr': 0.0, 'momentum': 0.17}.
+[INFO 01-24 05:55:40] ax.service.ax_client: Generated new trial 2 with parameters {'lr': 0.0, 'momentum': 0.27}.
 </pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3692)</span> Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3693)</span> Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz
+<pre><span class="ansi-cyan-fg">(pid=3733)</span> Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz
+<span class="ansi-cyan-fg">(pid=3734)</span> Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre><span class="ansi-cyan-fg">(pid=3734)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3734)</span> 
+<span class="ansi-cyan-fg">(pid=3734)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3734)</span> 
+<span class="ansi-cyan-fg">(pid=3733)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3733)</span> 
+<span class="ansi-cyan-fg">(pid=3733)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3733)</span> 
+0.1%
+0.1%
+1.0%
+8.8%
+1.2%
+11.6%
+12.1%
+1.4%
+13.4%
+1.7%
+14.7%
+2.1%
+16.3%
+17.0%
+19.2%
+2.5%
+19.3%
+19.6%
+20.8%
+20.9%
+21.8%
+23.3%
+3.6%
+24.5%
+10.7%
+72.5%
+75.7%
+11.5%
+78.8%
+21.8%
+100.1%
+36.1%
+60.2%
+92.9%
+</pre>
+</div>
+</div>
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre><span class="ansi-cyan-fg">(pid=3733)</span> Extracting /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
+<span class="ansi-cyan-fg">(pid=3734)</span> Extracting /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
 </pre>
 </div>
 </div>
@@ -666,314 +708,297 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100.1%
-12.1%
-22.6%
-36.7%
-55.6%
 </pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3692)</span> Extracting /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3693)</span> Extracting /home/runner/.data/MNIST/raw/train-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
+<pre><span class="ansi-cyan-fg">(pid=3733)</span> Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz
+<span class="ansi-cyan-fg">(pid=3734)</span> Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz
+<span class="ansi-cyan-fg">(pid=3733)</span> Extracting /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
+<span class="ansi-cyan-fg">(pid=3733)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz
+<span class="ansi-cyan-fg">(pid=3734)</span> Extracting /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
+<span class="ansi-cyan-fg">(pid=3734)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz
 </pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>83.1%
-100.1%
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3692)</span> Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3693)</span> Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3692)</span> Extracting /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3692)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3693)</span> Extracting /home/runner/.data/MNIST/raw/train-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3693)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz
-</pre>
-</div>
-</div>
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>28.4%
-85.1%
+<pre>113.5%
 113.5%
-113.5%
-2.5%
+0.5%
+0.5%
+17.4%
+12.4%
+20.9%
+19.4%
+25.8%
+22.9%
 100.4%
-2.5%
+100.4%
 </pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3692)</span> Extracting /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3693)</span> Extracting /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3692)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3693)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz
-<span class="ansi-cyan-fg">(pid=3692)</span> Extracting /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3692)</span> Processing...
-<span class="ansi-cyan-fg">(pid=3693)</span> Extracting /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
-<span class="ansi-cyan-fg">(pid=3693)</span> Processing...
+<pre><span class="ansi-cyan-fg">(pid=3733)</span> Extracting /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
+<span class="ansi-cyan-fg">(pid=3734)</span> Extracting /home/runner/.data/MNIST/raw/t10k-images-idx3-ubyte.gz to /home/runner/.data/MNIST/raw
+<span class="ansi-cyan-fg">(pid=3733)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+<span class="ansi-cyan-fg">(pid=3734)</span> Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz
+<span class="ansi-cyan-fg">(pid=3733)</span> Extracting /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
+<span class="ansi-cyan-fg">(pid=3733)</span> Processing...
+<span class="ansi-cyan-fg">(pid=3734)</span> Extracting /home/runner/.data/MNIST/raw/t10k-labels-idx1-ubyte.gz to /home/runner/.data/MNIST/raw
+<span class="ansi-cyan-fg">(pid=3734)</span> Processing...
 </pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100.4%
-180.4%/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py:480: UserWarning:
-<span class="ansi-cyan-fg">(pid=3692)</span> 
-<span class="ansi-cyan-fg">(pid=3692)</span> The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /pytorch/torch/csrc/utils/tensor_numpy.cpp:141.)
-<span class="ansi-cyan-fg">(pid=3692)</span> 
+<pre>180.4%/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py:480: UserWarning:
+<span class="ansi-cyan-fg">(pid=3734)</span> 
+<span class="ansi-cyan-fg">(pid=3734)</span> The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /pytorch/torch/csrc/utils/tensor_numpy.cpp:141.)
+<span class="ansi-cyan-fg">(pid=3734)</span> 
 180.4%
-<span class="ansi-cyan-fg">(pid=3693)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py:480: UserWarning:
-<span class="ansi-cyan-fg">(pid=3693)</span> 
-<span class="ansi-cyan-fg">(pid=3693)</span> The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /pytorch/torch/csrc/utils/tensor_numpy.cpp:141.)
-<span class="ansi-cyan-fg">(pid=3693)</span> 
+<span class="ansi-cyan-fg">(pid=3733)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py:480: UserWarning:
+<span class="ansi-cyan-fg">(pid=3733)</span> 
+<span class="ansi-cyan-fg">(pid=3733)</span> The given NumPy array is not writeable, and PyTorch does not support non-writeable tensors. This means you can write to the underlying (supposedly non-writeable) NumPy array using the tensor. You may want to copy the array to protect its data or make it writeable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at  /pytorch/torch/csrc/utils/tensor_numpy.cpp:141.)
+<span class="ansi-cyan-fg">(pid=3733)</span> 
 </pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-cyan-fg">(pid=3692)</span> Done!
-<span class="ansi-cyan-fg">(pid=3693)</span> Done!
+<pre><span class="ansi-cyan-fg">(pid=3734)</span> Done!
+<span class="ansi-cyan-fg">(pid=3733)</span> Done!
 </pre>
 </div>
 </div>
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre><span class="ansi-cyan-fg">(pid=3692)</span> 2021-01-23 05:54:27,662	ERROR function_runner.py:254 -- Runner Thread raised error.
-<span class="ansi-cyan-fg">(pid=3692)</span> Traceback (most recent call last):
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 248, in run
-<span class="ansi-cyan-fg">(pid=3692)</span>     self._entrypoint()
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 316, in entrypoint
-<span class="ansi-cyan-fg">(pid=3692)</span>     self._status_reporter.get_checkpoint())
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 575, in _trainable_func
-<span class="ansi-cyan-fg">(pid=3692)</span>     output = fn()
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "&lt;ipython-input-7-dd1f524b886e&gt;", line 3, in train_evaluate
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/home/runner/work/Ax/Ax/ax/utils/tutorials/cnn_utils.py", line 76, in load_mnist
-<span class="ansi-cyan-fg">(pid=3692)</span>     root=data_path, train=True, download=True, transform=transform
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 89, in __init__
-<span class="ansi-cyan-fg">(pid=3692)</span>     self.data, self.targets = torch.load(os.path.join(self.processed_folder, data_file))
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 594, in load
-<span class="ansi-cyan-fg">(pid=3692)</span>     return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 853, in _load
-<span class="ansi-cyan-fg">(pid=3692)</span>     result = unpickler.load()
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 845, in persistent_load
-<span class="ansi-cyan-fg">(pid=3692)</span>     load_tensor(data_type, size, key, _maybe_decode_ascii(location))
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 833, in load_tensor
-<span class="ansi-cyan-fg">(pid=3692)</span>     storage = zip_file.get_storage_from_record(name, size, dtype).storage()
-<span class="ansi-cyan-fg">(pid=3692)</span> RuntimeError: [enforce fail at inline_container.cc:222] . file not found: archive/data/140681855122400
-<span class="ansi-cyan-fg">(pid=3692)</span> Exception in thread Thread-2:
-<span class="ansi-cyan-fg">(pid=3692)</span> Traceback (most recent call last):
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/threading.py", line 926, in _bootstrap_inner
-<span class="ansi-cyan-fg">(pid=3692)</span>     self.run()
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 267, in run
-<span class="ansi-cyan-fg">(pid=3692)</span>     raise e
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 248, in run
-<span class="ansi-cyan-fg">(pid=3692)</span>     self._entrypoint()
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 316, in entrypoint
-<span class="ansi-cyan-fg">(pid=3692)</span>     self._status_reporter.get_checkpoint())
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 575, in _trainable_func
-<span class="ansi-cyan-fg">(pid=3692)</span>     output = fn()
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "&lt;ipython-input-7-dd1f524b886e&gt;", line 3, in train_evaluate
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/home/runner/work/Ax/Ax/ax/utils/tutorials/cnn_utils.py", line 76, in load_mnist
-<span class="ansi-cyan-fg">(pid=3692)</span>     root=data_path, train=True, download=True, transform=transform
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 89, in __init__
-<span class="ansi-cyan-fg">(pid=3692)</span>     self.data, self.targets = torch.load(os.path.join(self.processed_folder, data_file))
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 594, in load
-<span class="ansi-cyan-fg">(pid=3692)</span>     return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 853, in _load
-<span class="ansi-cyan-fg">(pid=3692)</span>     result = unpickler.load()
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 845, in persistent_load
-<span class="ansi-cyan-fg">(pid=3692)</span>     load_tensor(data_type, size, key, _maybe_decode_ascii(location))
-<span class="ansi-cyan-fg">(pid=3692)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 833, in load_tensor
-<span class="ansi-cyan-fg">(pid=3692)</span>     storage = zip_file.get_storage_from_record(name, size, dtype).storage()
-<span class="ansi-cyan-fg">(pid=3692)</span> RuntimeError: [enforce fail at inline_container.cc:222] . file not found: archive/data/140681855122400
-<span class="ansi-cyan-fg">(pid=3692)</span> 
-[INFO 01-23 05:54:27] ax.service.ax_client: Generated new trial 3 with parameters {'lr': 0.04, 'momentum': 0.05}.
-<span class="ansi-cyan-fg">(pid=3757)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3757)</span> 
-<span class="ansi-cyan-fg">(pid=3757)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3757)</span> 
-[INFO 01-23 05:54:36] ax.service.ax_client: Completed trial 1 with data: {'mean_accuracy': (0.75, 0.0)}.
-[INFO 01-23 05:54:36] ax.service.ax_client: Generated new trial 4 with parameters {'lr': 0.03, 'momentum': 0.05}.
-<span class="ansi-cyan-fg">(pid=3780)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3780)</span> 
-<span class="ansi-cyan-fg">(pid=3780)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3780)</span> 
-[INFO 01-23 05:54:39] ax.service.ax_client: Completed trial 2 with data: {'mean_accuracy': (0.95, 0.0)}.
-[INFO 01-23 05:54:39] ax.service.ax_client: Generated new trial 5 with parameters {'lr': 0.15, 'momentum': 0.83}.
-<span class="ansi-cyan-fg">(pid=3803)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3803)</span> 
-<span class="ansi-cyan-fg">(pid=3803)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3803)</span> 
-[INFO 01-23 05:54:48] ax.service.ax_client: Completed trial 3 with data: {'mean_accuracy': (0.1, 0.0)}.
-[INFO 01-23 05:54:49] ax.service.ax_client: Generated new trial 6 with parameters {'lr': 0.0, 'momentum': 0.2}.
-<span class="ansi-cyan-fg">(pid=3835)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3835)</span> 
-<span class="ansi-cyan-fg">(pid=3835)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3835)</span> 
-[INFO 01-23 05:54:52] ax.service.ax_client: Completed trial 4 with data: {'mean_accuracy': (0.09, 0.0)}.
-2021-01-23 05:54:52,530	WARNING worker.py:1034 -- The actor or task with ID ffffffffffffffff7d26912601000000 cannot be scheduled right now. It requires {CPU: 1.000000} for placement, but this node only has remaining {CPU: 1.000000}, {node:10.1.0.4: 1.000000}, {memory: 3.613281 GiB}, {object_store_memory: 1.220703 GiB}. In total there are 0 pending tasks and 1 pending actors on this node. This is likely due to all cluster resources being claimed by actors. To resolve the issue, consider creating fewer actors or increase the resources available to this Ray cluster. You can ignore this message if this Ray cluster is expected to auto-scale.
-[INFO 01-23 05:54:53] ax.service.ax_client: Generated new trial 7 with parameters {'lr': 0.0, 'momentum': 0.42}.
-<span class="ansi-cyan-fg">(pid=3859)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3859)</span> 
-<span class="ansi-cyan-fg">(pid=3859)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3859)</span> 
-[INFO 01-23 05:55:00] ax.service.ax_client: Completed trial 5 with data: {'mean_accuracy': (0.11, 0.0)}.
-[INFO 01-23 05:55:02] ax.service.ax_client: Generated new trial 8 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=3884)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3884)</span> 
-<span class="ansi-cyan-fg">(pid=3884)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3884)</span> 
-[INFO 01-23 05:55:04] ax.service.ax_client: Completed trial 6 with data: {'mean_accuracy': (0.88, 0.0)}.
-[INFO 01-23 05:55:06] ax.service.ax_client: Generated new trial 9 with parameters {'lr': 0.0, 'momentum': 0.22}.
-<span class="ansi-cyan-fg">(pid=3909)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3909)</span> 
-<span class="ansi-cyan-fg">(pid=3909)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3909)</span> 
-[INFO 01-23 05:55:13] ax.service.ax_client: Completed trial 7 with data: {'mean_accuracy': (0.93, 0.0)}.
-[INFO 01-23 05:55:15] ax.service.ax_client: Generated new trial 10 with parameters {'lr': 0.0, 'momentum': 0.26}.
-<span class="ansi-cyan-fg">(pid=3935)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3935)</span> 
-<span class="ansi-cyan-fg">(pid=3935)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3935)</span> 
-[INFO 01-23 05:55:17] ax.service.ax_client: Completed trial 8 with data: {'mean_accuracy': (0.91, 0.0)}.
-[INFO 01-23 05:55:18] ax.service.ax_client: Generated new trial 11 with parameters {'lr': 0.0, 'momentum': 1.0}.
-<span class="ansi-cyan-fg">(pid=3958)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3958)</span> 
-<span class="ansi-cyan-fg">(pid=3958)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3958)</span> 
-[INFO 01-23 05:55:26] ax.service.ax_client: Completed trial 9 with data: {'mean_accuracy': (0.93, 0.0)}.
-[INFO 01-23 05:55:28] ax.service.ax_client: Generated new trial 12 with parameters {'lr': 0.0, 'momentum': 1.0}.
-<span class="ansi-cyan-fg">(pid=3983)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=3983)</span> 
-<span class="ansi-cyan-fg">(pid=3983)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=3983)</span> 
-[INFO 01-23 05:55:30] ax.service.ax_client: Completed trial 10 with data: {'mean_accuracy': (0.2, 0.0)}.
-[INFO 01-23 05:55:31] ax.service.ax_client: Generated new trial 13 with parameters {'lr': 0.0, 'momentum': 0.7}.
-<span class="ansi-cyan-fg">(pid=4005)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4005)</span> 
-<span class="ansi-cyan-fg">(pid=4005)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4005)</span> 
-[INFO 01-23 05:55:39] ax.service.ax_client: Completed trial 11 with data: {'mean_accuracy': (0.86, 0.0)}.
-[INFO 01-23 05:55:41] ax.service.ax_client: Generated new trial 14 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4036)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4036)</span> 
-<span class="ansi-cyan-fg">(pid=4036)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4036)</span> 
-[INFO 01-23 05:55:43] ax.service.ax_client: Completed trial 12 with data: {'mean_accuracy': (0.1, 0.0)}.
-[INFO 01-23 05:55:44] ax.service.ax_client: Generated new trial 15 with parameters {'lr': 0.0, 'momentum': 1.0}.
-<span class="ansi-cyan-fg">(pid=4058)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4058)</span> 
-<span class="ansi-cyan-fg">(pid=4058)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4058)</span> 
-[INFO 01-23 05:55:52] ax.service.ax_client: Completed trial 13 with data: {'mean_accuracy': (0.89, 0.0)}.
-2021-01-23 05:55:52,655	WARNING worker.py:1034 -- The actor or task with ID ffffffffffffffffe1083dbe01000000 cannot be scheduled right now. It requires {CPU: 1.000000} for placement, but this node only has remaining {CPU: 1.000000}, {node:10.1.0.4: 1.000000}, {memory: 3.613281 GiB}, {object_store_memory: 1.220703 GiB}. In total there are 0 pending tasks and 1 pending actors on this node. This is likely due to all cluster resources being claimed by actors. To resolve the issue, consider creating fewer actors or increase the resources available to this Ray cluster. You can ignore this message if this Ray cluster is expected to auto-scale.
-[INFO 01-23 05:55:54] ax.service.ax_client: Generated new trial 16 with parameters {'lr': 0.0, 'momentum': 0.47}.
-<span class="ansi-cyan-fg">(pid=4090)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4090)</span> 
-<span class="ansi-cyan-fg">(pid=4090)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4090)</span> 
-[INFO 01-23 05:55:56] ax.service.ax_client: Completed trial 14 with data: {'mean_accuracy': (0.94, 0.0)}.
-[INFO 01-23 05:55:58] ax.service.ax_client: Generated new trial 17 with parameters {'lr': 0.0, 'momentum': 0.14}.
-<span class="ansi-cyan-fg">(pid=4113)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4113)</span> 
-<span class="ansi-cyan-fg">(pid=4113)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4113)</span> 
-[INFO 01-23 05:56:05] ax.service.ax_client: Completed trial 15 with data: {'mean_accuracy': (0.84, 0.0)}.
-[INFO 01-23 05:56:06] ax.service.ax_client: Generated new trial 18 with parameters {'lr': 0.0, 'momentum': 0.28}.
-<span class="ansi-cyan-fg">(pid=4135)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4135)</span> 
-<span class="ansi-cyan-fg">(pid=4135)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4135)</span> 
-[INFO 01-23 05:56:09] ax.service.ax_client: Completed trial 16 with data: {'mean_accuracy': (0.89, 0.0)}.
-[INFO 01-23 05:56:11] ax.service.ax_client: Generated new trial 19 with parameters {'lr': 0.0, 'momentum': 0.32}.
-<span class="ansi-cyan-fg">(pid=4159)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4159)</span> 
-<span class="ansi-cyan-fg">(pid=4159)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4159)</span> 
-[INFO 01-23 05:56:17] ax.service.ax_client: Completed trial 17 with data: {'mean_accuracy': (0.95, 0.0)}.
-[INFO 01-23 05:56:20] ax.service.ax_client: Generated new trial 20 with parameters {'lr': 0.0, 'momentum': 0.09}.
-<span class="ansi-cyan-fg">(pid=4185)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4185)</span> 
-<span class="ansi-cyan-fg">(pid=4185)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4185)</span> 
-[INFO 01-23 05:56:22] ax.service.ax_client: Completed trial 18 with data: {'mean_accuracy': (0.89, 0.0)}.
-[INFO 01-23 05:56:24] ax.service.ax_client: Generated new trial 21 with parameters {'lr': 0.0, 'momentum': 0.0}.
-<span class="ansi-cyan-fg">(pid=4209)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4209)</span> 
-<span class="ansi-cyan-fg">(pid=4209)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4209)</span> 
-[INFO 01-23 05:56:31] ax.service.ax_client: Completed trial 19 with data: {'mean_accuracy': (0.95, 0.0)}.
-[INFO 01-23 05:56:32] ax.service.ax_client: Generated new trial 22 with parameters {'lr': 0.0, 'momentum': 0.24}.
-<span class="ansi-cyan-fg">(pid=4253)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4253)</span> 
-<span class="ansi-cyan-fg">(pid=4253)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4253)</span> 
-[INFO 01-23 05:56:36] ax.service.ax_client: Completed trial 20 with data: {'mean_accuracy': (0.96, 0.0)}.
-[INFO 01-23 05:56:37] ax.service.ax_client: Generated new trial 23 with parameters {'lr': 0.0, 'momentum': 0.76}.
-<span class="ansi-cyan-fg">(pid=4275)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4275)</span> 
-<span class="ansi-cyan-fg">(pid=4275)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4275)</span> 
-[INFO 01-23 05:56:44] ax.service.ax_client: Completed trial 21 with data: {'mean_accuracy': (0.77, 0.0)}.
-[INFO 01-23 05:56:45] ax.service.ax_client: Generated new trial 24 with parameters {'lr': 0.0, 'momentum': 1.0}.
-<span class="ansi-cyan-fg">(pid=4299)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4299)</span> 
-<span class="ansi-cyan-fg">(pid=4299)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4299)</span> 
-[INFO 01-23 05:56:49] ax.service.ax_client: Completed trial 22 with data: {'mean_accuracy': (0.95, 0.0)}.
-[INFO 01-23 05:56:50] ax.service.ax_client: Generated new trial 25 with parameters {'lr': 0.0, 'momentum': 0.36}.
-<span class="ansi-cyan-fg">(pid=4330)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4330)</span> 
-<span class="ansi-cyan-fg">(pid=4330)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4330)</span> 
-[INFO 01-23 05:56:57] ax.service.ax_client: Completed trial 23 with data: {'mean_accuracy': (0.91, 0.0)}.
-[INFO 01-23 05:56:58] ax.service.ax_client: Generated new trial 26 with parameters {'lr': 0.0, 'momentum': 0.11}.
-<span class="ansi-cyan-fg">(pid=4353)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4353)</span> 
-<span class="ansi-cyan-fg">(pid=4353)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4353)</span> 
-[INFO 01-23 05:57:02] ax.service.ax_client: Completed trial 24 with data: {'mean_accuracy': (0.79, 0.0)}.
-[INFO 01-23 05:57:03] ax.service.ax_client: Generated new trial 27 with parameters {'lr': 0.0, 'momentum': 0.44}.
-<span class="ansi-cyan-fg">(pid=4375)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4375)</span> 
-<span class="ansi-cyan-fg">(pid=4375)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4375)</span> 
-[INFO 01-23 05:57:10] ax.service.ax_client: Completed trial 25 with data: {'mean_accuracy': (0.94, 0.0)}.
-[INFO 01-23 05:57:11] ax.service.ax_client: Generated new trial 28 with parameters {'lr': 0.0, 'momentum': 0.37}.
-<span class="ansi-cyan-fg">(pid=4400)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4400)</span> 
-<span class="ansi-cyan-fg">(pid=4400)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4400)</span> 
-[INFO 01-23 05:57:15] ax.service.ax_client: Completed trial 26 with data: {'mean_accuracy': (0.95, 0.0)}.
-[INFO 01-23 05:57:17] ax.service.ax_client: Generated new trial 29 with parameters {'lr': 0.0, 'momentum': 0.13}.
-<span class="ansi-cyan-fg">(pid=4424)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4424)</span> 
-<span class="ansi-cyan-fg">(pid=4424)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4424)</span> 
-[INFO 01-23 05:57:23] ax.service.ax_client: Completed trial 27 with data: {'mean_accuracy': (0.94, 0.0)}.
-<span class="ansi-cyan-fg">(pid=4453)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
-<span class="ansi-cyan-fg">(pid=4453)</span> 
-<span class="ansi-cyan-fg">(pid=4453)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-<span class="ansi-cyan-fg">(pid=4453)</span> 
-[INFO 01-23 05:57:27] ax.service.ax_client: Completed trial 28 with data: {'mean_accuracy': (0.96, 0.0)}.
-[INFO 01-23 05:57:34] ax.service.ax_client: Completed trial 29 with data: {'mean_accuracy': (0.96, 0.0)}.
+<pre><span class="ansi-cyan-fg">(pid=3734)</span> 2021-01-24 05:55:43,573	ERROR function_runner.py:254 -- Runner Thread raised error.
+<span class="ansi-cyan-fg">(pid=3734)</span> Traceback (most recent call last):
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 248, in run
+<span class="ansi-cyan-fg">(pid=3734)</span>     self._entrypoint()
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 316, in entrypoint
+<span class="ansi-cyan-fg">(pid=3734)</span>     self._status_reporter.get_checkpoint())
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 575, in _trainable_func
+<span class="ansi-cyan-fg">(pid=3734)</span>     output = fn()
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "&lt;ipython-input-7-dd1f524b886e&gt;", line 3, in train_evaluate
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/home/runner/work/Ax/Ax/ax/utils/tutorials/cnn_utils.py", line 76, in load_mnist
+<span class="ansi-cyan-fg">(pid=3734)</span>     root=data_path, train=True, download=True, transform=transform
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 89, in __init__
+<span class="ansi-cyan-fg">(pid=3734)</span>     self.data, self.targets = torch.load(os.path.join(self.processed_folder, data_file))
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 594, in load
+<span class="ansi-cyan-fg">(pid=3734)</span>     return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 853, in _load
+<span class="ansi-cyan-fg">(pid=3734)</span>     result = unpickler.load()
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 845, in persistent_load
+<span class="ansi-cyan-fg">(pid=3734)</span>     load_tensor(data_type, size, key, _maybe_decode_ascii(location))
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 833, in load_tensor
+<span class="ansi-cyan-fg">(pid=3734)</span>     storage = zip_file.get_storage_from_record(name, size, dtype).storage()
+<span class="ansi-cyan-fg">(pid=3734)</span> RuntimeError: [enforce fail at inline_container.cc:222] . file not found: archive/data/140305374395360
+<span class="ansi-cyan-fg">(pid=3734)</span> Exception in thread Thread-2:
+<span class="ansi-cyan-fg">(pid=3734)</span> Traceback (most recent call last):
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+<span class="ansi-cyan-fg">(pid=3734)</span>     self.run()
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 267, in run
+<span class="ansi-cyan-fg">(pid=3734)</span>     raise e
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 248, in run
+<span class="ansi-cyan-fg">(pid=3734)</span>     self._entrypoint()
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 316, in entrypoint
+<span class="ansi-cyan-fg">(pid=3734)</span>     self._status_reporter.get_checkpoint())
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/ray/tune/function_runner.py", line 575, in _trainable_func
+<span class="ansi-cyan-fg">(pid=3734)</span>     output = fn()
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "&lt;ipython-input-7-dd1f524b886e&gt;", line 3, in train_evaluate
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/home/runner/work/Ax/Ax/ax/utils/tutorials/cnn_utils.py", line 76, in load_mnist
+<span class="ansi-cyan-fg">(pid=3734)</span>     root=data_path, train=True, download=True, transform=transform
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torchvision/datasets/mnist.py", line 89, in __init__
+<span class="ansi-cyan-fg">(pid=3734)</span>     self.data, self.targets = torch.load(os.path.join(self.processed_folder, data_file))
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 594, in load
+<span class="ansi-cyan-fg">(pid=3734)</span>     return _load(opened_zipfile, map_location, pickle_module, **pickle_load_args)
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 853, in _load
+<span class="ansi-cyan-fg">(pid=3734)</span>     result = unpickler.load()
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 845, in persistent_load
+<span class="ansi-cyan-fg">(pid=3734)</span>     load_tensor(data_type, size, key, _maybe_decode_ascii(location))
+<span class="ansi-cyan-fg">(pid=3734)</span>   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/serialization.py", line 833, in load_tensor
+<span class="ansi-cyan-fg">(pid=3734)</span>     storage = zip_file.get_storage_from_record(name, size, dtype).storage()
+<span class="ansi-cyan-fg">(pid=3734)</span> RuntimeError: [enforce fail at inline_container.cc:222] . file not found: archive/data/140305374395360
+<span class="ansi-cyan-fg">(pid=3734)</span> 
+[INFO 01-24 05:55:43] ax.service.ax_client: Generated new trial 3 with parameters {'lr': 0.0, 'momentum': 0.36}.
+<span class="ansi-cyan-fg">(pid=3802)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3802)</span> 
+<span class="ansi-cyan-fg">(pid=3802)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3802)</span> 
+[INFO 01-24 05:55:52] ax.service.ax_client: Completed trial 0 with data: {'mean_accuracy': (0.1, 0.0)}.
+[INFO 01-24 05:55:52] ax.service.ax_client: Generated new trial 4 with parameters {'lr': 0.18, 'momentum': 0.51}.
+<span class="ansi-cyan-fg">(pid=3830)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3830)</span> 
+<span class="ansi-cyan-fg">(pid=3830)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3830)</span> 
+[INFO 01-24 05:55:55] ax.service.ax_client: Completed trial 2 with data: {'mean_accuracy': (0.85, 0.0)}.
+[INFO 01-24 05:55:55] ax.service.ax_client: Generated new trial 5 with parameters {'lr': 0.0, 'momentum': 0.27}.
+<span class="ansi-cyan-fg">(pid=3852)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3852)</span> 
+<span class="ansi-cyan-fg">(pid=3852)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3852)</span> 
+[INFO 01-24 05:56:04] ax.service.ax_client: Completed trial 3 with data: {'mean_accuracy': (0.91, 0.0)}.
+[INFO 01-24 05:56:05] ax.service.ax_client: Generated new trial 6 with parameters {'lr': 0.0, 'momentum': 0.0}.
+<span class="ansi-cyan-fg">(pid=3877)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3877)</span> 
+<span class="ansi-cyan-fg">(pid=3877)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3877)</span> 
+[INFO 01-24 05:56:07] ax.service.ax_client: Completed trial 4 with data: {'mean_accuracy': (0.09, 0.0)}.
+[INFO 01-24 05:56:09] ax.service.ax_client: Generated new trial 7 with parameters {'lr': 0.0, 'momentum': 0.79}.
+<span class="ansi-cyan-fg">(pid=3900)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3900)</span> 
+<span class="ansi-cyan-fg">(pid=3900)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3900)</span> 
+[INFO 01-24 05:56:17] ax.service.ax_client: Completed trial 5 with data: {'mean_accuracy': (0.21, 0.0)}.
+[INFO 01-24 05:56:17] ax.service.ax_client: Generated new trial 8 with parameters {'lr': 0.0, 'momentum': 0.4}.
+<span class="ansi-cyan-fg">(pid=3923)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3923)</span> 
+<span class="ansi-cyan-fg">(pid=3923)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3923)</span> 
+[INFO 01-24 05:56:20] ax.service.ax_client: Completed trial 6 with data: {'mean_accuracy': (0.95, 0.0)}.
+[INFO 01-24 05:56:22] ax.service.ax_client: Generated new trial 9 with parameters {'lr': 0.0, 'momentum': 0.19}.
+<span class="ansi-cyan-fg">(pid=3948)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3948)</span> 
+<span class="ansi-cyan-fg">(pid=3948)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3948)</span> 
+[INFO 01-24 05:56:30] ax.service.ax_client: Completed trial 7 with data: {'mean_accuracy': (0.92, 0.0)}.
+[INFO 01-24 05:56:31] ax.service.ax_client: Generated new trial 10 with parameters {'lr': 0.0, 'momentum': 0.91}.
+<span class="ansi-cyan-fg">(pid=3980)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=3980)</span> 
+<span class="ansi-cyan-fg">(pid=3980)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=3980)</span> 
+[INFO 01-24 05:56:33] ax.service.ax_client: Completed trial 8 with data: {'mean_accuracy': (0.94, 0.0)}.
+[INFO 01-24 05:56:35] ax.service.ax_client: Generated new trial 11 with parameters {'lr': 0.0, 'momentum': 0.62}.
+<span class="ansi-cyan-fg">(pid=4002)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4002)</span> 
+<span class="ansi-cyan-fg">(pid=4002)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4002)</span> 
+[INFO 01-24 05:56:43] ax.service.ax_client: Completed trial 9 with data: {'mean_accuracy': (0.93, 0.0)}.
+[INFO 01-24 05:56:44] ax.service.ax_client: Generated new trial 12 with parameters {'lr': 0.0, 'momentum': 0.0}.
+<span class="ansi-cyan-fg">(pid=4026)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4026)</span> 
+<span class="ansi-cyan-fg">(pid=4026)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4026)</span> 
+[INFO 01-24 05:56:46] ax.service.ax_client: Completed trial 10 with data: {'mean_accuracy': (0.96, 0.0)}.
+[INFO 01-24 05:56:48] ax.service.ax_client: Generated new trial 13 with parameters {'lr': 0.0, 'momentum': 1.0}.
+<span class="ansi-cyan-fg">(pid=4048)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4048)</span> 
+<span class="ansi-cyan-fg">(pid=4048)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4048)</span> 
+[INFO 01-24 05:56:55] ax.service.ax_client: Completed trial 11 with data: {'mean_accuracy': (0.94, 0.0)}.
+[INFO 01-24 05:56:57] ax.service.ax_client: Generated new trial 14 with parameters {'lr': 0.0, 'momentum': 1.0}.
+<span class="ansi-cyan-fg">(pid=4081)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4081)</span> 
+<span class="ansi-cyan-fg">(pid=4081)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4081)</span> 
+[INFO 01-24 05:56:59] ax.service.ax_client: Completed trial 12 with data: {'mean_accuracy': (0.96, 0.0)}.
+[INFO 01-24 05:57:01] ax.service.ax_client: Generated new trial 15 with parameters {'lr': 0.0, 'momentum': 0.11}.
+<span class="ansi-cyan-fg">(pid=4102)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4102)</span> 
+<span class="ansi-cyan-fg">(pid=4102)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4102)</span> 
+[INFO 01-24 05:57:08] ax.service.ax_client: Completed trial 13 with data: {'mean_accuracy': (0.7, 0.0)}.
+[INFO 01-24 05:57:10] ax.service.ax_client: Generated new trial 16 with parameters {'lr': 0.0, 'momentum': 0.8}.
+<span class="ansi-cyan-fg">(pid=4129)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4129)</span> 
+<span class="ansi-cyan-fg">(pid=4129)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4129)</span> 
+[INFO 01-24 05:57:12] ax.service.ax_client: Completed trial 14 with data: {'mean_accuracy': (0.09, 0.0)}.
+[INFO 01-24 05:57:13] ax.service.ax_client: Generated new trial 17 with parameters {'lr': 0.0, 'momentum': 0.69}.
+<span class="ansi-cyan-fg">(pid=4150)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4150)</span> 
+<span class="ansi-cyan-fg">(pid=4150)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4150)</span> 
+[INFO 01-24 05:57:21] ax.service.ax_client: Completed trial 15 with data: {'mean_accuracy': (0.96, 0.0)}.
+[INFO 01-24 05:57:23] ax.service.ax_client: Generated new trial 18 with parameters {'lr': 0.0, 'momentum': 0.58}.
+<span class="ansi-cyan-fg">(pid=4175)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4175)</span> 
+<span class="ansi-cyan-fg">(pid=4175)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4175)</span> 
+[INFO 01-24 05:57:25] ax.service.ax_client: Completed trial 16 with data: {'mean_accuracy': (0.96, 0.0)}.
+[INFO 01-24 05:57:27] ax.service.ax_client: Generated new trial 19 with parameters {'lr': 0.01, 'momentum': 0.0}.
+<span class="ansi-cyan-fg">(pid=4201)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4201)</span> 
+<span class="ansi-cyan-fg">(pid=4201)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4201)</span> 
+[INFO 01-24 05:57:35] ax.service.ax_client: Completed trial 17 with data: {'mean_accuracy': (0.96, 0.0)}.
+[INFO 01-24 05:57:37] ax.service.ax_client: Generated new trial 20 with parameters {'lr': 0.0, 'momentum': 1.0}.
+<span class="ansi-cyan-fg">(pid=4233)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4233)</span> 
+<span class="ansi-cyan-fg">(pid=4233)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4233)</span> 
+[INFO 01-24 05:57:38] ax.service.ax_client: Completed trial 18 with data: {'mean_accuracy': (0.86, 0.0)}.
+2021-01-24 05:57:38,723	WARNING worker.py:1034 -- The actor or task with ID ffffffffffffffffcba888e301000000 cannot be scheduled right now. It requires {CPU: 1.000000} for placement, but this node only has remaining {CPU: 1.000000}, {node:10.1.0.4: 1.000000}, {memory: 3.613281 GiB}, {object_store_memory: 1.220703 GiB}. In total there are 0 pending tasks and 1 pending actors on this node. This is likely due to all cluster resources being claimed by actors. To resolve the issue, consider creating fewer actors or increase the resources available to this Ray cluster. You can ignore this message if this Ray cluster is expected to auto-scale.
+[INFO 01-24 05:57:40] ax.service.ax_client: Generated new trial 21 with parameters {'lr': 0.0, 'momentum': 0.58}.
+<span class="ansi-cyan-fg">(pid=4254)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4254)</span> 
+<span class="ansi-cyan-fg">(pid=4254)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4254)</span> 
+[INFO 01-24 05:57:48] ax.service.ax_client: Completed trial 19 with data: {'mean_accuracy': (0.11, 0.0)}.
+[INFO 01-24 05:57:50] ax.service.ax_client: Generated new trial 22 with parameters {'lr': 0.0, 'momentum': 0.22}.
+<span class="ansi-cyan-fg">(pid=4278)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4278)</span> 
+<span class="ansi-cyan-fg">(pid=4278)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4278)</span> 
+[INFO 01-24 05:57:51] ax.service.ax_client: Completed trial 20 with data: {'mean_accuracy': (0.88, 0.0)}.
+[INFO 01-24 05:57:53] ax.service.ax_client: Generated new trial 23 with parameters {'lr': 0.0, 'momentum': 1.0}.
+<span class="ansi-cyan-fg">(pid=4302)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4302)</span> 
+<span class="ansi-cyan-fg">(pid=4302)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4302)</span> 
+[INFO 01-24 05:58:01] ax.service.ax_client: Completed trial 21 with data: {'mean_accuracy': (0.9, 0.0)}.
+[INFO 01-24 05:58:03] ax.service.ax_client: Generated new trial 24 with parameters {'lr': 0.0, 'momentum': 0.0}.
+<span class="ansi-cyan-fg">(pid=4328)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4328)</span> 
+<span class="ansi-cyan-fg">(pid=4328)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4328)</span> 
+[INFO 01-24 05:58:04] ax.service.ax_client: Completed trial 22 with data: {'mean_accuracy': (0.96, 0.0)}.
+[INFO 01-24 05:58:06] ax.service.ax_client: Generated new trial 25 with parameters {'lr': 0.0, 'momentum': 0.4}.
+<span class="ansi-cyan-fg">(pid=4350)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4350)</span> 
+<span class="ansi-cyan-fg">(pid=4350)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4350)</span> 
+[INFO 01-24 05:58:14] ax.service.ax_client: Completed trial 23 with data: {'mean_accuracy': (0.81, 0.0)}.
+[INFO 01-24 05:58:16] ax.service.ax_client: Generated new trial 26 with parameters {'lr': 0.0, 'momentum': 1.0}.
+<span class="ansi-cyan-fg">(pid=4397)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4397)</span> 
+<span class="ansi-cyan-fg">(pid=4397)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4397)</span> 
+[INFO 01-24 05:58:17] ax.service.ax_client: Completed trial 24 with data: {'mean_accuracy': (0.91, 0.0)}.
+[INFO 01-24 05:58:19] ax.service.ax_client: Generated new trial 27 with parameters {'lr': 0.0, 'momentum': 0.0}.
+<span class="ansi-cyan-fg">(pid=4421)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4421)</span> 
+<span class="ansi-cyan-fg">(pid=4421)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4421)</span> 
+[INFO 01-24 05:58:28] ax.service.ax_client: Completed trial 25 with data: {'mean_accuracy': (0.93, 0.0)}.
+[INFO 01-24 05:58:30] ax.service.ax_client: Generated new trial 28 with parameters {'lr': 0.0, 'momentum': 0.8}.
+<span class="ansi-cyan-fg">(pid=4444)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4444)</span> 
+<span class="ansi-cyan-fg">(pid=4444)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4444)</span> 
+[INFO 01-24 05:58:31] ax.service.ax_client: Completed trial 26 with data: {'mean_accuracy': (0.86, 0.0)}.
+[INFO 01-24 05:58:32] ax.service.ax_client: Generated new trial 29 with parameters {'lr': 0.0, 'momentum': 0.75}.
+<span class="ansi-cyan-fg">(pid=4475)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4475)</span> 
+<span class="ansi-cyan-fg">(pid=4475)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4475)</span> 
+[INFO 01-24 05:58:41] ax.service.ax_client: Completed trial 27 with data: {'mean_accuracy': (0.85, 0.0)}.
+[INFO 01-24 05:58:43] ax.service.ax_client: Completed trial 28 with data: {'mean_accuracy': (0.93, 0.0)}.
+<span class="ansi-cyan-fg">(pid=4501)</span> /opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning:
+<span class="ansi-cyan-fg">(pid=4501)</span> 
+<span class="ansi-cyan-fg">(pid=4501)</span> CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
+<span class="ansi-cyan-fg">(pid=4501)</span> 
+[INFO 01-24 05:58:52] ax.service.ax_client: Completed trial 29 with data: {'mean_accuracy': (0.75, 0.0)}.
 </pre>
 </div>
 </div>
@@ -997,7 +1022,7 @@ var n,i=t("./lib/build-log"),a=t("./lib/epsilon"),o=t("./lib/intersecter"),s=t("
 <span class="ansi-green-intense-fg ansi-bold">    443</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">    444</span>             logger<span class="ansi-blue-fg">.</span>error<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Trials did not complete: %s"</span><span class="ansi-blue-fg">,</span> incomplete_trials<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">TuneError</span>: ('Trials did not complete', [train_evaluate_71cfe7de])</pre>
+<span class="ansi-red-fg">TuneError</span>: ('Trials did not complete', [train_evaluate_c98d5a0b])</pre>
 </div>
 </div>
 </div>
