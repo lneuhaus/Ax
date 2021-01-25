@@ -191,6 +191,34 @@ src="/js/documentation_options.js">
     <span class="k">return</span> <span class="n">experiment</span></div>
 
 
+<div class="viewcode-block" id="get_multi_type_experiment_with_multi_objective"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_multi_type_experiment_with_multi_objective">[docs]</a><span class="k">def</span> <span class="nf">get_multi_type_experiment_with_multi_objective</span><span class="p">(</span>
+    <span class="n">add_trials</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MultiTypeExperiment</span><span class="p">:</span>
+    <span class="n">oc</span> <span class="o">=</span> <span class="n">get_branin_multi_objective_optimization_config</span><span class="p">()</span>
+    <span class="n">experiment</span> <span class="o">=</span> <span class="n">MultiTypeExperiment</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">"test_exp"</span><span class="p">,</span>
+        <span class="n">search_space</span><span class="o">=</span><span class="n">get_branin_search_space</span><span class="p">(),</span>
+        <span class="n">default_trial_type</span><span class="o">=</span><span class="s2">"type1"</span><span class="p">,</span>
+        <span class="n">default_runner</span><span class="o">=</span><span class="n">SyntheticRunner</span><span class="p">(</span><span class="n">dummy_metadata</span><span class="o">=</span><span class="s2">"dummy1"</span><span class="p">),</span>
+        <span class="n">optimization_config</span><span class="o">=</span><span class="n">oc</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">experiment</span><span class="o">.</span><span class="n">add_trial_type</span><span class="p">(</span>
+        <span class="n">trial_type</span><span class="o">=</span><span class="s2">"type2"</span><span class="p">,</span> <span class="n">runner</span><span class="o">=</span><span class="n">SyntheticRunner</span><span class="p">(</span><span class="n">dummy_metadata</span><span class="o">=</span><span class="s2">"dummy2"</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">add_trials</span><span class="p">:</span>
+        <span class="n">generator</span> <span class="o">=</span> <span class="n">get_sobol</span><span class="p">(</span><span class="n">experiment</span><span class="o">.</span><span class="n">search_space</span><span class="p">)</span>
+        <span class="n">gr</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">new_batch_trial</span><span class="p">(</span><span class="n">generator_run</span><span class="o">=</span><span class="n">gr</span><span class="p">,</span> <span class="n">trial_type</span><span class="o">=</span><span class="s2">"type1"</span><span class="p">)</span>
+        <span class="n">t2</span> <span class="o">=</span> <span class="n">experiment</span><span class="o">.</span><span class="n">new_batch_trial</span><span class="p">(</span><span class="n">generator_run</span><span class="o">=</span><span class="n">gr</span><span class="p">,</span> <span class="n">trial_type</span><span class="o">=</span><span class="s2">"type2"</span><span class="p">)</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">set_status_quo_with_weight</span><span class="p">(</span><span class="n">status_quo</span><span class="o">=</span><span class="n">t1</span><span class="o">.</span><span class="n">arms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">t2</span><span class="o">.</span><span class="n">set_status_quo_with_weight</span><span class="p">(</span><span class="n">status_quo</span><span class="o">=</span><span class="n">t2</span><span class="o">.</span><span class="n">arms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">t1</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="n">t2</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">experiment</span></div>
+
+
 <div class="viewcode-block" id="get_factorial_experiment"><a class="viewcode-back" href="../../../../utils.html#ax.utils.testing.core_stubs.get_factorial_experiment">[docs]</a><span class="k">def</span> <span class="nf">get_factorial_experiment</span><span class="p">(</span>
     <span class="n">has_optimization_config</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">with_batch</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
