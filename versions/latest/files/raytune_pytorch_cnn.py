@@ -125,14 +125,14 @@ tune.run(
 
 # ## 5. Retrieve the optimization results
 
-# In[9]:
+# In[8]:
 
 
 best_parameters, values = ax.get_best_parameters()
 best_parameters
 
 
-# In[10]:
+# In[9]:
 
 
 means, covariances = values
@@ -141,7 +141,7 @@ means
 
 # ## 6. Plot the response surface and optimization trace
 
-# In[11]:
+# In[10]:
 
 
 render(
@@ -154,7 +154,7 @@ render(
 )
 
 
-# In[12]:
+# In[11]:
 
 
 # `plot_single_method` expects a 2-d array of means, because it expects to average means from multiple
