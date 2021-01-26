@@ -78,10 +78,16 @@ ax.create_experiment(
 ax.experiment.optimization_config.objective.minimize
 
 
+# In[7]:
+
+
+load_mnist(data_path="~/.data")  # Pre-load the dataset before the initial evaluations are executed.
+
+
 # ## 3. Define how to evaluate trials
 # Since we use the Ax Service API here, we evaluate the parameterizations that Ax suggests, using RayTune. The evaluation function follows its usual pattern, taking in a parameterization and outputting an objective value. For detail on evaluation functions, see [Trial Evaluation](https://ax.dev/docs/runner.html). 
 
-# In[7]:
+# In[8]:
 
 
 def train_evaluate(parameterization):
@@ -107,7 +113,7 @@ def train_evaluate(parameterization):
 # ## 4. Run optimization
 # Execute the Ax optimization and trial evaluation in RayTune using [AxSearch algorithm](https://ray.readthedocs.io/en/latest/tune-searchalg.html#ax-search):
 
-# In[8]:
+# In[9]:
 
 
 tune.run(
@@ -125,14 +131,14 @@ tune.run(
 
 # ## 5. Retrieve the optimization results
 
-# In[8]:
+# In[10]:
 
 
 best_parameters, values = ax.get_best_parameters()
 best_parameters
 
 
-# In[9]:
+# In[11]:
 
 
 means, covariances = values
@@ -141,7 +147,7 @@ means
 
 # ## 6. Plot the response surface and optimization trace
 
-# In[10]:
+# In[12]:
 
 
 render(
@@ -154,7 +160,7 @@ render(
 )
 
 
-# In[11]:
+# In[13]:
 
 
 # `plot_single_method` expects a 2-d array of means, because it expects to average means from multiple
